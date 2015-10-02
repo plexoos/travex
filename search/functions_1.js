@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hit',['Hit',['../classtvx_1_1Hit.html#ac2727a27933c07b60b6a7ccccba12fff',1,'tvx::Hit']]]
+  ['findcandidatehits',['FindCandidateHits',['../classtvx_1_1TrackNode.html#a9623df28769ca1a39de0edae68c67986',1,'tvx::TrackNode']]]
 ];

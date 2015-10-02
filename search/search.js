@@ -7,13 +7,15 @@
 
 var indexSectionsWithContent =
 {
-  0: "fghoprt",
-  1: "h",
+  0: "acfghoprstu",
+  1: "ht",
   2: "t",
-  3: "hr",
-  4: "ghop",
+  3: "hrt",
+  4: "cfghopst",
   5: "f",
-  6: "o"
+  6: "s",
+  7: "acru",
+  8: "o"
 };
 
 var indexSectionNames =
@@ -24,7 +26,9 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "related"
+  6: "enums",
+  7: "enumvalues",
+  8: "related"
 };
 
 function convertToId(search)

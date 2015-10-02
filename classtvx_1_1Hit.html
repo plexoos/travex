@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -106,6 +107,15 @@ Inheritance diagram for tvx::Hit:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a00321b0541fed50f37ce0c57e94e6b94"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94">Status</a> { <a class="el" href="classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94aec0fc0100c4fc1ce4eea230c3dc10360">Status::Undefined</a>, 
+<a class="el" href="classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94a382ab522931673c11e398ead1b7b1678">Status::Accepted</a>, 
+<a class="el" href="classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94ad37b1f6c0512e2118cee17fea015b699">Status::Rejected</a>, 
+<a class="el" href="classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94a25befec7033aa9feec4a5a586d4e1366">Status::Candidate</a>
+ }</td></tr>
+<tr class="separator:a00321b0541fed50f37ce0c57e94e6b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2727a27933c07b60b6a7ccccba12fff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1Hit.html#ac2727a27933c07b60b6a7ccccba12fff">Hit</a> ()</td></tr>
@@ -132,7 +142,40 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="Hit_8h_source.html#l00011">11</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a00321b0541fed50f37ce0c57e94e6b94"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94">tvx::Hit::Status</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a00321b0541fed50f37ce0c57e94e6b94aec0fc0100c4fc1ce4eea230c3dc10360"></a>Undefined&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a00321b0541fed50f37ce0c57e94e6b94a382ab522931673c11e398ead1b7b1678"></a>Accepted&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a00321b0541fed50f37ce0c57e94e6b94ad37b1f6c0512e2118cee17fea015b699"></a>Rejected&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a00321b0541fed50f37ce0c57e94e6b94a25befec7033aa9feec4a5a586d4e1366"></a>Candidate&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="Hit_8h_source.html#l00015">15</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac2727a27933c07b60b6a7ccccba12fff"></a>
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +215,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Hit_8h_source.html#l00016">16</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
+<p>Definition at line <a class="el" href="Hit_8h_source.html#l00018">18</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
 
 </div>
 </div>
@@ -258,7 +301,7 @@ Friends</h2></td></tr>
 
 <p>Global coordinates of the hit in the STAR CS. </p>
 
-<p>Definition at line <a class="el" href="Hit_8h_source.html#l00023">23</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
+<p>Definition at line <a class="el" href="Hit_8h_source.html#l00025">25</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
 
 </div>
 </div>
@@ -282,7 +325,7 @@ Friends</h2></td></tr>
 
 <p>The number of tracks this hit was assigned to. </p>
 
-<p>Definition at line <a class="el" href="Hit_8h_source.html#l00024">24</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
+<p>Definition at line <a class="el" href="Hit_8h_source.html#l00026">26</a> of file <a class="el" href="Hit_8h_source.html">Hit.h</a>.</p>
 
 </div>
 </div>
@@ -293,7 +336,7 @@ Friends</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 2 2015 15:06:06 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 2 2015 17:31:38 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
