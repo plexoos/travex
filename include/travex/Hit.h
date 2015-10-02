@@ -12,6 +12,8 @@ class Hit : public TObject
 {
 public:
 
+   enum class Status {Undefined, Accepted, Rejected, Candidate};
+
    Hit();
    const TVector3& GetPosition() const { return fPosition; }
    virtual void Print(Option_t *opt = "") const;
