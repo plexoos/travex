@@ -33,6 +33,8 @@ add_library (
 	travex
 	SHARED
 	src/Hit.cxx
+	src/HitProxy.cxx
+	src/TrackNode.cxx
 )
 
 
