@@ -35,6 +35,8 @@ add_library (
 	src/Hit.cxx
 	src/HitProxy.cxx
 	src/TrackNode.cxx
+	src/Track.cxx
+	src/Event.cxx
 )
 
 
