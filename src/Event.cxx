@@ -4,8 +4,7 @@
 #include "travex/Event.h"
 
 
-
-tvx::Event::Event() : TObject(),
+tvx::Event::Event() : TObject(), GenericEvent(),
    fTracks(),
    fHits()
 {
