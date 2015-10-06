@@ -37,11 +37,14 @@ add_library (
 	src/Track.cxx
 	src/Event.cxx
 	src/ProgramOptions.cxx
+	src/HistContainer.cxx
 )
+
+link_directories(${ROOT_LIBRARY_DIR})
 
 add_executable(test-lib tests/test-lib.cxx)
 
-target_link_libraries(test-lib travex ${Boost_LIBRARIES} ${ROOT_LIBRARIES} pthread)
+target_link_libraries(test-lib travex ${Boost_LIBRARIES} ${ROOT_LIBRARIES} HistPainter pthread)
 
 
 # Installation section
