@@ -29,6 +29,14 @@ include_directories (
 )
 
 
+root_generate_dictionary(travex_dict
+	travex/Hit.h
+	travex/Event.h
+	travex/Track.h
+	travex/TrackNode.h
+	LINKDEF travex/LinkDef.h
+)
+
 add_library (
 	travex
 	SHARED
@@ -38,6 +46,7 @@ add_library (
 	src/Event.cxx
 	src/ProgramOptions.cxx
 	src/HistContainer.cxx
+	travex_dict.cxx
 )
 
 link_directories(${ROOT_LIBRARY_DIR})
