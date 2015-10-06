@@ -36,6 +36,7 @@ add_library (
 	src/TrackNode.cxx
 	src/Track.cxx
 	src/Event.cxx
+	src/ProgramOptions.cxx
 )
 
 add_executable(test-lib tests/test-lib.cxx)
