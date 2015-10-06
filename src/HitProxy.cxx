@@ -3,10 +3,8 @@
 #include "travex/TrackNode.h"
 
 
-using namespace tvx;
 
-
-HitProxy::HitProxy() :
+tvx::HitProxy::HitProxy() :
    TObject(),
    fHit(nullptr),
    fTrackNode(nullptr),
@@ -16,7 +14,7 @@ HitProxy::HitProxy() :
 }
 
 
-HitProxy::HitProxy(const Hit& hit, const TrackNode& node) :
+tvx::HitProxy::HitProxy(const Hit& hit, const TrackNode& node) :
    TObject(),
    fHit(&hit),
    fTrackNode(&node),

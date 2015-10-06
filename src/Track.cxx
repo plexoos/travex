@@ -2,24 +2,22 @@
 #include "travex/Event.h"
 
 
-using namespace tvx;
 
-
-Track::Track() : TObject(),
+tvx::Track::Track() : TObject(),
    fEvent(nullptr), fNodes(), fEnergyLosses(0)
 {
 }
 
 
-Track::Track(Event* event) : TObject(),
+tvx::Track::Track(Event* event) : TObject(),
    fEvent(event), fNodes(), fEnergyLosses(0)
 {
 }
 
 
-std::pair<std::set<Hit>::iterator, bool> Track::AddToParentEvent(const Hit& stiHit)
+std::pair<std::set<tvx::Hit>::iterator, bool> tvx::Track::AddToParentEvent(const tvx::Hit& stiHit)
 {
-   std::pair<std::set<Hit>::iterator, bool> dummy;
+   std::pair<std::set<tvx::Hit>::iterator, bool> dummy;
    dummy.second = false;
 
    return fEvent ? fEvent->AddHit(stiHit) : dummy;
@@ -30,7 +28,7 @@ std::pair<std::set<Hit>::iterator, bool> Track::AddToParentEvent(const Hit& stiH
  * For each node of this track finds the hit closest to the mean track
  * projection.
  */
-void Track::SetClosestHits(const std::set<Hit>& stiHits)
+void tvx::Track::SetClosestHits(const std::set<tvx::Hit>& stiHits)
 {
    for (const auto& node : fNodes)
    {
@@ -43,7 +41,7 @@ void Track::SetClosestHits(const std::set<Hit>& stiHits)
  * For each node of this track finds hits in some proximity to the mean track
  * projection.
  */
-void Track::FindCandidateHits(const std::set<Hit>& stiHits)
+void tvx::Track::FindCandidateHits(const std::set<tvx::Hit>& stiHits)
 {
    for (const auto& node : fNodes)
    {
@@ -52,7 +50,7 @@ void Track::FindCandidateHits(const std::set<Hit>& stiHits)
 }
 
 
-void Track::Print(Option_t *opt) const
+void tvx::Track::Print(Option_t *opt) const
 {
    Info("Print", "fEnergyLosses: %f\n", fEnergyLosses);
 

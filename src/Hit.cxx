@@ -1,22 +1,21 @@
 #include "travex/Hit.h"
 
-using namespace tvx;
 
 
-Hit::Hit() : TObject(),
+tvx::Hit::Hit() : TObject(),
    fPosition(),
    fTimesUsed(0)
 {
 }
 
 
-void Hit::Print(Option_t *opt) const
+void tvx::Hit::Print(Option_t *opt) const
 {
    fPosition.Print();
 }
 
 
-bool tvx::operator< (const Hit& lhs, const Hit& rhs)
+bool tvx::operator< (const tvx::Hit& lhs, const tvx::Hit& rhs)
 {
    if (lhs.fPosition.Perp() < rhs.fPosition.Perp() )
       return true;

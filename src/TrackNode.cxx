@@ -4,10 +4,8 @@
 #include "travex/TrackNode.h"
 
 
-using namespace tvx;
 
-
-TrackNode::TrackNode() : TObject(),
+tvx::TrackNode::TrackNode() : TObject(),
    fTrack(nullptr),
    fPosition(),
    fError(),
@@ -20,7 +18,7 @@ TrackNode::TrackNode() : TObject(),
 }
 
 
-TVector3 TrackNode::CalcPullToHit(const Hit& hit) const
+TVector3 tvx::TrackNode::CalcPullToHit(const tvx::Hit& hit) const
 {
    double pullX = fProjError.X() ? (hit.GetPosition().X() - fPosition.X()) / fProjError.X() : 0;
    double pullY = fProjError.Y() ? (hit.GetPosition().Y() - fPosition.Y()) / fProjError.Y() : 0;
@@ -34,7 +32,7 @@ TVector3 TrackNode::CalcPullToHit(const Hit& hit) const
  * Calculates and returns uncorrelated three components which can be used in the
  * pull distribution.
  */
-TVector3 TrackNode::CalcPullClosestHit() const
+TVector3 tvx::TrackNode::CalcPullClosestHit() const
 {
    if (!fClosestHit) return TVector3(DBL_MAX, DBL_MAX, DBL_MAX);
 
@@ -42,22 +40,22 @@ TVector3 TrackNode::CalcPullClosestHit() const
 }
 
 
-void TrackNode::Print(Option_t *opt) const
+void tvx::TrackNode::Print(Option_t *opt) const
 {
    fPosition.Print();
    fMomentum.Print();
 }
 
 
-bool tvx::operator< (const TrackNode& lhs, const TrackNode& rhs)
+bool tvx::operator< (const tvx::TrackNode& lhs, const tvx::TrackNode& rhs)
 {
    return lhs.fPosition.Perp() < rhs.fPosition.Perp();
 }
 
 
-std::set<const Hit*> TrackNode::GetCandidateBareHits() const
+std::set<const tvx::Hit*> tvx::TrackNode::GetCandidateBareHits() const
 {
-   std::set<const Hit*> candidateHits;
+   std::set<const tvx::Hit*> candidateHits;
 
    std::transform(fCandidateHits.begin(), fCandidateHits.end(),
       std::inserter(candidateHits, candidateHits.begin()), HitProxy::GetBareStiHit);
@@ -66,7 +64,7 @@ std::set<const Hit*> TrackNode::GetCandidateBareHits() const
 }
 
 
-void TrackNode::SetClosestHit(const std::set<Hit>& hits) const
+void tvx::TrackNode::SetClosestHit(const std::set<tvx::Hit>& hits) const
 {
    TVector3 distVec;
    double min_dist = DBL_MAX;
@@ -92,7 +90,7 @@ void TrackNode::SetClosestHit(const std::set<Hit>& hits) const
  * user provided collection hits which should normaly be a collection of hits
  * in the parent event to which the track belongs.
  */
-void TrackNode::FindCandidateHits(const std::set<Hit>& hits) const
+void tvx::TrackNode::FindCandidateHits(const std::set<tvx::Hit>& hits) const
 {
    TVector3 distVec;
    double min_dist = DBL_MAX;
