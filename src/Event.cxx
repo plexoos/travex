@@ -2,6 +2,8 @@
 #include <string>
 
 #include "travex/Event.h"
+#include "travex/Track.h"
+#include "travex/Hit.h"
 
 
 tvx::Event::Event() : TObject(), GenericEvent(),

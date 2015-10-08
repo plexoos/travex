@@ -7,12 +7,12 @@
 #include "TObject.h"
 
 #include "travex/GenericEvent.h"
-#include "travex/Track.h"
-#include "travex/Hit.h"
 
 
 namespace tvx {
 
+class Hit;
+class Track;
 
 /**
  * A simple persistent event container holding collections of tracks and hits.
