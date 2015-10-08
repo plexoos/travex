@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hit',['Hit',['../classtvx_1_1Hit.html#ac2727a27933c07b60b6a7ccccba12fff',1,'tvx::Hit']]],
-  ['hitproxy',['HitProxy',['../classtvx_1_1HitProxy.html#a3141c3552b23b8d09d6b70f78ad93fb9',1,'tvx::HitProxy::HitProxy()'],['../classtvx_1_1HitProxy.html#a63695744b701cdb7a7922522b4776f74',1,'tvx::HitProxy::HitProxy(const Hit &amp;hit, const TrackNode &amp;node)']]]
+  ['findcandidatehits',['FindCandidateHits',['../classtvx_1_1GenericTrack.html#a822ec889e2ce3f41ead41470d3f31185',1,'tvx::GenericTrack::FindCandidateHits()'],['../classtvx_1_1Track.html#a35ae7f7a048fe18a9d556f5442a10222',1,'tvx::Track::FindCandidateHits()'],['../classtvx_1_1TrackNode.html#ab6570d4b4c3bfbe51c72c2584ca85bcf',1,'tvx::TrackNode::FindCandidateHits()']]]
 ];

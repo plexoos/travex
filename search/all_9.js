@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['tracknode',['TrackNode',['../classtvx_1_1TrackNode.html',1,'tvx']]],
-  ['tracknode',['TrackNode',['../classtvx_1_1TrackNode.html#ab873d7a308551e9329dcf1608a1f1a7a',1,'tvx::TrackNode']]],
-  ['tracknode_2ecxx',['TrackNode.cxx',['../TrackNode_8cxx.html',1,'']]],
-  ['tracknode_2eh',['TrackNode.h',['../TrackNode_8h.html',1,'']]],
-  ['tvx',['tvx',['../namespacetvx.html',1,'']]]
+  ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
+  ['rejected',['Rejected',['../classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94ad37b1f6c0512e2118cee17fea015b699',1,'tvx::Hit']]]
 ];

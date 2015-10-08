@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li class="current"><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
@@ -81,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,14 +108,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>fDistanceToNode
 : <a class="el" href="classtvx_1_1HitProxy.html#a312374758f50ae5b44aa968aa1b037a3">tvx::HitProxy</a>
 </li>
+<li>fEnergyLosses
+: <a class="el" href="classtvx_1_1Track.html#a0810a849fc868a558dae1b7136aefaf0">tvx::Track</a>
+</li>
 <li>fError
 : <a class="el" href="classtvx_1_1TrackNode.html#a2b150f010fc7f7236a93be3632e9294f">tvx::TrackNode</a>
+</li>
+<li>fEvent
+: <a class="el" href="classtvx_1_1Track.html#a105ac3890fff756a9f12596b27e68325">tvx::Track</a>
 </li>
 <li>fHit
 : <a class="el" href="classtvx_1_1HitProxy.html#a392f05249e25c83c2b9f05e841c3eb95">tvx::HitProxy</a>
 </li>
+<li>fHits
+: <a class="el" href="classtvx_1_1Event.html#aef13002b61f5d25090b4282d02f3a700">tvx::Event</a>
+</li>
 <li>fMomentum
 : <a class="el" href="classtvx_1_1TrackNode.html#acf3754473a989625f82f0cbcb15e6ceb">tvx::TrackNode</a>
+</li>
+<li>fNodes
+: <a class="el" href="classtvx_1_1Track.html#a574e03c9e81390db293afddfe20643c0">tvx::Track</a>
 </li>
 <li>fPosition
 : <a class="el" href="classtvx_1_1Hit.html#a59ef5707d10c4a2441e03e0640680840">tvx::Hit</a>
@@ -132,11 +145,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>fTrackNode
 : <a class="el" href="classtvx_1_1HitProxy.html#a241e453e3e2fe2243bd980cbe58a26f4">tvx::HitProxy</a>
 </li>
+<li>fTracks
+: <a class="el" href="classtvx_1_1Event.html#a644894bc1fb6b230d5844699d866c2a0">tvx::Event</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 2 2015 17:31:38 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 8 2015 17:30:18 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
