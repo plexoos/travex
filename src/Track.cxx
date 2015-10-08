@@ -1,9 +1,12 @@
-#include "travex/Track.h"
 #include "travex/Event.h"
+#include "travex/Track.h"
 
 
 
-tvx::Track::Track() : TObject(),
+/**
+ * Constructs an orphan empty Track not associated with any Event.
+ */
+tvx::Track::Track() : TObject(), GenericTrack(),
    fEvent(nullptr), fNodes(), fEnergyLosses(0)
 {
 }

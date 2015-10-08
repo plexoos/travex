@@ -5,6 +5,7 @@
 
 #include "TObject.h"
 
+#include "travex/GenericTrack.h"
 #include "travex/TrackNode.h"
 
 
@@ -13,19 +14,19 @@ namespace tvx {
 class Event;
 
 
-class Track : public TObject
+class Track : public TObject, public GenericTrack<Event>
 {
 public:
 
    Track();
    explicit Track(Event* event);
 
-   const Event* GetParentEvent() const { return fEvent; }
-   const std::set<TrackNode>& GetNodes() const { return fNodes; }
-   double GetEnergyLosses() const { return fEnergyLosses; }
-   std::pair<std::set<Hit>::iterator, bool> AddToParentEvent(const Hit& stiHit);
-   void SetClosestHits(const std::set<Hit>& stiHits);
-   void FindCandidateHits(const std::set<Hit>& stiHits);
+   virtual Event* GetParentEvent() { return fEvent; }
+   virtual const std::set<TrackNode>& GetNodes() const { return fNodes; }
+   virtual double GetEnergyLosses() const { return fEnergyLosses; }
+   virtual AddHitResult AddToParentEvent(const Hit& stiHit);
+   virtual void SetClosestHits(const std::set<Hit>& stiHits);
+   virtual void FindCandidateHits(const std::set<Hit>& stiHits);
    virtual void Print(Option_t *opt = "") const;
 
 protected:
