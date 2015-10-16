@@ -4,15 +4,15 @@
 #include "TObject.h"
 #include "TVector3.h"
 
+#include "GenericHit.h"
+
 
 namespace tvx {
 
 
-class Hit : public TObject
+class Hit : public GenericHit<TVector3>, public TObject
 {
 public:
-
-   enum class Status {Undefined, Accepted, Rejected, Candidate};
 
    Hit();
    const TVector3& GetPosition() const { return fPosition; }
