@@ -22,15 +22,18 @@ class Event : public GenericEvent<std::list<Track>, std::set<Hit> >, public TObj
 {
 public:
 
+   using TrackContainer_t = typename GenericEvent::TrackContainer_t;
+   using HitContainer_t = typename GenericEvent::HitContainer_t;
+
    Event();
 
-   virtual void AddTracks(const TrackContainer& tracks) { fTracks = tracks; }
+   virtual void AddTracks(const TrackContainer_t& tracks) { fTracks = tracks; }
    virtual void AddTrack(const Track& track) { fTracks.push_back(track); }
-   virtual const TrackContainer& GetTracks() const { return fTracks; }
+   virtual const TrackContainer_t& GetTracks() const { return fTracks; }
 
-   virtual void AddHits(const HitContainer& hits) { fHits = hits; }
-   virtual AddHitResult AddHit(const Hit& hit) { return fHits.insert(hit); }
-   virtual const HitContainer& GetHits() const { return fHits; }
+   virtual void AddHits(const HitContainer_t& hits) { fHits = hits; }
+   virtual AddHitResult_t AddHit(const Hit& hit) { return fHits.insert(hit); }
+   virtual const HitContainer_t& GetHits() const { return fHits; }
 
    virtual void Clear(Option_t *opt = "");
    virtual void Print(Option_t *opt = "") const;
@@ -38,10 +41,10 @@ public:
 protected:
 
    ///< A collection of all (possibly preselected) tracks in this event
-   TrackContainer  fTracks;
+   TrackContainer_t  fTracks;
 
    ///< A collection of all (possibly preselected) hits in this event
-   HitContainer  fHits;
+   HitContainer_t  fHits;
 
    ClassDef(Event, 1)
 };

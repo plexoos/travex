@@ -6,7 +6,7 @@
 #include "travex/Hit.h"
 
 
-tvx::Event::Event() : TObject(), GenericEvent(),
+tvx::Event::Event() : TObject(),
    fTracks(),
    fHits()
 {
