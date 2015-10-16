@@ -21,8 +21,6 @@ public:
    virtual const TrackNodeContainer_t& GetNodes() const = 0;
    virtual double GetEnergyLosses() const = 0;
    virtual AddHitResult_t AddToParentEvent(const typename HitContainer_t::value_type& hit) = 0;
-   virtual void SetClosestHits(const HitContainer_t& hits) = 0;
-   virtual void FindCandidateHits(const HitContainer_t& hits) = 0;
 };
 
 }

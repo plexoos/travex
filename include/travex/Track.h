@@ -27,8 +27,6 @@ public:
    virtual const TrackNodeContainer_t& GetNodes() const { return fNodes; }
    virtual double GetEnergyLosses() const { return fEnergyLosses; }
    virtual AddHitResult_t AddToParentEvent(const Hit& hit);
-   virtual void SetClosestHits(const std::set<Hit>& stiHits);
-   virtual void FindCandidateHits(const std::set<Hit>& stiHits);
    virtual void Print(Option_t *opt = "") const;
 
 protected:

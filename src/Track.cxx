@@ -6,8 +6,10 @@
 /**
  * Constructs an orphan empty Track not associated with any Event.
  */
-tvx::Track::Track() : TObject(), GenericTrack(),
-   fEvent(nullptr), fNodes(), fEnergyLosses(0)
+tvx::Track::Track() : TObject(),
+   fEvent(nullptr),
+	fNodes(),
+	fEnergyLosses(0)
 {
 }
 
@@ -24,32 +26,6 @@ std::pair<std::set<tvx::Hit>::iterator, bool> tvx::Track::AddToParentEvent(const
    dummy.second = false;
 
    return fEvent ? fEvent->AddHit(stiHit) : dummy;
-}
-
-
-/**
- * For each node of this track finds the hit closest to the mean track
- * projection.
- */
-void tvx::Track::SetClosestHits(const std::set<tvx::Hit>& stiHits)
-{
-   for (const auto& node : fNodes)
-   {
-      node.SetClosestHit(stiHits);
-   }
-}
-
-
-/**
- * For each node of this track finds hits in some proximity to the mean track
- * projection.
- */
-void tvx::Track::FindCandidateHits(const std::set<tvx::Hit>& stiHits)
-{
-   for (const auto& node : fNodes)
-   {
-      node.FindCandidateHits(stiHits);
-   }
 }
 
 
