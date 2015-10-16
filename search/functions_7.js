@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['print',['Print',['../classtvx_1_1Event.html#aedbfbda89e7d8ffedaa179bdc37e699b',1,'tvx::Event::Print()'],['../classtvx_1_1Hit.html#afd46b92058bce12654efef76a7396a1f',1,'tvx::Hit::Print()'],['../classtvx_1_1Track.html#af3cbc08f7bf2851332ab19c371020e64',1,'tvx::Track::Print()'],['../classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893',1,'tvx::TrackNode::Print()']]]
+  ['track',['Track',['../classtvx_1_1Track.html#a530006a7ba60233814398e8b12704f0d',1,'tvx::Track::Track()'],['../classtvx_1_1Track.html#a37874bab855f24a6841d02072df6b006',1,'tvx::Track::Track(Event *event)']]],
+  ['tracknode',['TrackNode',['../classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e',1,'tvx::TrackNode']]]
 ];

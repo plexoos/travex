@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['accepted',['Accepted',['../classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94a382ab522931673c11e398ead1b7b1678',1,'tvx::Hit']]],
-  ['addhit',['AddHit',['../classtvx_1_1Event.html#ab27c9ec1d2272c1364bffd9ac0323e48',1,'tvx::Event::AddHit()'],['../classtvx_1_1GenericEvent.html#a98b9de19e9e14f78c4e9cc1a8a2e5af6',1,'tvx::GenericEvent::AddHit()']]],
-  ['addhitresult',['AddHitResult',['../classtvx_1_1GenericEvent.html#a1b47c64d50d1a7b473e42438f0e5a1a6',1,'tvx::GenericEvent::AddHitResult()'],['../classtvx_1_1GenericTrack.html#acfa0b7a7a82d1e49baf9daabcacd31ea',1,'tvx::GenericTrack::AddHitResult()']]],
-  ['addhits',['AddHits',['../classtvx_1_1Event.html#aee31c30ccc2746806ff98cc9f6d1f493',1,'tvx::Event::AddHits()'],['../classtvx_1_1GenericEvent.html#adc9e01e2690573d8a8c75264f62ad416',1,'tvx::GenericEvent::AddHits()']]],
-  ['addtoparentevent',['AddToParentEvent',['../classtvx_1_1GenericTrack.html#a69d09d4b5984fdb77311b0cf45236694',1,'tvx::GenericTrack::AddToParentEvent()'],['../classtvx_1_1Track.html#aef8fbbbfb367c9809226218f486168a8',1,'tvx::Track::AddToParentEvent()']]],
-  ['addtrack',['AddTrack',['../classtvx_1_1Event.html#a8cb1cb0b03c80fa0f65c3018b7e93696',1,'tvx::Event::AddTrack()'],['../classtvx_1_1GenericEvent.html#a8ebd545f190dbbf5bfcf02ee9d3bbcf9',1,'tvx::GenericEvent::AddTrack()']]],
-  ['addtracks',['AddTracks',['../classtvx_1_1Event.html#a2e3e035b42fdf489a519831269ba33f3',1,'tvx::Event::AddTracks()'],['../classtvx_1_1GenericEvent.html#aaebbda3f9b95a7e8d4053a1844c368b6',1,'tvx::GenericEvent::AddTracks()']]]
+  ['accepted',['Accepted',['../classtvx_1_1GenericHit.html#a27fc5b6817cef44db70410f2755789e8a382ab522931673c11e398ead1b7b1678',1,'tvx::GenericHit']]],
+  ['addhit',['AddHit',['../classtvx_1_1Event.html#aafe2066258ada7a4cace0189b4530bba',1,'tvx::Event::AddHit()'],['../classtvx_1_1GenericEvent.html#a67cf4e5459b9be4e69418ed186aea701',1,'tvx::GenericEvent::AddHit()']]],
+  ['addhitresult_5ft',['AddHitResult_t',['../classtvx_1_1GenericEvent.html#a0591f0bf58551bf92a9c14bb24109221',1,'tvx::GenericEvent::AddHitResult_t()'],['../classtvx_1_1GenericTrack.html#a82e08c67efc5fcf9955d5fd61272f2f5',1,'tvx::GenericTrack::AddHitResult_t()']]],
+  ['addhits',['AddHits',['../classtvx_1_1Event.html#ae026d47fc545d3ceb85e104d9ebc2c22',1,'tvx::Event::AddHits()'],['../classtvx_1_1GenericEvent.html#a192a38b2dc19b5b540816ddc1f97d2f0',1,'tvx::GenericEvent::AddHits()']]],
+  ['addtoparentevent',['AddToParentEvent',['../classtvx_1_1GenericTrack.html#abcf9a5c54132e349f1702e4bdbe1cd4a',1,'tvx::GenericTrack::AddToParentEvent()'],['../classtvx_1_1Track.html#a0becdb8ccaae30dcb94cd519ba8079e3',1,'tvx::Track::AddToParentEvent()']]],
+  ['addtrack',['AddTrack',['../classtvx_1_1Event.html#a8cb1cb0b03c80fa0f65c3018b7e93696',1,'tvx::Event::AddTrack()'],['../classtvx_1_1GenericEvent.html#a9db9157bb664f22d72b43ace08241554',1,'tvx::GenericEvent::AddTrack()']]],
+  ['addtracks',['AddTracks',['../classtvx_1_1Event.html#abb172e2d1a13e3a3811d9f79078f0557',1,'tvx::Event::AddTracks()'],['../classtvx_1_1GenericEvent.html#a656df2bcf75b27f77a269d713f5b623a',1,'tvx::GenericEvent::AddTracks()']]]
 ];

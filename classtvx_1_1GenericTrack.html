@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>travex: tvx::GenericTrack&lt; EventClass &gt; Class Template Reference</title>
+<title>travex: tvx::GenericTrack&lt; _GenericEvent, _TrackNodeContainer &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,49 +92,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classtvx_1_1GenericTrack-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tvx::GenericTrack&lt; EventClass &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">tvx::GenericTrack&lt; _GenericEvent, _TrackNodeContainer &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A templated abstract base class interface with a basic functionality common to all tracks reconstructed by a tracking algorithm.  
+ <a href="classtvx_1_1GenericTrack.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:acfa0b7a7a82d1e49baf9daabcacd31ea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#acfa0b7a7a82d1e49baf9daabcacd31ea">AddHitResult</a> = typename EventClass::AddHitResult</td></tr>
-<tr class="separator:acfa0b7a7a82d1e49baf9daabcacd31ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd95ce3a2f5bc7303ad0a1e148b76fc6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#abd95ce3a2f5bc7303ad0a1e148b76fc6">Event_t</a> = _GenericEvent</td></tr>
+<tr class="separator:abd95ce3a2f5bc7303ad0a1e148b76fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e08c67efc5fcf9955d5fd61272f2f5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a82e08c67efc5fcf9955d5fd61272f2f5">AddHitResult_t</a> = typename _GenericEvent::AddHitResult_t</td></tr>
+<tr class="separator:a82e08c67efc5fcf9955d5fd61272f2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad158f5948faa79d5663896c06fef5846"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#ad158f5948faa79d5663896c06fef5846">HitContainer_t</a> = typename _GenericEvent::HitContainer_t</td></tr>
+<tr class="separator:ad158f5948faa79d5663896c06fef5846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537c0ec25cd08d6f50fc04464edc9411"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a537c0ec25cd08d6f50fc04464edc9411">TrackNodeContainer_t</a> = _TrackNodeContainer</td></tr>
+<tr class="separator:a537c0ec25cd08d6f50fc04464edc9411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab5c3b35853e1dfc686cdc4c561778757"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#ab5c3b35853e1dfc686cdc4c561778757">~GenericTrack</a> ()</td></tr>
-<tr class="separator:ab5c3b35853e1dfc686cdc4c561778757"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a245b0c5b3b91ae369ca08e9904ca741f"><td class="memItemLeft" align="right" valign="top">virtual EventClass *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a245b0c5b3b91ae369ca08e9904ca741f">GetParentEvent</a> ()=0</td></tr>
-<tr class="separator:a245b0c5b3b91ae369ca08e9904ca741f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1efd9d068629f5363742e3b87cd8b57"><td class="memItemLeft" align="right" valign="top">virtual const std::set&lt; <a class="el" href="classtvx_1_1TrackNode.html">TrackNode</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#af1efd9d068629f5363742e3b87cd8b57">GetNodes</a> () const =0</td></tr>
-<tr class="separator:af1efd9d068629f5363742e3b87cd8b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bbc9f011714125ad018aaf6aea79842"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a7bbc9f011714125ad018aaf6aea79842">GetEnergyLosses</a> () const =0</td></tr>
-<tr class="separator:a7bbc9f011714125ad018aaf6aea79842"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d09d4b5984fdb77311b0cf45236694"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtvx_1_1GenericTrack.html#acfa0b7a7a82d1e49baf9daabcacd31ea">AddHitResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a69d09d4b5984fdb77311b0cf45236694">AddToParentEvent</a> (const <a class="el" href="classtvx_1_1Hit.html">Hit</a> &amp;stiHit)=0</td></tr>
-<tr class="separator:a69d09d4b5984fdb77311b0cf45236694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e02d600cad106a602839af6ba421f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a89e02d600cad106a602839af6ba421f6">SetClosestHits</a> (const std::set&lt; <a class="el" href="classtvx_1_1Hit.html">Hit</a> &gt; &amp;hits)=0</td></tr>
-<tr class="separator:a89e02d600cad106a602839af6ba421f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a822ec889e2ce3f41ead41470d3f31185"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a822ec889e2ce3f41ead41470d3f31185">FindCandidateHits</a> (const std::set&lt; <a class="el" href="classtvx_1_1Hit.html">Hit</a> &gt; &amp;hits)=0</td></tr>
-<tr class="separator:a822ec889e2ce3f41ead41470d3f31185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27dd8f35fd7b85cf411f91ceddb3c776"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a27dd8f35fd7b85cf411f91ceddb3c776">~GenericTrack</a> ()</td></tr>
+<tr class="separator:a27dd8f35fd7b85cf411f91ceddb3c776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9bb2e44f1d4b417a8daeb2d3687816f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtvx_1_1GenericTrack.html#abd95ce3a2f5bc7303ad0a1e148b76fc6">Event_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#ab9bb2e44f1d4b417a8daeb2d3687816f">GetParentEvent</a> ()=0</td></tr>
+<tr class="separator:ab9bb2e44f1d4b417a8daeb2d3687816f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb84b9629f186b7b38e4ae982ee8e001"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classtvx_1_1GenericTrack.html#a537c0ec25cd08d6f50fc04464edc9411">TrackNodeContainer_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#aeb84b9629f186b7b38e4ae982ee8e001">GetNodes</a> () const =0</td></tr>
+<tr class="separator:aeb84b9629f186b7b38e4ae982ee8e001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624cd4b9adb29bd52044b755e29b338f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#a624cd4b9adb29bd52044b755e29b338f">GetEnergyLosses</a> () const =0</td></tr>
+<tr class="separator:a624cd4b9adb29bd52044b755e29b338f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf9a5c54132e349f1702e4bdbe1cd4a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtvx_1_1GenericTrack.html#a82e08c67efc5fcf9955d5fd61272f2f5">AddHitResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrack.html#abcf9a5c54132e349f1702e4bdbe1cd4a">AddToParentEvent</a> (const typename HitContainer_t::value_type &amp;hit)=0</td></tr>
+<tr class="separator:abcf9a5c54132e349f1702e4bdbe1cd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class EventClass&gt;<br />
-class tvx::GenericTrack&lt; EventClass &gt;</h3>
+<div class="textblock"><h3>template&lt;class _GenericEvent, class _TrackNodeContainer&gt;<br />
+class tvx::GenericTrack&lt; _GenericEvent, _TrackNodeContainer &gt;</h3>
 
+<p>A templated abstract base class interface with a basic functionality common to all tracks reconstructed by a tracking algorithm. </p>
 
-<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00014">14</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
+<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00013">13</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="acfa0b7a7a82d1e49baf9daabcacd31ea"></a>
+<a class="anchor" id="a82e08c67efc5fcf9955d5fd61272f2f5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class EventClass&gt; </div>
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::<a class="el" href="classtvx_1_1GenericTrack.html#acfa0b7a7a82d1e49baf9daabcacd31ea">AddHitResult</a> =  typename EventClass::AddHitResult</td>
+          <td class="memname">using <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::<a class="el" href="classtvx_1_1GenericTrack.html#a82e08c67efc5fcf9955d5fd61272f2f5">AddHitResult_t</a> =  typename _GenericEvent::AddHitResult_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -142,18 +149,66 @@ template&lt;class EventClass&gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab5c3b35853e1dfc686cdc4c561778757"></a>
+<a class="anchor" id="abd95ce3a2f5bc7303ad0a1e148b76fc6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class EventClass&gt; </div>
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::<a class="el" href="classtvx_1_1GenericTrack.html#abd95ce3a2f5bc7303ad0a1e148b76fc6">Event_t</a> =  _GenericEvent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00017">17</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad158f5948faa79d5663896c06fef5846"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::<a class="el" href="classtvx_1_1GenericTrack.html#ad158f5948faa79d5663896c06fef5846">HitContainer_t</a> =  typename _GenericEvent::HitContainer_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00019">19</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a537c0ec25cd08d6f50fc04464edc9411"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::<a class="el" href="classtvx_1_1GenericTrack.html#a537c0ec25cd08d6f50fc04464edc9411">TrackNodeContainer_t</a> =  _TrackNodeContainer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00020">20</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a27dd8f35fd7b85cf411f91ceddb3c776"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::~<a class="el" href="classtvx_1_1GenericTrack.html">GenericTrack</a> </td>
+          <td class="memname">virtual <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::~<a class="el" href="classtvx_1_1GenericTrack.html">GenericTrack</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -166,25 +221,25 @@ template&lt;class EventClass&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00020">20</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
+<p>Definition at line <a class="el" href="GenericTrack_8h_source.html#l00022">22</a> of file <a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a69d09d4b5984fdb77311b0cf45236694"></a>
+<a class="anchor" id="abcf9a5c54132e349f1702e4bdbe1cd4a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class EventClass&gt; </div>
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classtvx_1_1GenericTrack.html#acfa0b7a7a82d1e49baf9daabcacd31ea">AddHitResult</a> <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::AddToParentEvent </td>
+          <td class="memname">virtual <a class="el" href="classtvx_1_1GenericTrack.html#a82e08c67efc5fcf9955d5fd61272f2f5">AddHitResult_t</a> <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::AddToParentEvent </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvx_1_1Hit.html">Hit</a> &amp;&#160;</td>
-          <td class="paramname"><em>stiHit</em></td><td>)</td>
+          <td class="paramtype">const typename HitContainer_t::value_type &amp;&#160;</td>
+          <td class="paramname"><em>hit</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -195,49 +250,19 @@ template&lt;class EventClass&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classtvx_1_1Track.html#aef8fbbbfb367c9809226218f486168a8">tvx::Track</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a822ec889e2ce3f41ead41470d3f31185"></a>
+<a class="anchor" id="a624cd4b9adb29bd52044b755e29b338f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class EventClass&gt; </div>
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::FindCandidateHits </td>
-          <td>(</td>
-          <td class="paramtype">const std::set&lt; <a class="el" href="classtvx_1_1Hit.html">Hit</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>hits</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classtvx_1_1Track.html#a35ae7f7a048fe18a9d556f5442a10222">tvx::Track</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7bbc9f011714125ad018aaf6aea79842"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class EventClass&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::GetEnergyLosses </td>
+          <td class="memname">virtual double <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::GetEnergyLosses </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -254,17 +279,17 @@ template&lt;class EventClass&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af1efd9d068629f5363742e3b87cd8b57"></a>
+<a class="anchor" id="aeb84b9629f186b7b38e4ae982ee8e001"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class EventClass&gt; </div>
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::set&lt;<a class="el" href="classtvx_1_1TrackNode.html">TrackNode</a>&gt;&amp; <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::GetNodes </td>
+          <td class="memname">virtual const <a class="el" href="classtvx_1_1GenericTrack.html#a537c0ec25cd08d6f50fc04464edc9411">TrackNodeContainer_t</a>&amp; <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::GetNodes </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -277,21 +302,21 @@ template&lt;class EventClass&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classtvx_1_1Track.html#a7996e3fb0e38c4b6889638a2bcbcb802">tvx::Track</a>.</p>
+<p>Implemented in <a class="el" href="classtvx_1_1Track.html#a31e54aad9c7bf73bc8ec4d25fbe548a9">tvx::Track</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a245b0c5b3b91ae369ca08e9904ca741f"></a>
+<a class="anchor" id="ab9bb2e44f1d4b417a8daeb2d3687816f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class EventClass&gt; </div>
+template&lt;class _GenericEvent, class _TrackNodeContainer&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual EventClass* <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::GetParentEvent </td>
+          <td class="memname">virtual <a class="el" href="classtvx_1_1GenericTrack.html#abd95ce3a2f5bc7303ad0a1e148b76fc6">Event_t</a>* <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; _GenericEvent, _TrackNodeContainer &gt;::GetParentEvent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -308,41 +333,13 @@ template&lt;class EventClass&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a89e02d600cad106a602839af6ba421f6"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class EventClass&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classtvx_1_1GenericTrack.html">tvx::GenericTrack</a>&lt; EventClass &gt;::SetClosestHits </td>
-          <td>(</td>
-          <td class="paramtype">const std::set&lt; <a class="el" href="classtvx_1_1Hit.html">Hit</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>hits</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classtvx_1_1Track.html#a29dc50c628b85a4760610681765abb2e">tvx::Track</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/travex/<a class="el" href="GenericTrack_8h_source.html">GenericTrack.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 8 2015 17:30:18 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 16 2015 17:42:52 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

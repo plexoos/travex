@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trackcontainer',['TrackContainer',['../classtvx_1_1GenericEvent.html#aa066bda5d4fc0823b65743efaf61d0fd',1,'tvx::GenericEvent']]]
+  ['event_5ft',['Event_t',['../classtvx_1_1GenericTrack.html#abd95ce3a2f5bc7303ad0a1e148b76fc6',1,'tvx::GenericTrack']]]
 ];
