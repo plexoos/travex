@@ -1,30 +1,28 @@
 #ifndef tvx_GenericTrack_h
 #define tvx_GenericTrack_h
 
-#include <set>
-
 
 namespace tvx {
 
-class Hit;
-class TrackNode;
 
-
-template<class EventClass>
+template<class _GenericEvent, class _TrackNodeContainer>
 class GenericTrack
 {
 public:
 
-   using AddHitResult = typename EventClass::AddHitResult;
+   using Event_t = _GenericEvent;
+   using AddHitResult_t = typename _GenericEvent::AddHitResult_t;
+   using HitContainer_t = typename _GenericEvent::HitContainer_t;
+   using TrackNodeContainer_t = _TrackNodeContainer;
 
 	virtual ~GenericTrack() {}
 
-   virtual EventClass* GetParentEvent() = 0;
-   virtual const std::set<TrackNode>& GetNodes() const = 0;
+   virtual Event_t* GetParentEvent() = 0;
+   virtual const TrackNodeContainer_t& GetNodes() const = 0;
    virtual double GetEnergyLosses() const = 0;
-   virtual AddHitResult AddToParentEvent(const Hit& stiHit) = 0;
-   virtual void SetClosestHits(const std::set<Hit>& hits) = 0;
-   virtual void FindCandidateHits(const std::set<Hit>& hits) = 0;
+   virtual AddHitResult_t AddToParentEvent(const typename HitContainer_t::value_type& hit) = 0;
+   virtual void SetClosestHits(const HitContainer_t& hits) = 0;
+   virtual void FindCandidateHits(const HitContainer_t& hits) = 0;
 };
 
 }
