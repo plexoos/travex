@@ -14,6 +14,11 @@ namespace tvx {
 class Event;
 
 
+/**
+ * A simple persistent class describing a reconstructed charged particle track
+ * with a collection of track nodes. It is implemented as a specialization of
+ * a templated abstract GenericTrack.
+ */
 class Track : public GenericTrack<Event, std::set<TrackNode> >, public TObject
 {
 public:

@@ -14,6 +14,9 @@ tvx::Track::Track() : TObject(),
 }
 
 
+/**
+ * Constructs a empty Track without track nodes but associated with the provided Event.
+ */
 tvx::Track::Track(Event* event) : TObject(),
    fEvent(event), fNodes(), fEnergyLosses(0)
 {

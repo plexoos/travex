@@ -10,12 +10,18 @@
 namespace tvx {
 
 
+/**
+ * A simple class to contain basic properties of a hit registered by an active
+ * material in a detector.
+ */
 class Hit : public GenericHit<TVector3>, public TObject
 {
 public:
 
    Hit();
+
    const TVector3& GetPosition() const { return fPosition; }
+
    virtual void Print(Option_t *opt = "") const;
 
    friend bool operator< (const Hit& lhs, const Hit& rhs);

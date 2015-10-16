@@ -5,6 +5,10 @@
 namespace tvx {
 
 
+/**
+ * A templated abstract base class interface with a basic functionality common
+ * to all tracks reconstructed by a tracking algorithm.
+ */
 template<class _GenericEvent, class _TrackNodeContainer>
 class GenericTrack
 {
@@ -15,7 +19,7 @@ public:
    using HitContainer_t = typename _GenericEvent::HitContainer_t;
    using TrackNodeContainer_t = _TrackNodeContainer;
 
-	virtual ~GenericTrack() {}
+   virtual ~GenericTrack() {}
 
    virtual Event_t* GetParentEvent() = 0;
    virtual const TrackNodeContainer_t& GetNodes() const = 0;

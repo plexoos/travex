@@ -6,6 +6,9 @@
 #include "travex/Hit.h"
 
 
+/**
+ * Creates an empty event with no tracks and no hits.
+ */
 tvx::Event::Event() : TObject(),
    fTracks(),
    fHits()
