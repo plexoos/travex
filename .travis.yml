@@ -22,17 +22,12 @@ addons:
       - libboost-program-options1.55-dev
 
 before_script:
-    # Install a recent version of ROOT with source
-  - wget http://root.cern.ch/download/root_v6.05.02.source.tar.gz -P /tmp/
-  - tar -xzf /tmp/root_v6.05.02.source.tar.gz
-  - mv root-6.05.02 root-6.05.02-src
+    # Install a recent version of ROOT
   - wget http://root.cern.ch/download/root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz -P /tmp/
   - tar -xzf /tmp/root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz
   - source ./root/bin/thisroot.sh
   - root-config --libs
   - root-config --cflags
-    # Move some ROOT header files to common include directory
-  - rsync -auv root-6.05.02-src/math/mathmore/inc/Math root/include/
 
 branch:
   only:
