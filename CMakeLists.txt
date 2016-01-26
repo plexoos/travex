@@ -7,7 +7,6 @@ project(travex)
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 
 # This project depends on Boost
-set(Boost_USE_MULTITHREADED OFF)
 find_package(Boost 1.54.0 REQUIRED COMPONENTS program_options regex filesystem)
 
 # This project depends on ROOT
