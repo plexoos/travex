@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['todo_20list',['Todo List',['../todo.html',1,'']]],
-  ['track',['Track',['../classtvx_1_1Track.html#a530006a7ba60233814398e8b12704f0d',1,'tvx::Track::Track()'],['../classtvx_1_1Track.html#a37874bab855f24a6841d02072df6b006',1,'tvx::Track::Track(Event *event)']]],
-  ['track',['Track',['../classtvx_1_1Track.html',1,'tvx']]],
-  ['track_2ecxx',['Track.cxx',['../Track_8cxx.html',1,'']]],
-  ['track_2eh',['Track.h',['../Track_8h.html',1,'']]],
-  ['trackcontainer_5ft',['TrackContainer_t',['../classtvx_1_1Event.html#a9c94f48861825ba58dc8f0996a075bec',1,'tvx::Event::TrackContainer_t()'],['../classtvx_1_1GenericEvent.html#a303040f774b95f7f6f7e1243b8bf1bd5',1,'tvx::GenericEvent::TrackContainer_t()']]],
-  ['tracknode',['TrackNode',['../classtvx_1_1TrackNode.html',1,'tvx']]],
-  ['tracknode',['TrackNode',['../classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e',1,'tvx::TrackNode']]],
-  ['tracknode_2ecxx',['TrackNode.cxx',['../TrackNode_8cxx.html',1,'']]],
-  ['tracknode_2eh',['TrackNode.h',['../TrackNode_8h.html',1,'']]],
-  ['tracknodecontainer_5ft',['TrackNodeContainer_t',['../classtvx_1_1GenericTrack.html#a537c0ec25cd08d6f50fc04464edc9411',1,'tvx::GenericTrack::TrackNodeContainer_t()'],['../classtvx_1_1Track.html#a5793c4cda05237ab4ff0e896c6013e1b',1,'tvx::Track::TrackNodeContainer_t()']]],
-  ['tracknodehitcontainer_5ft',['TrackNodeHitContainer_t',['../classtvx_1_1GenericTrackNode.html#a98f68b687477dddd83daaa9f9bffe588',1,'tvx::GenericTrackNode']]],
-  ['tvx',['tvx',['../namespacetvx.html',1,'']]]
+  ['pathtoinputfile',['PathToInputFile',['../classtvx_1_1ProgramOptions.html#aee9d035285d00d43af941436ce89c617',1,'tvx::ProgramOptions']]],
+  ['predicates_2eh',['Predicates.h',['../Predicates_8h.html',1,'']]],
+  ['print',['Print',['../classtvx_1_1Event.html#aedbfbda89e7d8ffedaa179bdc37e699b',1,'tvx::Event::Print()'],['../classtvx_1_1Hit.html#afd46b92058bce12654efef76a7396a1f',1,'tvx::Hit::Print()'],['../classtvx_1_1Track.html#af3cbc08f7bf2851332ab19c371020e64',1,'tvx::Track::Print()'],['../classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893',1,'tvx::TrackNode::Print()']]],
+  ['processoptions',['ProcessOptions',['../classtvx_1_1ProgramOptions.html#ac83d39f4d1ae66b2de501e4502ec8474',1,'tvx::ProgramOptions']]],
+  ['programoptions',['ProgramOptions',['../classtvx_1_1ProgramOptions.html',1,'tvx']]],
+  ['programoptions',['ProgramOptions',['../classtvx_1_1ProgramOptions.html#af4d748ab66175b1a0c67d38f96403eff',1,'tvx::ProgramOptions::ProgramOptions()'],['../classtvx_1_1ProgramOptions.html#a7faced1dfaeccb5a7cf1a8eaaea7fffe',1,'tvx::ProgramOptions::ProgramOptions(int argc, char **argv)']]],
+  ['programoptions_2ecxx',['ProgramOptions.cxx',['../ProgramOptions_8cxx.html',1,'']]],
+  ['programoptions_2eh',['ProgramOptions.h',['../ProgramOptions_8h.html',1,'']]]
 ];

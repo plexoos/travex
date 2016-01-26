@@ -1,15 +1,26 @@
 var searchData=
 [
   ['facceptedhit',['fAcceptedHit',['../classtvx_1_1TrackNode.html#a5973231c8f8bd5856e88ce7380a7a5c4',1,'tvx::TrackNode']]],
+  ['fargc',['fArgc',['../classtvx_1_1ProgramOptions.html#ab75dd2c984d89f15a699b4f51de3ecd3',1,'tvx::ProgramOptions']]],
+  ['fargv',['fArgv',['../classtvx_1_1ProgramOptions.html#a46d71284ccb25fe378787ca06628fcb7',1,'tvx::ProgramOptions']]],
   ['fcandidatehits',['fCandidateHits',['../classtvx_1_1TrackNode.html#a517dd27a9160cbffe0eecb039ae2585d',1,'tvx::TrackNode']]],
+  ['fdirs',['fDirs',['../classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6',1,'tvx::RootFile']]],
   ['fenergylosses',['fEnergyLosses',['../classtvx_1_1Track.html#a0810a849fc868a558dae1b7136aefaf0',1,'tvx::Track']]],
   ['ferror',['fError',['../classtvx_1_1TrackNode.html#a2b150f010fc7f7236a93be3632e9294f',1,'tvx::TrackNode']]],
   ['fevent',['fEvent',['../classtvx_1_1Track.html#a105ac3890fff756a9f12596b27e68325',1,'tvx::Track']]],
   ['fhits',['fHits',['../classtvx_1_1Event.html#a748b38fe8952b9f3e28d7c853254168d',1,'tvx::Event']]],
+  ['finfilepath',['fInFilePath',['../classtvx_1_1ProgramOptions.html#ae6fdf049b8b9ae1ff23b2e23853aa468',1,'tvx::ProgramOptions']]],
+  ['fmaxeventsuser',['fMaxEventsUser',['../classtvx_1_1ProgramOptions.html#ae6b2bfb2a773d1075331f074c1d13907',1,'tvx::ProgramOptions']]],
   ['fmomentum',['fMomentum',['../classtvx_1_1TrackNode.html#acf3754473a989625f82f0cbcb15e6ceb',1,'tvx::TrackNode']]],
   ['fnodes',['fNodes',['../classtvx_1_1Track.html#ada449ae102395f7294daa2643b1d9676',1,'tvx::Track']]],
+  ['foptions',['fOptions',['../classtvx_1_1ProgramOptions.html#ab36f69cbe7f7d108f934abd5b54f6d73',1,'tvx::ProgramOptions']]],
+  ['foptionsvalues',['fOptionsValues',['../classtvx_1_1ProgramOptions.html#a13576a93287384c456a8e5f1747cf4f4',1,'tvx::ProgramOptions']]],
+  ['foutprefix',['fOutPrefix',['../classtvx_1_1ProgramOptions.html#ac509c10425bd3b919b412e5fb11554c3',1,'tvx::ProgramOptions']]],
   ['fposition',['fPosition',['../classtvx_1_1Hit.html#a59ef5707d10c4a2441e03e0640680840',1,'tvx::Hit::fPosition()'],['../classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874',1,'tvx::TrackNode::fPosition()']]],
+  ['fprgoptions',['fPrgOptions',['../classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567',1,'tvx::RootFile']]],
   ['fprojerror',['fProjError',['../classtvx_1_1TrackNode.html#a8370e00453a57b2cdcea693926762f58',1,'tvx::TrackNode']]],
+  ['fsavegraphics',['fSaveGraphics',['../classtvx_1_1ProgramOptions.html#a5493e35d6df5de30e8454593cb962819',1,'tvx::ProgramOptions']]],
+  ['fsparsity',['fSparsity',['../classtvx_1_1ProgramOptions.html#a376c23e5c23d11242f4e8d87e209d2fb',1,'tvx::ProgramOptions']]],
   ['ftimesused',['fTimesUsed',['../classtvx_1_1Hit.html#a7bd64a0144bb042d4388be1c5e5b9383',1,'tvx::Hit']]],
   ['ftracks',['fTracks',['../classtvx_1_1Event.html#a9bb3592253b6a407c34970e8a190285d',1,'tvx::Event']]]
 ];

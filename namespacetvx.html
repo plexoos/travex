@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">tvx Namespace Reference</div>  </div>
@@ -106,16 +107,32 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1GenericTrackNode.html">GenericTrackNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A templated abstract base class interface with a basic functionality common to all track nodes identified by a tracking algorithm.  <a href="classtvx_1_1GenericTrackNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html">HistContainer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A very light container to hold and manipulate user histograms.  <a href="classtvx_1_1HistContainer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1Hit.html">Hit</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple class to contain basic properties of a hit registered by an active material in a detector.  <a href="classtvx_1_1Hit.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvx_1_1IsHitWithinError.html">IsHitWithinError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1ProgramOptions.html">ProgramOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes and controls user options provided in the command line.  <a href="classtvx_1_1ProgramOptions.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html">RootFile</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple helper class to wrap ROOT's TFile with many options controlled by user settings provided in command line and aggregated by <a class="el" href="classtvx_1_1ProgramOptions.html" title="Processes and controls user options provided in the command line. ">tvx::ProgramOptions</a>.  <a href="classtvx_1_1RootFile.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1Track.html">Track</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple persistent class describing a reconstructed charged particle track with a collection of track nodes.  <a href="classtvx_1_1Track.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1TrackNode.html">TrackNode</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac16d8f7f6ea425b496077988b8d49981"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, std::unique_ptr&lt; TH1 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a></td></tr>
+<tr class="separator:ac16d8f7f6ea425b496077988b8d49981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa398395679934c9fc9ee22eb8901655c"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <a class="el" href="classtvx_1_1HistContainer.html">HistContainer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvx.html#aa398395679934c9fc9ee22eb8901655c">HistContainers</a></td></tr>
+<tr class="separator:aa398395679934c9fc9ee22eb8901655c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -125,6 +142,35 @@ Functions</h2></td></tr>
 <tr class="memdesc:a7f1bff11784245f01b544e7ebea5fb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently the nodes are ordered based on the transverse coordinates.  <a href="#a7f1bff11784245f01b544e7ebea5fb88">More...</a><br /></td></tr>
 <tr class="separator:a7f1bff11784245f01b544e7ebea5fb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="aa398395679934c9fc9ee22eb8901655c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="classtvx_1_1HistContainer.html">HistContainer</a>*&gt; <a class="el" href="namespacetvx.html#aa398395679934c9fc9ee22eb8901655c">tvx::HistContainers</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00015">15</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac16d8f7f6ea425b496077988b8d49981"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, std::unique_ptr&lt;TH1&gt; &gt; <a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">tvx::HistMap</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00013">13</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ac5cb92929ebe1b27665bb6fd63183536"></a>
 <div class="memitem">
@@ -188,7 +234,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 16 2015 17:42:52 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

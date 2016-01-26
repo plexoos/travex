@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['clear',['Clear',['../classtvx_1_1Event.html#a8e1c2fddf9d8edcc212f23d4489944ed',1,'tvx::Event']]]
+  ['bookhists',['BookHists',['../classtvx_1_1HistContainer.html#ab7a58506a6c8f89c0eafce36ad50a838',1,'tvx::HistContainer']]]
 ];

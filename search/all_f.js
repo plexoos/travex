@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['undefined',['Undefined',['../classtvx_1_1Hit.html#a00321b0541fed50f37ce0c57e94e6b94aec0fc0100c4fc1ce4eea230c3dc10360',1,'tvx::Hit']]]
+  ['undefined',['Undefined',['../classtvx_1_1GenericHit.html#a27fc5b6817cef44db70410f2755789e8aec0fc0100c4fc1ce4eea230c3dc10360',1,'tvx::GenericHit']]],
+  ['utils_2eh',['utils.h',['../utils_8h.html',1,'']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['write',['Write',['../classtvx_1_1RootFile.html#a0e83f21c3fd3536ebdafd9b0f5e34965',1,'tvx::RootFile::Write(const char *name=0, Int_t opt=0, Int_t bufsiz=0)'],['../classtvx_1_1RootFile.html#ac78cd43b98279a8fc904121d7288d113',1,'tvx::RootFile::Write(const char *name=0, Int_t opt=0, Int_t bufsiz=0) const ']]]
+  ['_7egenericevent',['~GenericEvent',['../classtvx_1_1GenericEvent.html#a6a2f8e31c79c1af66492fadf87375cd0',1,'tvx::GenericEvent']]],
+  ['_7egenerichit',['~GenericHit',['../classtvx_1_1GenericHit.html#a6bbb2f740a1ebcb5a788a316983d9cf5',1,'tvx::GenericHit']]],
+  ['_7egenerictrack',['~GenericTrack',['../classtvx_1_1GenericTrack.html#a27dd8f35fd7b85cf411f91ceddb3c776',1,'tvx::GenericTrack']]],
+  ['_7egenerictracknode',['~GenericTrackNode',['../classtvx_1_1GenericTrackNode.html#a9490c8b20edb3317d9b88cc5708ce72d',1,'tvx::GenericTrackNode']]]
 ];
