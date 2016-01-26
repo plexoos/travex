@@ -38,6 +38,10 @@ add_library (
 	src/Event.cxx
 )
 
+add_executable(test-lib tests/test-lib.cxx)
+
+target_link_libraries(test-lib travex ${Boost_LIBRARIES} ${ROOT_LIBRARIES} pthread)
+
 
 # Installation section
 set(ADDITIONAL_INSTALL_PREFIX ".")
@@ -49,3 +53,4 @@ endif()
 
 install(DIRECTORY "include/travex" DESTINATION "${ADDITIONAL_INSTALL_PREFIX}/include")
 install(TARGETS travex DESTINATION "${ADDITIONAL_INSTALL_PREFIX}/lib")
+install(TARGETS test-lib DESTINATION "${ADDITIONAL_INSTALL_PREFIX}/bin")
