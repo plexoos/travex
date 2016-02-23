@@ -18,8 +18,6 @@ class TrackNode : public TObject, public GenericTrackNode<TVector3, std::set<Hit
 {
 public:
 
-   using Hit_t = typename TrackNodeHitContainer_t::value_type;
-
    TrackNode();
 
    const TVector3& GetPosition()  const { return fPosition; }

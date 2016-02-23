@@ -23,8 +23,6 @@ class Track : public TObject, public GenericTrack<Event, std::set<TrackNode> >
 {
 public:
 
-   using TrackNodeContainer_t = typename GenericTrack::TrackNodeContainer_t;
-
    Track();
    explicit Track(Event* event);
 

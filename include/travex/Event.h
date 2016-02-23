@@ -23,9 +23,6 @@ class Event : public TObject, public GenericEvent<std::list<Track>, std::set<Hit
 {
 public:
 
-   using TrackContainer_t = typename GenericEvent::TrackContainer_t;
-   using HitContainer_t = typename GenericEvent::HitContainer_t;
-
    Event();
 
    virtual void AddTracks(const TrackContainer_t& tracks) { fTracks = tracks; }
