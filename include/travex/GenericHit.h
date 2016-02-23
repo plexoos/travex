@@ -14,7 +14,7 @@ class GenericHit
 {
 public:
 
-   using Coordinates_t = _Coordinates;
+   typedef _Coordinates Coordinates_t;
 
    enum class Status {Undefined, Accepted, Rejected, Candidate};
 

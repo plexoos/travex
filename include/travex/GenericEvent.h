@@ -16,9 +16,9 @@ class GenericEvent
 {
 public:
 
-   using TrackContainer_t = _TrackContainer;
-   using HitContainer_t = _HitContainer;
-   using AddHitResult_t = std::pair< typename _HitContainer::iterator, bool>;
+   typedef _TrackContainer TrackContainer_t;
+   typedef _HitContainer HitContainer_t;
+   typedef std::pair< typename _HitContainer::iterator, bool> AddHitResult_t;
 
    virtual ~GenericEvent() {}
 

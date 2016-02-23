@@ -14,10 +14,10 @@ class GenericTrack
 {
 public:
 
-   using Event_t = _GenericEvent;
-   using AddHitResult_t = typename _GenericEvent::AddHitResult_t;
-   using HitContainer_t = typename _GenericEvent::HitContainer_t;
-   using TrackNodeContainer_t = _TrackNodeContainer;
+   typedef _GenericEvent Event_t;
+   typedef typename _GenericEvent::AddHitResult_t AddHitResult_t;
+   typedef typename _GenericEvent::HitContainer_t HitContainer_t;
+   typedef _TrackNodeContainer TrackNodeContainer_t;
 
    virtual ~GenericTrack() {}
 

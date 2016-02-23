@@ -16,9 +16,9 @@ class GenericTrackNode
 {
 public:
 
-   using Coordinates_t = _Coordinates;
-   using TrackNodeHitContainer_t = _TrackNodeHitContainer;
-   using Hit_t = typename _TrackNodeHitContainer::value_type;
+   typedef _Coordinates Coordinates_t;
+   typedef _TrackNodeHitContainer TrackNodeHitContainer_t;
+   typedef typename _TrackNodeHitContainer::value_type Hit_t;
 
    virtual ~GenericTrackNode() {}
 
