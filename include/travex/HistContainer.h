@@ -2,6 +2,7 @@
 #define HistContainer_h
 
 #include <map>
+#include <memory>
 #include <string>
 
 #include "TH1.h"
