@@ -19,7 +19,7 @@ class Event;
  * with a collection of track nodes. It is implemented as a specialization of
  * a templated abstract GenericTrack.
  */
-class Track : public GenericTrack<Event, std::set<TrackNode> >, public TObject
+class Track : public TObject, public GenericTrack<Event, std::set<TrackNode> >
 {
 public:
 

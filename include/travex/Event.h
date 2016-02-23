@@ -19,7 +19,7 @@ class Track;
  * A simple persistent event container holding collections of tracks and hits.
  * It is an implementation of an abstract GenericEvent.
  */
-class Event : public GenericEvent<std::list<Track>, std::set<Hit> >, public TObject
+class Event : public TObject, public GenericEvent<std::list<Track>, std::set<Hit> >
 {
 public:
 

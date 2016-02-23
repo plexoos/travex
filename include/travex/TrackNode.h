@@ -15,7 +15,7 @@ namespace tvx {
 
 
 
-class TrackNode : public GenericTrackNode<TVector3, std::set<Hit> >, public TObject
+class TrackNode : public TObject, public GenericTrackNode<TVector3, std::set<Hit> >
 {
 public:
 
