@@ -1,6 +1,10 @@
 #ifndef tvx_Hit_h
 #define tvx_Hit_h
 
+#ifdef __CINT__
+#include <stdint.h>
+#endif
+
 #include "TObject.h"
 #include "TVector3.h"
 

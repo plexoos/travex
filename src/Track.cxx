@@ -1,5 +1,7 @@
 #include "travex/Event.h"
+#include "travex/Hit.h"
 #include "travex/Track.h"
+#include "travex/TrackNode.h"
 
 
 

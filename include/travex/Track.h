@@ -12,6 +12,7 @@
 namespace tvx {
 
 class Event;
+class Hit;
 
 
 /**
