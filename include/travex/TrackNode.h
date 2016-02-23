@@ -24,7 +24,7 @@ public:
    const TVector3& GetMomentum()  const { return fMomentum; }
    const TVector3& GetError()     const { return fError; }
    const TVector3& GetProjError() const { return fProjError; }
-   const Hit_t* GetAcceptedHit() const { return fAcceptedHit; }
+   const Hit* GetAcceptedHit() const { return fAcceptedHit; }
    const TrackNodeHitContainer_t& GetCandidateHits() const { return fCandidateHits; }
 
    virtual void Print(Option_t *opt = "") const;
@@ -37,7 +37,7 @@ protected:
    TVector3      fMomentum;          ///< Track momentum vector in global CS
    TVector3      fError;             ///< Diagonal elements of error matrix after final fit
    TVector3      fProjError;         ///< The projection error to the node before the fit
-   const Hit_t*  fAcceptedHit;       ///< Pointer to the hit associated with this node by the reconstruction algorithm, if any
+   const Hit*    fAcceptedHit;       ///< Pointer to the hit associated with this node by the reconstruction algorithm, if any
    TrackNodeHitContainer_t fCandidateHits;   ///< Collection of hits in some proximity of mean track projection
 
    ClassDef(TrackNode, 1)

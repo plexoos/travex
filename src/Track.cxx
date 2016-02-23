@@ -23,7 +23,7 @@ tvx::Track::Track(Event* event) : TObject(),
 }
 
 
-std::pair<std::set<tvx::Hit>::iterator, bool> tvx::Track::AddToParentEvent(const tvx::Hit& stiHit)
+tvx::Event::AddHitResult_t tvx::Track::AddToParentEvent(const tvx::Hit& stiHit)
 {
    std::pair<std::set<tvx::Hit>::iterator, bool> dummy;
    dummy.second = false;
