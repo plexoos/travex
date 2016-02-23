@@ -1,12 +1,9 @@
 sudo: false
+
 language: cpp
 
 compiler:
   - gcc
-
-# Make sure cmake picks up the compiler we want
-install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 
 addons:
   apt:
@@ -21,20 +18,24 @@ addons:
       - libboost-filesystem1.55-dev
       - libboost-program-options1.55-dev
 
+branch:
+  only:
+    - master
+
+# Make sure cmake picks up the compiler we want
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+
 before_script:
-    # Install a recent version of ROOT
+    # Install desired version of ROOT
   - wget http://root.cern.ch/download/root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz -P /tmp/
   - tar -xzf /tmp/root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz
   - source ./root/bin/thisroot.sh
   - root-config --libs
   - root-config --cflags
 
-branch:
-  only:
-    - master
-
 script:
   - mkdir build/ && cd build/ && pwd
   - cmake -D CMAKE_INSTALL_PREFIX=./ -D CMAKE_BUILD_TYPE=Release ../
   - make -j4 && make install && make clean
-  - ls -la ./ && ls -la lib/
+  - pwd && ls -la ./ && ls -la lib/
