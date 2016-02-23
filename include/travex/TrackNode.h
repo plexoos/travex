@@ -2,7 +2,6 @@
 #define tvx_TrackNode_h
 
 #include <set>
-#include <string>
 
 #include "TObject.h"
 #include "TVector3.h"
