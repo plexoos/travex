@@ -13,8 +13,17 @@ find_package(Boost 1.54.0 REQUIRED COMPONENTS program_options regex filesystem)
 # This project depends on ROOT
 find_package(ROOT)
 
-if (NOT ROOT_FOUND)
-   message(FATAL_ERROR "Fatal error: ROOT package not found")
+# Since this projects heavily depend on ROOT check the ROOT's '-m' compilation flag
+# and use the same
+if(ROOT_FOUND)
+	string(REGEX MATCH "(^|[\t ]+)-m([\t ]*)(32|64)([\t ]+|$)" TRAVEX_ROOT_CXX_FLAGS_M ${ROOT_CXX_FLAGS})
+
+	if (TRAVEX_ROOT_CXX_FLAGS_M)
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m${CMAKE_MATCH_3}")
+		message(STATUS "Found -m${CMAKE_MATCH_3} option in $ROOT_CXX_FLAGS (root-config). Will add it to $CMAKE_CXX_FLAGS")
+	endif()
+else()
+	message(FATAL_ERROR "Fatal error: ROOT package not found")
 endif()
 
 add_definitions(-D__ROOT__)
