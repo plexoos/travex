@@ -9,8 +9,8 @@
 using namespace tvx;
 
 
-HistContainer::HistContainer(const char* name, TDirectory* motherDir, Option_t* option) :
-   TDirectoryFile(name, name, option, motherDir),
+HistContainer::HistContainer(const std::string name, TDirectory* motherDir, const std::string option) :
+   TDirectoryFile(name.c_str(), name.c_str(), option.c_str(), motherDir),
    mHs()
 {
 }

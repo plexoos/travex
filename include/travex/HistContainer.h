@@ -21,7 +21,7 @@ class HistContainer : public TDirectoryFile
 {
 public:
 
-   HistContainer(const char* name, TDirectory* motherDir=nullptr, Option_t* option="");
+   HistContainer(const std::string name, TDirectory* motherDir=nullptr, const std::string option="");
 
    const HistMap& GetHists() const { return mHs; }
    const TH1*     FindHist(const std::string& hist_name) const;
