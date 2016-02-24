@@ -23,7 +23,7 @@ public:
 
    HistContainer(const std::string name, TDirectory* motherDir=nullptr, const std::string option="");
 
-   const HistMap& GetHists() const { return mHs; }
+   const HistMap& GetHists() const { return fHs; }
    const TH1*     FindHist(const std::string& hist_name) const;
    virtual void FillDerivedHists() = 0;
 
@@ -36,7 +36,7 @@ protected:
    TH1* FindHist(const std::string& hist_name);
 
 	/// A container of unique pointers to TH1 objects indexed by names
-   HistMap mHs;
+   HistMap fHs;
 };
 
 }

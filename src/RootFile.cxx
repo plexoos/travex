@@ -26,10 +26,10 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
 
 void RootFile::FillDerivedHists()
 {
-   for (const std::pair<std::string, HistContainer*>& iDir : fDirs)
+   for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
    {
-      std::string  dirName = iDir.first;
-      HistContainer *container = iDir.second;
+      std::string  dirName = subDir.first;
+      HistContainer *container = subDir.second;
 
       if (!container) {
          Error("FillDerivedHists", "No container/directory found for key %s. Skipping...", dirName.c_str());
@@ -62,10 +62,10 @@ void RootFile::SaveAllAs(std::string prefix)
    else
       Warning("SaveAllAs", "Perhaps dir already exists: %s", prefix.c_str());
 
-   for (const std::pair<std::string, HistContainer*>& iDir : fDirs)
+   for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
    {
-      std::string  dirName = iDir.first;
-      HistContainer *container = iDir.second;
+      std::string  dirName = subDir.first;
+      HistContainer *container = subDir.second;
 
       if (!container) {
          Error("SaveAllAs", "No container/directory found for key %s. Skipping...", dirName.c_str());

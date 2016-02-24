@@ -11,22 +11,22 @@ using namespace tvx;
 
 HistContainer::HistContainer(const std::string name, TDirectory* motherDir, const std::string option) :
    TDirectoryFile(name.c_str(), name.c_str(), option.c_str(), motherDir),
-   mHs()
+   fHs()
 {
 }
 
 
 const TH1* HistContainer::FindHist(const std::string& hist_name) const
 {
-   auto iter = mHs.find(hist_name);
-   return ( iter != mHs.end() ) ? iter->second.get() : nullptr;
+   auto iter = fHs.find(hist_name);
+   return ( iter != fHs.end() ) ? iter->second.get() : nullptr;
 }
 
 
 TH1* HistContainer::FindHist(const std::string& hist_name)
 {
-   auto iter = mHs.find(hist_name);
-   return ( iter != mHs.end() ) ? iter->second.get() : nullptr;
+   auto iter = fHs.find(hist_name);
+   return ( iter != fHs.end() ) ? iter->second.get() : nullptr;
 }
 
 
@@ -43,7 +43,7 @@ void HistContainer::SaveAllAs(std::string prefix)
    canvas.SetGridx(true);
    canvas.SetGridy(true);
 
-   for (auto& iHist : mHs)
+   for (auto& iHist : fHs)
    {
       std::string histName = iHist.first;
       std::unique_ptr<TH1>& hist = iHist.second;
