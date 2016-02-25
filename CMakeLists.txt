@@ -48,6 +48,10 @@ include_directories (
 )
 
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/travex/config.h.in
+               ${CMAKE_CURRENT_SOURCE_DIR}/include/travex/config.h)
+
+
 root_generate_dictionary(travex_dict
 	travex/Hit.h
 	travex/Event.h
@@ -65,6 +69,7 @@ add_library (
 	src/Event.cxx
 	src/ProgramOptions.cxx
 	src/HistContainer.cxx
+	src/RootFile.cxx
 	travex_dict.cxx
 )
 

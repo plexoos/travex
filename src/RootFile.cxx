@@ -5,6 +5,7 @@
 #include "TSystem.h"
 #include "TROOT.h"
 
+#include "travex/config.h"
 #include "travex/HistContainer.h"
 #include "travex/ProgramOptions.h"
 
@@ -19,7 +20,7 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
 {
    Info("RootFile", "Created ROOT file: %s", GetName());
 
-   std::string macroPath = std::string(gROOT->GetMacroPath()) + ":" + stitools::gStiToolsMacrosPath;
+   std::string macroPath = std::string(gROOT->GetMacroPath()) + ":" + gTravexMacrosPath;
    gROOT->SetMacroPath(macroPath.c_str());
 }
 
