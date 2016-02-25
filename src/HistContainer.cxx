@@ -13,6 +13,7 @@ HistContainer::HistContainer(const std::string name, TDirectory* motherDir, cons
    TDirectoryFile(name.c_str(), name.c_str(), option.c_str(), motherDir),
    fHs()
 {
+   cd();
 }
 
 
