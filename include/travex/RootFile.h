@@ -16,8 +16,10 @@ typedef std::map<std::string, HistContainer*>   HistContainers;
 
 
 /**
- * This is a simple helper class to wrap ROOT's TFile with many options
- * controlled by user settings provided in command line and aggregated by
+ * A basic extention of the ROOT's TFile class to manage a set of user defined
+ * histogram containers (or any other ROOT objects if desired) by automatically
+ * arranging them in subdirectories. This simple helper class can use options
+ * provided by the user in the command line and aggregated by
  * tvx::ProgramOptions.
  */
 class RootFile : public TFile
@@ -33,8 +35,11 @@ public:
 
 protected:
 
-   HistContainers  fDirs;       ///< A string-to-HistContainer map for convenient access to enclosed directories
-   ProgramOptions& fPrgOptions; ///< Command line arguments and options requested by the user
+   /// A string-to-HistContainer map for convenient access to enclosed directories
+   HistContainers  fDirs;
+
+   /// Command line arguments and options requested by the user
+   ProgramOptions& fPrgOptions;
 };
 
 }

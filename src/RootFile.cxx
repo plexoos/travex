@@ -25,6 +25,10 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
 }
 
 
+/**
+ * For each histogram container calls the method of the same name in order to
+ * produce new histograms from already filled histograms.
+ */
 void RootFile::FillDerivedHists()
 {
    for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
@@ -59,9 +63,9 @@ void RootFile::SaveAllAs(std::string prefix)
    namespace fs = boost::filesystem;
 
    if (fs::create_directories(prefix))
-      Info("SaveAllAs", "Created dir: %s", prefix.c_str());
+      Info("SaveAllAs", "Created directory: %s", prefix.c_str());
    else
-      Warning("SaveAllAs", "Perhaps dir already exists: %s", prefix.c_str());
+      Warning("SaveAllAs", "Perhaps directory already exists: %s", prefix.c_str());
 
    for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
    {
@@ -76,9 +80,9 @@ void RootFile::SaveAllAs(std::string prefix)
       std::string path = prefix + "/" + dirName;
 
       if (gSystem->mkdir(path.c_str()) < 0)
-         Warning("SaveAllAs", "Perhaps dir already exists: %s", path.c_str());
+         Warning("SaveAllAs", "Perhaps directory already exists: %s", path.c_str());
       else
-         Info("SaveAllAs", "Created dir: %s", path.c_str());
+         Info("SaveAllAs", "Created directory: %s", path.c_str());
 
       container->SaveAllAs(path);
    }
