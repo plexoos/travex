@@ -92,7 +92,7 @@ void HistContainer::SaveAllAs(std::string prefix)
             iObj->Draw();
       }
 
-      std::string sFileName = prefix + "/c_" + histName + ".png";
+      std::string sFileName = prefix + "/" + histName + ".png";
       canvas.SaveAs(sFileName.c_str());
 
       // Restore modified color
