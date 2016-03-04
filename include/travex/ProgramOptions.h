@@ -37,7 +37,7 @@ public:
 
 protected:
 
-   virtual void VerifyOptions();
+   void VerifyOptions();
 
    int                     fArgc;
    char**                  fArgv;
