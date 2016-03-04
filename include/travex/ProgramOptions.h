@@ -33,6 +33,7 @@ public:
    std::string GetOutFileName(std::string suffix="hist") const;
 
    void ProcessOptions();
+   void Print() const;
 
 protected:
 

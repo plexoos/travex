@@ -59,6 +59,17 @@ void ProgramOptions::ProcessOptions()
 }
 
 
+void ProgramOptions::Print() const
+{
+   std::cout << "Program options set to following values:\n";
+
+   for (const std::pair< std::string, po::variable_value >& option : fOptionsValues)
+   {
+      std::cout << "\t" << option.first << ":\t" << option.second.value() << "\n";
+   }
+}
+
+
 void ProgramOptions::VerifyOptions()
 {
    if (fOptionsValues.count("help"))
