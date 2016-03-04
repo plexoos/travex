@@ -37,10 +37,10 @@ void ProgramOptions::InitOptions()
       ("help,h",        "Print this help message")
       ("input-file,f",  po::value<std::string>(&fInFilePath), "Full path to a ROOT file, e.g. containing a TTree " \
                         "OR a text file with a list of such ROOT files")
-      ("prefix,o",      po::value<std::string>(&fOutPrefix), "Absolute or relative path to prefix output files")
+      ("prefix,o",      po::value<std::string>(&fOutPrefix)->default_value("./"), "Absolute or relative path to prefix output files")
       ("max-events,n",  po::value<unsigned int>(&fMaxEventsUser)->default_value(0), "Maximum number of events to process")
       ("sparsity,s",    po::value<float>(&fSparsity)->default_value(1), "Approximate fraction of events to read and process")
-      ("save-graph,g",  "Use this option to save histograms and such as images")
+      ("save-graph,g",  po::value<bool>(&fSaveGraphics)->default_value(false)->implicit_value(true), "Use this option to save histograms and such as images")
    ;
 }
 
@@ -95,11 +95,6 @@ void ProgramOptions::VerifyOptions()
    }
 
 
-   if (fOptionsValues.count("max-events"))
-   {
-      std::cout << "max-events: " << fMaxEventsUser << std::endl;
-   }
-
    if (fOptionsValues.count("sparsity"))
    {
       if (fSparsity > 1 || fSparsity <= 0) {
@@ -108,9 +103,6 @@ void ProgramOptions::VerifyOptions()
       }
       std::cout << "sparsity: " << fSparsity << std::endl;
    }
-
-   if (fOptionsValues.count("save-graph") )
-      fSaveGraphics = true;
 }
 
 
