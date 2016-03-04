@@ -78,30 +78,27 @@ void ProgramOptions::VerifyOptions()
       exit(EXIT_SUCCESS);
    }
 
-   //Info("User provided options: %d %s", 5, "ggg");
-
 
    if (fOptionsValues.count("input-file"))
    {
       std::string inputFileName = boost::any_cast<std::string>(fOptionsValues["input-file"].value());
-      std::cout << "Input file: " << inputFileName << std::endl;
 
       std::ifstream tmpFileCheck(inputFileName.c_str());
       if (!tmpFileCheck.good()) {
-         //Fatal("VerifyOptions", "File \"%s\" does not exist", inputFileName.c_str());
+         Fatal("File \"%s\" does not exist", inputFileName.c_str());
       }
    } else {
-      //Fatal("VerifyOptions", "Input file not set");
+      Error("Input file not set \"%s\"", fInFilePath.c_str());
+      std::cout << fOptions << std::endl;
+      exit(EXIT_FAILURE);
    }
-
 
    if (fOptionsValues.count("sparsity"))
    {
       if (fSparsity > 1 || fSparsity <= 0) {
-         //Warning("VerifyOptions", "Sparsity specified value outside allowed limits. Set to 1");
+         Warning("VerifyOptions", "Sparsity specified value outside allowed limits. Set to 1");
          fSparsity = 1;
       }
-      std::cout << "sparsity: " << fSparsity << std::endl;
    }
 }
 
