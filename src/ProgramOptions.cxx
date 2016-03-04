@@ -122,3 +122,17 @@ std::string ProgramOptions::GetOutFileName(std::string suffix) const
       return fInFilePath + "." + suffix + ".root";
    }
 }
+
+
+std::ostream& tvx::operator<<(std::ostream& os, const boost::any& any_value)
+{
+   // List all types you want to try
+   if(!out_to_stream<int>(os, any_value))
+   if(!out_to_stream<unsigned int>(os, any_value))
+   if(!out_to_stream<float>(os, any_value))
+   if(!out_to_stream<bool>(os, any_value))
+   if(!out_to_stream<std::string>(os, any_value))
+      os<<"{unknown}"; // all cast are failed, an unknown type of any
+
+   return os;
+}

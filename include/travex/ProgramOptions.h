@@ -64,6 +64,23 @@ private:
    void InitOptions();
 };
 
+
+/**
+ * A helper function to print values of boost's any type.
+ */
+template<class T>
+bool out_to_stream(std::ostream& os, const boost::any& any_value)
+{
+   try {
+      os << boost::any_cast<T>(any_value);
+      return true;
+   } catch(boost:: bad_any_cast& e) {
+      return false;
+   }
+}
+
+std::ostream& operator<<(std::ostream& os, const boost::any& any_value);
+
 }
 
 #endif
