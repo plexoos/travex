@@ -25,7 +25,7 @@ public:
 
    const HistMap& GetHists() const { return fHs; }
    const TH1*     FindHist(const std::string& hist_name) const;
-   virtual void FillDerivedHists() = 0;
+   virtual void FillDerivedHists() {}
 
 	/// Saves all histograms from the container as png images in the `prefix` directory.
    void SaveAllAs(std::string prefix="./");
