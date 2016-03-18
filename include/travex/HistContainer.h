@@ -24,6 +24,7 @@ public:
    HistContainer(const std::string name, TDirectory* motherDir=nullptr, const std::string option="");
 
    const HistMap& GetHists() const { return fHs; }
+   void Add(TH1* hist);
    const TH1*     FindHist(const std::string& hist_name) const;
    virtual void FillDerivedHists() {}
 

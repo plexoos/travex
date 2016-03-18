@@ -4,6 +4,7 @@
 #include "TPaletteAxis.h"
 #include "TROOT.h"
 
+#include "travex/utils.h"
 #include "travex/HistContainer.h"
 
 using namespace tvx;
@@ -14,6 +15,26 @@ HistContainer::HistContainer(const std::string name, TDirectory* motherDir, cons
    fHs()
 {
    cd();
+}
+
+
+/**
+ * Adds the user provided histogram to the internal container. Basic checks are
+ * performed to validate the pointer.
+ */
+void HistContainer::Add(TH1* hist)
+{
+   if (!hist || std::string(hist->GetName()).empty() ) {
+      Warning("Cannot add invalid histogram");
+      return;
+   }
+
+   std::string hist_name(hist->GetName());
+
+   if ( FindHist(hist_name) )
+      Warning("Replacing existing histogram %s", hist_name.c_str());
+
+   fHs[hist_name].reset(hist);
 }
 
 
