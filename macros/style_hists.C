@@ -13,8 +13,8 @@ gStyle->SetLabelFont(42, "X");
 gStyle->SetLabelFont(42, "Y");
 gStyle->SetLabelFont(42, "Z");
 
-gStyle->SetLabelSize(0.06, "XYZ");
-gStyle->SetTitleSize(0.06, "XYZ");
+gStyle->SetLabelSize(0.04, "XYZ");
+gStyle->SetTitleSize(0.04, "XYZ");
 gStyle->SetFrameLineWidth(2);
 
 gStyle->SetLineColor(kBlack);
@@ -22,8 +22,8 @@ gStyle->SetHistLineColor(kBlack);
 gStyle->SetFuncColor(kBlack);
 gStyle->SetFillColor(kWhite);
 
-gStyle->SetNdivisions(505, "Y");
-gStyle->SetNdivisions(505, "Z");
+gStyle->SetNdivisions(510, "Y");
+gStyle->SetNdivisions(510, "Z");
 
 gStyle->SetPalette(1);
 gStyle->SetNumberContours(50);
@@ -32,7 +32,7 @@ gStyle->SetOptFit(1111);
 gStyle->SetOptStat("emroui");
 gStyle->SetStatX(0.99);
 gStyle->SetStatY(0.99);
-gStyle->SetStatW(0.15);
+gStyle->SetStatW(0.20);
 gStyle->SetStatH(0.15);
 gStyle->SetPadLeftMargin(0.08);
 gStyle->SetPadRightMargin(0.30);

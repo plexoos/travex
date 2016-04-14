@@ -22,6 +22,7 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
 
    std::string macroPath = std::string(gROOT->GetMacroPath()) + ":" + gTravexMacrosPath;
    gROOT->SetMacroPath(macroPath.c_str());
+   gROOT->Macro("style_hists.C");
 }
 
 
