@@ -29,6 +29,7 @@ public:
    RootFile(ProgramOptions& prgOpts, Option_t* option="", const char* ftitle="", Int_t compress=1);
 
    void FillDerivedHists();
+   const ProgramOptions& GetPrgOptions() { return fPrgOptions; }
 
    virtual void Close(Option_t *option="");
    void SaveAllAs(std::string prefix="./");
