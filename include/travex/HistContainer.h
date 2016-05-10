@@ -23,12 +23,12 @@ public:
 
    HistContainer(const std::string name, TDirectory* motherDir=nullptr, const std::string option="");
 
-   const HistMap& GetHists() const { return fHs; }
    void Add(TH1* hist);
-   const TH1*     FindHist(const std::string& hist_name) const;
+   const HistMap& GetHists() const { return fHs; }
+   const TH1* FindHist(const std::string& hist_name) const;
    virtual void FillDerivedHists() {}
 
-	/// Saves all histograms from the container as png images in the `prefix` directory.
+   /// Saves all histograms from the container as png images in the `prefix` directory.
    void SaveAllAs(std::string prefix="./");
 
 protected:
@@ -36,7 +36,7 @@ protected:
    virtual void BookHists() = 0;
    TH1* FindHist(const std::string& hist_name);
 
-	/// A container of unique pointers to TH1 objects indexed by names
+   /// A container of unique pointers to TH1 objects indexed by names
    HistMap fHs;
 };
 
