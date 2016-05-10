@@ -26,6 +26,7 @@ public:
    void Add(TH1* hist);
    const HistMap& GetHists() const { return fHs; }
    const TH1* FindHist(const std::string& hist_name) const;
+   const TH1* h(const std::string& hist_name) const { FindHist(hist_name); }
    virtual void FillDerivedHists() {}
 
    /// Saves all histograms from the container as png images in the `prefix` directory.
@@ -35,6 +36,9 @@ protected:
 
    virtual void BookHists() = 0;
    TH1* FindHist(const std::string& hist_name);
+   TH1* h(const std::string& hist_name) { FindHist(hist_name); }
+
+private:
 
    /// A container of unique pointers to TH1 objects indexed by names
    HistMap fHs;
