@@ -42,6 +42,7 @@ void RootFile::FillDerivedHists()
          continue;
       }
 
+      container->cd();
       container->FillDerivedHists();
    }
 }
