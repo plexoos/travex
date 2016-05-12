@@ -108,9 +108,7 @@ void HistContainer::SaveAllAs(std::string prefix)
       while ( TObject *iObj = (TObject*) next() )
       {
          if ( !iObj ) continue;
-
-         if ( ( (TClass*) iObj->IsA() )->InheritsFrom("TLine") )
-            iObj->Draw();
+         iObj->Draw();
       }
 
       std::string sFileName = prefix + "/" + histName + ".png";
