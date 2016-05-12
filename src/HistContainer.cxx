@@ -70,11 +70,6 @@ void HistContainer::SaveAllAs(std::string prefix)
       std::string histName = iHist.first;
       std::unique_ptr<TH1>& hist = iHist.second;
 
-      if (!hist) {
-         Error("SaveAllAs", "No object found for key %s. Skipping...", histName.c_str());
-         continue;
-      }
-
       char* opts = (char*) hist->GetOption();
 
       if (strstr(opts, "XX")) canvas.SetLogx(true);
