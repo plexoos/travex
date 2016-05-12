@@ -60,7 +60,7 @@ TH1* HistContainer::FindHist(const std::string& hist_name)
  */
 void HistContainer::SaveAllAs(std::string prefix)
 {
-   TCanvas canvas("canvas", "canvas", 1200, 600);
+   static TCanvas canvas("canvas", "canvas", 1200, 600);
    canvas.UseCurrentStyle();
    canvas.SetGridx(true);
    canvas.SetGridy(true);
@@ -88,7 +88,7 @@ void HistContainer::SaveAllAs(std::string prefix)
 
       hist->Draw();
 
-      TColor *color;
+      TColor *color = nullptr;
       float r, g, b;
 
       if (strstr(opts, "whit_zro")) {
@@ -115,8 +115,6 @@ void HistContainer::SaveAllAs(std::string prefix)
       canvas.SaveAs(sFileName.c_str());
 
       // Restore modified color
-      if (strstr(opts, "whit_zro")) {
-         color->SetRGB(r, g, b);
-      }
+      if (color) color->SetRGB(r, g, b);
    }
 }
