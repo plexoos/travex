@@ -34,7 +34,6 @@ public:
 
 protected:
 
-   virtual void BookHists() = 0;
    TH1* FindHist(const std::string& hist_name);
    TH1* h(const std::string& hist_name) { FindHist(hist_name); }
 
