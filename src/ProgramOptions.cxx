@@ -24,15 +24,6 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
    fSparsity(1),
    fSaveGraphics(false)
 {
-   InitOptions();
-}
-
-
-/**
- * Supported program options should be declared in this private method.
- */
-void ProgramOptions::InitOptions()
-{
    fOptions.add_options()
       ("help,h",        "Print this help message")
       ("input-file,f",  po::value<std::string>(&fInFilePath), "Full path to a ROOT file, e.g. containing a TTree " \

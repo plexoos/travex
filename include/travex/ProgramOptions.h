@@ -59,10 +59,6 @@ protected:
 
    /// This flag controls whether to produce images for created histograms
    bool  fSaveGraphics;
-
-private:
-
-   void InitOptions();
 };
 
 
