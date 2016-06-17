@@ -25,14 +25,14 @@ HistContainer::HistContainer(const std::string name, TDirectory* motherDir, cons
 void HistContainer::Add(TH1* hist)
 {
    if (!hist || std::string(hist->GetName()).empty() ) {
-      Warning("Cannot add invalid histogram");
+      tvx::Warning("Cannot add invalid histogram");
       return;
    }
 
    std::string hist_name(hist->GetName());
 
    if ( FindHist(hist_name) )
-      Warning("Replacing existing histogram %s", hist_name.c_str());
+      tvx::Warning("Replacing existing histogram %s", hist_name.c_str());
 
    fHs[hist_name].reset(hist);
 }
