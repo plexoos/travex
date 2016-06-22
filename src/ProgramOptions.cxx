@@ -1,3 +1,4 @@
+#include <exception>
 #include <iostream>
 #include <fstream>
 #include <boost/regex.hpp>
@@ -39,8 +40,14 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
  */
 void ProgramOptions::ProcessOptions()
 {
-   po::store(po::parse_command_line(fArgc, fArgv, fOptions), fOptionsValues);
-   po::notify(fOptionsValues);
+   try {
+      po::store(po::parse_command_line(fArgc, fArgv, fOptions), fOptionsValues);
+      po::notify(fOptionsValues);
+   } catch(const std::exception& ex) {
+      TVX_ERROR(ex.what());
+      std::cout << fOptions << std::endl;
+      exit(EXIT_FAILURE);
+   }
 
    VerifyOptions();
 }
