@@ -76,10 +76,10 @@ void ProgramOptions::VerifyOptions()
 
       std::ifstream tmpFileCheck(inputFileName.c_str());
       if (!tmpFileCheck.good()) {
-         Fatal("File \"%s\" does not exist", inputFileName.c_str());
+         TVX_FATAL("File \"%s\" does not exist", inputFileName.c_str());
       }
    } else {
-      Error("Input file not set \"%s\"", fInFilePath.c_str());
+      TVX_ERROR("Input file not set");
       std::cout << fOptions << std::endl;
       exit(EXIT_FAILURE);
    }
@@ -87,7 +87,7 @@ void ProgramOptions::VerifyOptions()
    if (fOptionsValues.count("sparsity"))
    {
       if (fSparsity > 1 || fSparsity <= 0) {
-         Warning("VerifyOptions", "Sparsity specified value outside allowed limits. Set to 1");
+         TVX_WARNING("VerifyOptions", "Sparsity specified value outside allowed limits. Set to 1");
          fSparsity = 1;
       }
    }

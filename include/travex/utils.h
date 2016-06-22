@@ -3,13 +3,11 @@
 
 #include "TError.h"
 
-namespace tvx {
 
-#define Info(...)     Info(__PRETTY_FUNCTION__, __VA_ARGS__)
-#define Warning(...)  Warning(__PRETTY_FUNCTION__, __VA_ARGS__)
-#define Error(...)    Error(__PRETTY_FUNCTION__, __VA_ARGS__)
-#define Fatal(...)    Fatal(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define TVX_INFO(...)     ::Info(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define TVX_WARNING(...)  ::Warning(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define TVX_ERROR(...)    ::Error(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define TVX_FATAL(...)    ::Fatal(__PRETTY_FUNCTION__, __VA_ARGS__)
 
-}
 
 #endif
