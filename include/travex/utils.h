@@ -5,17 +5,10 @@
 
 namespace tvx {
 
-template<typename... Arguments>
-void Info(Arguments... args)     { ::Info(__PRETTY_FUNCTION__, args...); }
-
-template<typename... Arguments>
-void Warning(Arguments... args)  { ::Warning(__PRETTY_FUNCTION__, args...); }
-
-template<typename... Arguments>
-void Error(Arguments... args)    { ::Error(__PRETTY_FUNCTION__, args...); }
-
-template<typename... Arguments>
-void Fatal(Arguments... args)    { ::Fatal(__PRETTY_FUNCTION__, args...); }
+#define Info(...)     Info(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define Warning(...)  Warning(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define Error(...)    Error(__PRETTY_FUNCTION__, __VA_ARGS__)
+#define Fatal(...)    Fatal(__PRETTY_FUNCTION__, __VA_ARGS__)
 
 }
 
