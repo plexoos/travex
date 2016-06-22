@@ -22,7 +22,6 @@ class ProgramOptions
 {
 public:
 
-   ProgramOptions();
    ProgramOptions(int argc, char **argv);
 
    std::string  PathToInputFile() const { return fInFilePath; }

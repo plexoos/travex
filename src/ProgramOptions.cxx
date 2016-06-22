@@ -9,10 +9,6 @@
 using namespace tvx;
 
 
-ProgramOptions::ProgramOptions() : ProgramOptions(0, nullptr)
-{
-}
-
 
 ProgramOptions::ProgramOptions(int argc, char **argv) :
    fArgc(argc), fArgv(argv),
