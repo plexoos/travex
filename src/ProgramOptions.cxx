@@ -12,7 +12,7 @@ using namespace tvx;
 
 ProgramOptions::ProgramOptions(int argc, char **argv) :
    fArgc(argc), fArgv(argv),
-   fOptions("Program options", 120),
+   fOptions("Available program options", 120),
    fOptionsValues(),
    fInFilePath(),
    fOutPrefix("./"),
@@ -22,7 +22,7 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
 {
    fOptions.add_options()
       ("help,h",        "Print this help message")
-      ("input-file,f",  po::value<std::string>(&fInFilePath), "Full path to a ROOT file, e.g. containing a TTree " \
+      ("input-file,f",  po::value<std::string>(&fInFilePath), "Full path to a ROOT file containing a TTree " \
                         "OR a text file with a list of such ROOT files")
       ("prefix,o",      po::value<std::string>(&fOutPrefix)->default_value("./"), "Absolute or relative path to prefix output files")
       ("max-events,n",  po::value<unsigned int>(&fMaxEventsUser)->default_value(0), "Maximum number of events to process")
@@ -46,6 +46,7 @@ void ProgramOptions::ProcessOptions()
 }
 
 
+/** Prints the options and their values. */
 void ProgramOptions::Print() const
 {
    std::cout << "Program options set to following values:\n";
@@ -57,6 +58,10 @@ void ProgramOptions::Print() const
 }
 
 
+/**
+ * Performs basic test of values provided by the user in the command line to
+ * maker sure that they are valid.
+ */
 void ProgramOptions::VerifyOptions()
 {
    if (fOptionsValues.count("help"))

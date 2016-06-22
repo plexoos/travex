@@ -36,6 +36,7 @@ public:
 
 protected:
 
+   /** Verifies user submitted values. */
    void VerifyOptions();
 
    int                     fArgc;
