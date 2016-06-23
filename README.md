@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/plexoos/travex.svg?branch=master)](https://travis-ci.org/plexoos/travex)
+[![Coverity Scan Build Status](https://scan.coverity.com/projects/9254/badge.svg)](https://scan.coverity.com/projects/plexoos-travex)
+
 
 This package provides a library of C++ classes which can be used to evaluate and
 validate reconstruction of charged particle tracks as measured by a tracking
