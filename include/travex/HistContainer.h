@@ -30,7 +30,7 @@ public:
    virtual void FillDerivedHists() {}
 
    /// Saves all histograms from the container as png images in the `prefix` directory.
-   void SaveAllAs(std::string prefix="./");
+   void SaveAllAs(std::string prefix="./", std::string img_format="png");
 
 protected:
 

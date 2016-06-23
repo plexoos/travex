@@ -57,8 +57,10 @@ TH1* HistContainer::FindHist(const std::string& hist_name)
  * directory. Some additional options, such as XX, XY, and XZ specifying
  * logarithmic X, Y, and Z axes correspondingly, are recognized if set with
  * TH1::SetOption().
+ *
+ * For the list of supported image formats see ROOT's TPad::SaveAs(...)
  */
-void HistContainer::SaveAllAs(std::string prefix)
+void HistContainer::SaveAllAs(std::string prefix, std::string img_format)
 {
    static TCanvas canvas("canvas", "canvas", 1200, 600);
    canvas.UseCurrentStyle();
@@ -106,7 +108,7 @@ void HistContainer::SaveAllAs(std::string prefix)
          iObj->Draw();
       }
 
-      std::string sFileName = prefix + "/" + histName + ".png";
+      std::string sFileName = prefix + "/" + histName + "." + img_format;
       canvas.SaveAs(sFileName.c_str());
 
       // Restore modified color
