@@ -24,13 +24,13 @@ public:
    HistContainer(const std::string name, TDirectory* motherDir=nullptr, const std::string option="");
 
    void Add(TH1* hist);
-   const HistMap& GetHists() const { return fHs; }
+   const HistMap& GetHists() const;
 
    /// Returns a reference to the histogram with name `hist_name`, throws
    /// a `std::out_of_range` exception if no such histogram exists.
    const TH1& operator[](const std::string& hist_name) const;
    const TH1* FindHist(const std::string& hist_name) const;
-   virtual void FillDerivedHists() {}
+   virtual void FillDerivedHists();
 
    /// Saves all histograms from the container as png images in the `prefix` directory.
    void SaveAllAs(std::string prefix="./", std::string img_format="png");
@@ -38,7 +38,7 @@ public:
 protected:
 
    TH1* FindHist(const std::string& hist_name);
-   TH1* h(const std::string& hist_name) { FindHist(hist_name); }
+   TH1* h(const std::string& hist_name);
 
 private:
 
@@ -47,10 +47,24 @@ private:
 };
 
 
+inline const HistMap& HistContainer::GetHists() const
+{
+   return fHs;
+}
+
 
 inline const TH1& HistContainer::operator[](const std::string& hist_name) const
 {
    return *(fHs.at(hist_name));
+}
+
+
+inline void HistContainer::FillDerivedHists() {}
+
+
+inline TH1* HistContainer::h(const std::string& hist_name)
+{
+   return FindHist(hist_name);
 }
 
 }
