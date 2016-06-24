@@ -25,8 +25,11 @@ public:
 
    void Add(TH1* hist);
    const HistMap& GetHists() const { return fHs; }
+
+   /// Returns a reference to the histogram with name `hist_name`, throws
+   /// a `std::out_of_range` exception if no such histogram exists.
+   const TH1& operator[](const std::string& hist_name) const;
    const TH1* FindHist(const std::string& hist_name) const;
-   const TH1* h(const std::string& hist_name) const { FindHist(hist_name); }
    virtual void FillDerivedHists() {}
 
    /// Saves all histograms from the container as png images in the `prefix` directory.
@@ -42,6 +45,13 @@ private:
    /// A container of unique pointers to TH1 objects indexed by names
    HistMap fHs;
 };
+
+
+
+inline const TH1& HistContainer::operator[](const std::string& hist_name) const
+{
+   return *(fHs.at(hist_name));
+}
 
 }
 
