@@ -40,15 +40,7 @@ void HistContainer::Add(TH1* hist)
 
 const TH1* HistContainer::FindHist(const std::string& hist_name) const
 {
-   auto iter = fHs.find(hist_name);
-   return ( iter != fHs.end() ) ? iter->second.get() : nullptr;
-}
-
-
-TH1* HistContainer::FindHist(const std::string& hist_name)
-{
-   auto iter = fHs.find(hist_name);
-   return ( iter != fHs.end() ) ? iter->second.get() : nullptr;
+   return h(hist_name);
 }
 
 

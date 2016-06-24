@@ -37,8 +37,7 @@ public:
 
 protected:
 
-   TH1* FindHist(const std::string& hist_name);
-   TH1* h(const std::string& hist_name);
+   TH1* h(const std::string& hist_name) const;
 
 private:
 
@@ -62,9 +61,10 @@ inline const TH1& HistContainer::operator[](const std::string& hist_name) const
 inline void HistContainer::FillDerivedHists() {}
 
 
-inline TH1* HistContainer::h(const std::string& hist_name)
+inline TH1* HistContainer::h(const std::string& hist_name) const
 {
-   return FindHist(hist_name);
+   auto iter = fHs.find(hist_name);
+   return ( iter != fHs.end() ) ? iter->second.get() : nullptr;
 }
 
 }
