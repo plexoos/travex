@@ -10,6 +10,10 @@
 using namespace tvx;
 
 
+/**
+ * Creates an empty histogram container. Follow up by filling it with TH1*
+ * objects using HistContainer::Add(TH1* hist).
+ */
 HistContainer::HistContainer(const std::string name, TDirectory* motherDir, const std::string option) :
    TDirectoryFile(name.c_str(), name.c_str(), option.c_str(), motherDir),
    fHs()

@@ -3,15 +3,16 @@
 
 
 This package provides a library of C++ classes which can be used to evaluate and
-validate reconstruction of charged particle tracks as measured by a tracking
+validate reconstruction of charged particle tracks measured by a tracking
 detector. One of the objectives of this library is to design and implement such
 functionality in a detector-independent way that can be applied to most common
-detector configurations and reconstruction algorithms and frameworks used in
+detector configurations, reconstruction algorithms, and frameworks used in
 particle physics experiments.
 
-Currently, the code is available at <https://github.com/plexoos/travex> and the
-`doxygen` generated documentation can be found at
-<http://plexoos.github.io/travex>
+The code and coding style in this project are heavily based on and influenced by
+the [ROOT](http://root.cern.ch) framework. The source is available at
+<https://github.com/plexoos/travex> and the `doxygen` generated documentation
+can be found at <http://plexoos.github.io/travex>
 
 
 The Concept
@@ -51,12 +52,11 @@ Prerequisites
 Build with cmake
 ----------------
 
-Checkout the code using one of the following commands:
+Checkout the code using the following command:
 
-    git clone https://github.com/plexoos/travex.git   # If you do not have an account on github.com
-    git clone git@github.com:plexoos/travex.git       # otherwise.
+    git clone https://github.com/plexoos/travex.git
 
-Compile and build the tools:
+Compile and build the library and the tools:
 
     cd travex/
     mkdir build && cd build
