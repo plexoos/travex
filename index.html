@@ -79,9 +79,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">travex Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://travis-ci.org/plexoos/travex">![Build Status](https://travis-ci.org/plexoos/travex.svg?branch=master)</a></p>
-<p>This package provides a library of C++ classes which can be used to evaluate and validate reconstruction of charged particle tracks as measured by a tracking detector. One of the objectives of this library is to design and implement such functionality in a detector-independent way that can be applied to most common detector configurations and reconstruction algorithms and frameworks used in particle physics experiments.</p>
-<p>Currently, the code is available at <a href="https://github.com/plexoos/travex">https://github.com/plexoos/travex</a> and the <code>doxygen</code> generated documentation can be found at <a href="http://plexoos.github.io/travex">http://plexoos.github.io/travex</a></p>
+<div class="textblock"><p><a href="https://travis-ci.org/plexoos/travex">![Build Status](https://travis-ci.org/plexoos/travex.svg?branch=master)</a> <a href="https://scan.coverity.com/projects/plexoos-travex">![Coverity Scan Build Status](https://scan.coverity.com/projects/9254/badge.svg)</a></p>
+<p>This package provides a library of C++ classes which can be used to evaluate and validate reconstruction of charged particle tracks measured by a tracking detector. One of the objectives of this library is to design and implement such functionality in a detector-independent way that can be applied to most common detector configurations, reconstruction algorithms, and frameworks used in particle physics experiments.</p>
+<p>The code and coding style in this project are heavily based on and influenced by the <a href="http://root.cern.ch">ROOT</a> framework. The source is available at <a href="https://github.com/plexoos/travex">https://github.com/plexoos/travex</a> and the <code>doxygen</code> generated documentation can be found at <a href="http://plexoos.github.io/travex">http://plexoos.github.io/travex</a></p>
 <h1>The Concept </h1>
 <p>This tools is designed to answer the following questions:</p>
 <ul>
@@ -103,15 +103,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>boost libraries (&gt;= 1.54): <code>program_options</code>, <code>regex</code>, and <code>filesystem</code></li>
 </ul>
 <h2>Build with cmake </h2>
-<p>Checkout the code using one of the following commands: </p><pre class="fragment">git clone https://github.com/plexoos/travex.git   # If you do not have an account on github.com
-git clone git@github.com:plexoos/travex.git       # otherwise.
-</pre><p>Compile and build the tools: </p><pre class="fragment">cd travex/
+<p>Checkout the code using the following command: </p><pre class="fragment">git clone https://github.com/plexoos/travex.git
+</pre><p>Compile and build the library and the tools: </p><pre class="fragment">cd travex/
 mkdir build &amp;&amp; cd build
 cmake ../
 make install</pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

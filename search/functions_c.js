@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['track',['Track',['../classtvx_1_1Track.html#a530006a7ba60233814398e8b12704f0d',1,'tvx::Track::Track()'],['../classtvx_1_1Track.html#a37874bab855f24a6841d02072df6b006',1,'tvx::Track::Track(Event *event)']]],
-  ['tracknode',['TrackNode',['../classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e',1,'tvx::TrackNode']]]
+  ['_7egenericevent',['~GenericEvent',['../classtvx_1_1GenericEvent.html#a6a2f8e31c79c1af66492fadf87375cd0',1,'tvx::GenericEvent']]],
+  ['_7egenerichit',['~GenericHit',['../classtvx_1_1GenericHit.html#a6bbb2f740a1ebcb5a788a316983d9cf5',1,'tvx::GenericHit']]],
+  ['_7egenerictrack',['~GenericTrack',['../classtvx_1_1GenericTrack.html#a27dd8f35fd7b85cf411f91ceddb3c776',1,'tvx::GenericTrack']]],
+  ['_7egenerictracknode',['~GenericTrackNode',['../classtvx_1_1GenericTrackNode.html#a9490c8b20edb3317d9b88cc5708ce72d',1,'tvx::GenericTrackNode']]]
 ];

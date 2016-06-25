@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>This is a simple helper class to wrap ROOT's TFile with many options controlled by user settings provided in command line and aggregated by <a class="el" href="classtvx_1_1ProgramOptions.html" title="Processes and controls user options provided in the command line. ">tvx::ProgramOptions</a>.  
+<p>A basic extention of the ROOT's TFile class to manage a set of user defined histogram containers (or any other ROOT objects if desired) by automatically arranging them in subdirectories.  
  <a href="classtvx_1_1RootFile.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RootFile_8h_source.html">RootFile.h</a>&gt;</code></p>
@@ -114,7 +114,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a93564af42cc3ba14691a58de147e70dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">RootFile</a> (<a class="el" href="classtvx_1_1ProgramOptions.html">ProgramOptions</a> &amp;prgOpts, Option_t *option=&quot;&quot;, const char *ftitle=&quot;&quot;, Int_t compress=1)</td></tr>
 <tr class="separator:a93564af42cc3ba14691a58de147e70dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1de5da146b9c8066ffec82d1641a7431"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">FillDerivedHists</a> ()</td></tr>
+<tr class="memdesc:a1de5da146b9c8066ffec82d1641a7431"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each histogram container calls the method of the same name in order to produce new histograms from already filled histograms.  <a href="#a1de5da146b9c8066ffec82d1641a7431">More...</a><br /></td></tr>
 <tr class="separator:a1de5da146b9c8066ffec82d1641a7431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4523e44ad2a93fecde777a7f94f2c02a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtvx_1_1ProgramOptions.html">ProgramOptions</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html#a4523e44ad2a93fecde777a7f94f2c02a">GetPrgOptions</a> ()</td></tr>
+<tr class="separator:a4523e44ad2a93fecde777a7f94f2c02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0735284ef89541f7cdc7b64bfa4316d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">Close</a> (Option_t *option=&quot;&quot;)</td></tr>
 <tr class="separator:a0735284ef89541f7cdc7b64bfa4316d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a319d80d05b96a122d2765262c7fcc704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">SaveAllAs</a> (std::string prefix=&quot;./&quot;)</td></tr>
@@ -130,9 +133,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a9cc7d77eff81837cc515c8906156d567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is a simple helper class to wrap ROOT's TFile with many options controlled by user settings provided in command line and aggregated by <a class="el" href="classtvx_1_1ProgramOptions.html" title="Processes and controls user options provided in the command line. ">tvx::ProgramOptions</a>. </p>
+<div class="textblock"><p>A basic extention of the ROOT's TFile class to manage a set of user defined histogram containers (or any other ROOT objects if desired) by automatically arranging them in subdirectories. </p>
+<p>This simple helper class can use options provided by the user in the command line and aggregated by <a class="el" href="classtvx_1_1ProgramOptions.html" title="Processes and controls user options provided in the command line. ">tvx::ProgramOptions</a>. </p>
 
-<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00023">23</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
+<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00025">25</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a93564af42cc3ba14691a58de147e70dc"></a>
 <div class="memitem">
@@ -170,7 +174,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00015">15</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
+<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00016">16</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
 
 </div>
 </div>
@@ -197,7 +201,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00044">44</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
+<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00051">51</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
 
 </div>
 </div>
@@ -214,7 +218,34 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00027">27</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
+<p>For each histogram container calls the method of the same name in order to produce new histograms from already filled histograms. </p>
+
+<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00033">33</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4523e44ad2a93fecde777a7f94f2c02a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classtvx_1_1ProgramOptions.html">ProgramOptions</a>&amp; tvx::RootFile::GetPrgOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00032">32</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
 
 </div>
 </div>
@@ -232,7 +263,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00054">54</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
+<p>Definition at line <a class="el" href="RootFile_8cxx_source.html#l00061">61</a> of file <a class="el" href="RootFile_8cxx_source.html">RootFile.cxx</a>.</p>
 
 </div>
 </div>
@@ -257,7 +288,7 @@ Protected Attributes</h2></td></tr>
 
 <p>A string-to-HistContainer map for convenient access to enclosed directories. </p>
 
-<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00036">36</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
+<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00040">40</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +312,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Command line arguments and options requested by the user. </p>
 
-<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00037">37</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
+<p>Definition at line <a class="el" href="RootFile_8h_source.html#l00043">43</a> of file <a class="el" href="RootFile_8h_source.html">RootFile.h</a>.</p>
 
 </div>
 </div>
@@ -292,7 +323,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

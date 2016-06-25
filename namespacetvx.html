@@ -108,7 +108,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A templated abstract base class interface with a basic functionality common to all track nodes identified by a tracking algorithm.  <a href="classtvx_1_1GenericTrackNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html">HistContainer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A very light container to hold and manipulate user histograms.  <a href="classtvx_1_1HistContainer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A light container to hold and manipulate user histograms.  <a href="classtvx_1_1HistContainer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1Hit.html">Hit</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple class to contain basic properties of a hit registered by an active material in a detector.  <a href="classtvx_1_1Hit.html#details">More...</a><br /></td></tr>
@@ -119,7 +119,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes and controls user options provided in the command line.  <a href="classtvx_1_1ProgramOptions.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1RootFile.html">RootFile</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple helper class to wrap ROOT's TFile with many options controlled by user settings provided in command line and aggregated by <a class="el" href="classtvx_1_1ProgramOptions.html" title="Processes and controls user options provided in the command line. ">tvx::ProgramOptions</a>.  <a href="classtvx_1_1RootFile.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A basic extention of the ROOT's TFile class to manage a set of user defined histogram containers (or any other ROOT objects if desired) by automatically arranging them in subdirectories.  <a href="classtvx_1_1RootFile.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1Track.html">Track</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple persistent class describing a reconstructed charged particle track with a collection of track nodes.  <a href="classtvx_1_1Track.html#details">More...</a><br /></td></tr>
@@ -138,6 +138,12 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ac5cb92929ebe1b27665bb6fd63183536"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvx.html#ac5cb92929ebe1b27665bb6fd63183536">operator&lt;</a> (const <a class="el" href="classtvx_1_1Hit.html">tvx::Hit</a> &amp;lhs, const <a class="el" href="classtvx_1_1Hit.html">tvx::Hit</a> &amp;rhs)</td></tr>
 <tr class="separator:ac5cb92929ebe1b27665bb6fd63183536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a965c1f9a6075bef7c970a0e7c3ac3a11"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a965c1f9a6075bef7c970a0e7c3ac3a11"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvx.html#a965c1f9a6075bef7c970a0e7c3ac3a11">out_to_stream</a> (std::ostream &amp;os, const boost::any &amp;any_value)</td></tr>
+<tr class="memdesc:a965c1f9a6075bef7c970a0e7c3ac3a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to print values of boost's any type.  <a href="#a965c1f9a6075bef7c970a0e7c3ac3a11">More...</a><br /></td></tr>
+<tr class="separator:a965c1f9a6075bef7c970a0e7c3ac3a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0ec96518f781e957ad533a5a6c71873"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvx.html#ab0ec96518f781e957ad533a5a6c71873">operator&lt;&lt;</a> (std::ostream &amp;os, const boost::any &amp;any_value)</td></tr>
+<tr class="separator:ab0ec96518f781e957ad533a5a6c71873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1bff11784245f01b544e7ebea5fb88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvx.html#a7f1bff11784245f01b544e7ebea5fb88">operator&lt;</a> (const <a class="el" href="classtvx_1_1TrackNode.html">TrackNode</a> &amp;lhs, const <a class="el" href="classtvx_1_1TrackNode.html">TrackNode</a> &amp;rhs)</td></tr>
 <tr class="memdesc:a7f1bff11784245f01b544e7ebea5fb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently the nodes are ordered based on the transverse coordinates.  <a href="#a7f1bff11784245f01b544e7ebea5fb88">More...</a><br /></td></tr>
 <tr class="separator:a7f1bff11784245f01b544e7ebea5fb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,7 +173,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00013">13</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00014">14</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
 
 </div>
 </div>
@@ -227,14 +233,74 @@ Functions</h2></td></tr>
 <p>Currently the nodes are ordered based on the transverse coordinates. </p>
 <p>But in general the sorting should be done along the track. </p>
 
-<p>Definition at line <a class="el" href="TrackNode_8cxx_source.html#l00027">27</a> of file <a class="el" href="TrackNode_8cxx_source.html">TrackNode.cxx</a>.</p>
+<p>Definition at line <a class="el" href="TrackNode_8cxx_source.html#l00028">28</a> of file <a class="el" href="TrackNode_8cxx_source.html">TrackNode.cxx</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0ec96518f781e957ad533a5a6c71873"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; tvx::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::any &amp;&#160;</td>
+          <td class="paramname"><em>any_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ProgramOptions_8cxx_source.html#l00126">126</a> of file <a class="el" href="ProgramOptions_8cxx_source.html">ProgramOptions.cxx</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a965c1f9a6075bef7c970a0e7c3ac3a11"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tvx::out_to_stream </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::any &amp;&#160;</td>
+          <td class="paramname"><em>any_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A helper function to print values of boost's any type. </p>
+
+<p>Definition at line <a class="el" href="ProgramOptions_8h_source.html#l00069">69</a> of file <a class="el" href="ProgramOptions_8h_source.html">ProgramOptions.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

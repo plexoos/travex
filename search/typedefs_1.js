@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coordinates_5ft',['Coordinates_t',['../classtvx_1_1GenericHit.html#a77145d2cb8bd56582b0680934ed484b4',1,'tvx::GenericHit::Coordinates_t()'],['../classtvx_1_1GenericTrackNode.html#a977ba13d428472b20d679f9427406241',1,'tvx::GenericTrackNode::Coordinates_t()']]]
+  ['coordinates_5ft',['Coordinates_t',['../classtvx_1_1GenericHit.html#a7b54c2bfc23aa645e5db93fde8615b16',1,'tvx::GenericHit::Coordinates_t()'],['../classtvx_1_1GenericTrackNode.html#af6bfaf05e0f81302afc9d5708c0dd5c0',1,'tvx::GenericTrackNode::Coordinates_t()']]]
 ];

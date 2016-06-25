@@ -96,104 +96,106 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;TSystem.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;TROOT.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HistContainer_8h.html">travex/HistContainer.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ProgramOptions_8h.html">travex/ProgramOptions.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;travex/config.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HistContainer_8h.html">travex/HistContainer.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ProgramOptions_8h.html">travex/ProgramOptions.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacetvx.html">tvx</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacetvx.html">tvx</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">   15</a></span>&#160;<a class="code" href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">RootFile::RootFile</a>(<a class="code" href="classtvx_1_1ProgramOptions.html">ProgramOptions</a>&amp; prgOpts, Option_t *option, <span class="keyword">const</span> <span class="keywordtype">char</span> *ftitle, Int_t compress) :</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   TFile(prgOpts.GetOutFileName().c_str(), option, ftitle, compress),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   fDirs(),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   fPrgOptions(prgOpts)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   <a class="code" href="utils_8h.html#af3e3ea026a46490920120994e46fdb09">Info</a>(<span class="stringliteral">&quot;RootFile&quot;</span>, <span class="stringliteral">&quot;Created ROOT file: %s&quot;</span>, GetName());</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   std::string macroPath = std::string(gROOT-&gt;GetMacroPath()) + <span class="stringliteral">&quot;:&quot;</span> + stitools::gStiToolsMacrosPath;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   gROOT-&gt;SetMacroPath(macroPath.c_str());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">RootFile::FillDerivedHists</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;std::string, HistContainer*&gt;&amp; iDir : <a class="code" href="classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6">fDirs</a>)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      std::string  dirName = iDir.first;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="classtvx_1_1HistContainer.html">HistContainer</a> *container = iDir.second;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">if</span> (!container) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;         Error(<span class="stringliteral">&quot;FillDerivedHists&quot;</span>, <span class="stringliteral">&quot;No container/directory found for key %s. Skipping...&quot;</span>, dirName.c_str());</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;         <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      container-&gt;<a class="code" href="classtvx_1_1HistContainer.html#a38c4f471e0870ae666359e451407ce1e">FillDerivedHists</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">RootFile::Close</a>(Option_t *option)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567">fPrgOptions</a>.<a class="code" href="classtvx_1_1ProgramOptions.html#a22329267a820a0020117e53a9b360728">SaveGraphics</a>()) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <a class="code" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">SaveAllAs</a>(<a class="code" href="classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567">fPrgOptions</a>.<a class="code" href="classtvx_1_1ProgramOptions.html#a8e80724da0ef5f194b93b61d563f8d8f">GetOutPrefix</a>());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">   16</a></span>&#160;<a class="code" href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">RootFile::RootFile</a>(<a class="code" href="classtvx_1_1ProgramOptions.html">ProgramOptions</a>&amp; prgOpts, Option_t *option, <span class="keyword">const</span> <span class="keywordtype">char</span> *ftitle, Int_t compress) :</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   TFile(prgOpts.GetOutFileName().c_str(), option, ftitle, compress),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   fDirs(),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   fPrgOptions(prgOpts)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   Info(<span class="stringliteral">&quot;RootFile&quot;</span>, <span class="stringliteral">&quot;Created ROOT file: %s&quot;</span>, GetName());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   std::string macroPath = std::string(gROOT-&gt;GetMacroPath()) + <span class="stringliteral">&quot;:&quot;</span> + gTravexMacrosPath;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   gROOT-&gt;SetMacroPath(macroPath.c_str());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   gROOT-&gt;Macro(<span class="stringliteral">&quot;style_hists.C&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">RootFile::FillDerivedHists</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;std::string, HistContainer*&gt;&amp; subDir : <a class="code" href="classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6">fDirs</a>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      std::string  dirName = subDir.first;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <a class="code" href="classtvx_1_1HistContainer.html">HistContainer</a> *container = subDir.second;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">if</span> (!container) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         Error(<span class="stringliteral">&quot;FillDerivedHists&quot;</span>, <span class="stringliteral">&quot;No container/directory found for key %s. Skipping...&quot;</span>, dirName.c_str());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      container-&gt;cd();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      container-&gt;<a class="code" href="classtvx_1_1HistContainer.html#a12d27370ad27f9162a141bdc95b93422">FillDerivedHists</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   TFile::Close(option);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">RootFile::SaveAllAs</a>(std::string prefix)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   gROOT-&gt;Macro(<span class="stringliteral">&quot;style_hists.C&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keyword">namespace </span>fs = boost::filesystem;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">RootFile::Close</a>(Option_t *option)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567">fPrgOptions</a>.<a class="code" href="classtvx_1_1ProgramOptions.html#a22329267a820a0020117e53a9b360728">SaveGraphics</a>()) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">SaveAllAs</a>(<a class="code" href="classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567">fPrgOptions</a>.<a class="code" href="classtvx_1_1ProgramOptions.html#a8e80724da0ef5f194b93b61d563f8d8f">GetOutPrefix</a>());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   TFile::Close(option);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keywordflow">if</span> (fs::create_directories(prefix))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <a class="code" href="utils_8h.html#af3e3ea026a46490920120994e46fdb09">Info</a>(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Created dir: %s&quot;</span>, prefix.c_str());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      Warning(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Perhaps dir already exists: %s&quot;</span>, prefix.c_str());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">RootFile::SaveAllAs</a>(std::string prefix)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   gROOT-&gt;Macro(<span class="stringliteral">&quot;style_hists.C&quot;</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;std::string, HistContainer*&gt;&amp; iDir : <a class="code" href="classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6">fDirs</a>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      std::string  dirName = iDir.first;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="classtvx_1_1HistContainer.html">HistContainer</a> *container = iDir.second;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">if</span> (!container) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         Error(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;No container/directory found for key %s. Skipping...&quot;</span>, dirName.c_str());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;         <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      std::string path = prefix + <span class="stringliteral">&quot;/&quot;</span> + dirName;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keyword">namespace </span>fs = boost::filesystem;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keywordflow">if</span> (fs::create_directories(prefix))</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      Info(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Created directory: %s&quot;</span>, prefix.c_str());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      Warning(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Perhaps directory already exists: %s&quot;</span>, prefix.c_str());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;std::string, HistContainer*&gt;&amp; subDir : <a class="code" href="classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6">fDirs</a>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      std::string  dirName = subDir.first;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="classtvx_1_1HistContainer.html">HistContainer</a> *container = subDir.second;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">if</span> (gSystem-&gt;mkdir(path.c_str()) &lt; 0)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;         Warning(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Perhaps dir already exists: %s&quot;</span>, path.c_str());</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;         <a class="code" href="utils_8h.html#af3e3ea026a46490920120994e46fdb09">Info</a>(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Created dir: %s&quot;</span>, path.c_str());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">if</span> (!container) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;         Error(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;No container/directory found for key %s. Skipping...&quot;</span>, dirName.c_str());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;         <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      container-&gt;<a class="code" href="classtvx_1_1HistContainer.html#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">SaveAllAs</a>(path);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="ttc" id="classtvx_1_1RootFile_html_a93564af42cc3ba14691a58de147e70dc"><div class="ttname"><a href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">tvx::RootFile::RootFile</a></div><div class="ttdeci">RootFile(ProgramOptions &amp;prgOpts, Option_t *option=&quot;&quot;, const char *ftitle=&quot;&quot;, Int_t compress=1)</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00015">RootFile.cxx:15</a></div></div>
-<div class="ttc" id="classtvx_1_1ProgramOptions_html_a22329267a820a0020117e53a9b360728"><div class="ttname"><a href="classtvx_1_1ProgramOptions.html#a22329267a820a0020117e53a9b360728">tvx::ProgramOptions::SaveGraphics</a></div><div class="ttdeci">bool SaveGraphics() const </div><div class="ttdef"><b>Definition:</b> <a href="ProgramOptions_8h_source.html#l00031">ProgramOptions.h:31</a></div></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      std::string path = prefix + <span class="stringliteral">&quot;/&quot;</span> + dirName;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">if</span> (gSystem-&gt;mkdir(path.c_str()) &lt; 0)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         Warning(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Perhaps directory already exists: %s&quot;</span>, path.c_str());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         Info(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;Created directory: %s&quot;</span>, path.c_str());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      container-&gt;<a class="code" href="classtvx_1_1HistContainer.html#a3f17c948b7f41eedc19945a4466c281a">SaveAllAs</a>(path);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_a12d27370ad27f9162a141bdc95b93422"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a12d27370ad27f9162a141bdc95b93422">tvx::HistContainer::FillDerivedHists</a></div><div class="ttdeci">virtual void FillDerivedHists()</div><div class="ttdoc">A user implementation of this method can be called when additional histograms need to be built from t...</div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8h_source.html#l00083">HistContainer.h:83</a></div></div>
+<div class="ttc" id="classtvx_1_1RootFile_html_a93564af42cc3ba14691a58de147e70dc"><div class="ttname"><a href="classtvx_1_1RootFile.html#a93564af42cc3ba14691a58de147e70dc">tvx::RootFile::RootFile</a></div><div class="ttdeci">RootFile(ProgramOptions &amp;prgOpts, Option_t *option=&quot;&quot;, const char *ftitle=&quot;&quot;, Int_t compress=1)</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00016">RootFile.cxx:16</a></div></div>
+<div class="ttc" id="classtvx_1_1ProgramOptions_html_a22329267a820a0020117e53a9b360728"><div class="ttname"><a href="classtvx_1_1ProgramOptions.html#a22329267a820a0020117e53a9b360728">tvx::ProgramOptions::SaveGraphics</a></div><div class="ttdeci">bool SaveGraphics() const </div><div class="ttdef"><b>Definition:</b> <a href="ProgramOptions_8h_source.html#l00030">ProgramOptions.h:30</a></div></div>
 <div class="ttc" id="namespacetvx_html"><div class="ttname"><a href="namespacetvx.html">tvx</a></div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00012">Event.h:12</a></div></div>
-<div class="ttc" id="utils_8h_html_af3e3ea026a46490920120994e46fdb09"><div class="ttname"><a href="utils_8h.html#af3e3ea026a46490920120994e46fdb09">Info</a></div><div class="ttdeci">#define Info(msgfmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00013">utils.h:13</a></div></div>
 <div class="ttc" id="classtvx_1_1ProgramOptions_html"><div class="ttname"><a href="classtvx_1_1ProgramOptions.html">tvx::ProgramOptions</a></div><div class="ttdoc">Processes and controls user options provided in the command line. </div><div class="ttdef"><b>Definition:</b> <a href="ProgramOptions_8h_source.html#l00021">ProgramOptions.h:21</a></div></div>
-<div class="ttc" id="classtvx_1_1ProgramOptions_html_a8e80724da0ef5f194b93b61d563f8d8f"><div class="ttname"><a href="classtvx_1_1ProgramOptions.html#a8e80724da0ef5f194b93b61d563f8d8f">tvx::ProgramOptions::GetOutPrefix</a></div><div class="ttdeci">std::string GetOutPrefix() const </div><div class="ttdef"><b>Definition:</b> <a href="ProgramOptions_8h_source.html#l00032">ProgramOptions.h:32</a></div></div>
-<div class="ttc" id="classtvx_1_1HistContainer_html"><div class="ttname"><a href="classtvx_1_1HistContainer.html">tvx::HistContainer</a></div><div class="ttdoc">A very light container to hold and manipulate user histograms. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8h_source.html#l00019">HistContainer.h:19</a></div></div>
+<div class="ttc" id="classtvx_1_1ProgramOptions_html_a8e80724da0ef5f194b93b61d563f8d8f"><div class="ttname"><a href="classtvx_1_1ProgramOptions.html#a8e80724da0ef5f194b93b61d563f8d8f">tvx::ProgramOptions::GetOutPrefix</a></div><div class="ttdeci">std::string GetOutPrefix() const </div><div class="ttdef"><b>Definition:</b> <a href="ProgramOptions_8h_source.html#l00031">ProgramOptions.h:31</a></div></div>
+<div class="ttc" id="classtvx_1_1HistContainer_html"><div class="ttname"><a href="classtvx_1_1HistContainer.html">tvx::HistContainer</a></div><div class="ttdoc">A light container to hold and manipulate user histograms. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8h_source.html#l00023">HistContainer.h:23</a></div></div>
 <div class="ttc" id="RootFile_8h_html"><div class="ttname"><a href="RootFile_8h.html">RootFile.h</a></div></div>
-<div class="ttc" id="classtvx_1_1HistContainer_html_a38c4f471e0870ae666359e451407ce1e"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a38c4f471e0870ae666359e451407ce1e">tvx::HistContainer::FillDerivedHists</a></div><div class="ttdeci">virtual void FillDerivedHists()=0</div></div>
-<div class="ttc" id="classtvx_1_1HistContainer_html_a9a2cd3c8d94a1bcb72e894b2b21e2fb6"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">tvx::HistContainer::SaveAllAs</a></div><div class="ttdeci">void SaveAllAs(std::string prefix=&quot;./&quot;)</div><div class="ttdoc">Saves all histograms from the container as png images in the prefix directory. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00039">HistContainer.cxx:39</a></div></div>
-<div class="ttc" id="classtvx_1_1RootFile_html_a319d80d05b96a122d2765262c7fcc704"><div class="ttname"><a href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">tvx::RootFile::SaveAllAs</a></div><div class="ttdeci">void SaveAllAs(std::string prefix=&quot;./&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00054">RootFile.cxx:54</a></div></div>
-<div class="ttc" id="classtvx_1_1RootFile_html_a32db78a237bf0da38de31b4fed1d1fa6"><div class="ttname"><a href="classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6">tvx::RootFile::fDirs</a></div><div class="ttdeci">HistContainers fDirs</div><div class="ttdoc">A string-to-HistContainer map for convenient access to enclosed directories. </div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8h_source.html#l00036">RootFile.h:36</a></div></div>
+<div class="ttc" id="classtvx_1_1RootFile_html_a319d80d05b96a122d2765262c7fcc704"><div class="ttname"><a href="classtvx_1_1RootFile.html#a319d80d05b96a122d2765262c7fcc704">tvx::RootFile::SaveAllAs</a></div><div class="ttdeci">void SaveAllAs(std::string prefix=&quot;./&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00061">RootFile.cxx:61</a></div></div>
+<div class="ttc" id="classtvx_1_1RootFile_html_a32db78a237bf0da38de31b4fed1d1fa6"><div class="ttname"><a href="classtvx_1_1RootFile.html#a32db78a237bf0da38de31b4fed1d1fa6">tvx::RootFile::fDirs</a></div><div class="ttdeci">HistContainers fDirs</div><div class="ttdoc">A string-to-HistContainer map for convenient access to enclosed directories. </div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8h_source.html#l00040">RootFile.h:40</a></div></div>
 <div class="ttc" id="ProgramOptions_8h_html"><div class="ttname"><a href="ProgramOptions_8h.html">ProgramOptions.h</a></div></div>
-<div class="ttc" id="classtvx_1_1RootFile_html_a1de5da146b9c8066ffec82d1641a7431"><div class="ttname"><a href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">tvx::RootFile::FillDerivedHists</a></div><div class="ttdeci">void FillDerivedHists()</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00027">RootFile.cxx:27</a></div></div>
-<div class="ttc" id="classtvx_1_1RootFile_html_a9cc7d77eff81837cc515c8906156d567"><div class="ttname"><a href="classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567">tvx::RootFile::fPrgOptions</a></div><div class="ttdeci">ProgramOptions &amp; fPrgOptions</div><div class="ttdoc">Command line arguments and options requested by the user. </div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8h_source.html#l00037">RootFile.h:37</a></div></div>
-<div class="ttc" id="classtvx_1_1RootFile_html_a0735284ef89541f7cdc7b64bfa4316d3"><div class="ttname"><a href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">tvx::RootFile::Close</a></div><div class="ttdeci">virtual void Close(Option_t *option=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00044">RootFile.cxx:44</a></div></div>
+<div class="ttc" id="classtvx_1_1RootFile_html_a1de5da146b9c8066ffec82d1641a7431"><div class="ttname"><a href="classtvx_1_1RootFile.html#a1de5da146b9c8066ffec82d1641a7431">tvx::RootFile::FillDerivedHists</a></div><div class="ttdeci">void FillDerivedHists()</div><div class="ttdoc">For each histogram container calls the method of the same name in order to produce new histograms fro...</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00033">RootFile.cxx:33</a></div></div>
+<div class="ttc" id="classtvx_1_1RootFile_html_a9cc7d77eff81837cc515c8906156d567"><div class="ttname"><a href="classtvx_1_1RootFile.html#a9cc7d77eff81837cc515c8906156d567">tvx::RootFile::fPrgOptions</a></div><div class="ttdeci">ProgramOptions &amp; fPrgOptions</div><div class="ttdoc">Command line arguments and options requested by the user. </div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8h_source.html#l00043">RootFile.h:43</a></div></div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_a3f17c948b7f41eedc19945a4466c281a"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a3f17c948b7f41eedc19945a4466c281a">tvx::HistContainer::SaveAllAs</a></div><div class="ttdeci">void SaveAllAs(std::string prefix=&quot;./&quot;, std::string img_format=&quot;png&quot;)</div><div class="ttdoc">Saves all histograms from the container as png images in the prefix directory. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00053">HistContainer.cxx:53</a></div></div>
+<div class="ttc" id="classtvx_1_1RootFile_html_a0735284ef89541f7cdc7b64bfa4316d3"><div class="ttname"><a href="classtvx_1_1RootFile.html#a0735284ef89541f7cdc7b64bfa4316d3">tvx::RootFile::Close</a></div><div class="ttdeci">virtual void Close(Option_t *option=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="RootFile_8cxx_source.html#l00051">RootFile.cxx:51</a></div></div>
 <div class="ttc" id="HistContainer_8h_html"><div class="ttname"><a href="HistContainer_8h.html">HistContainer.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

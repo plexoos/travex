@@ -90,14 +90,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classtvx_1_1HistContainer-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tvx::HistContainer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">tvx::HistContainer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A very light container to hold and manipulate user histograms.  
+<p>A light container to hold and manipulate user histograms.  
  <a href="classtvx_1_1HistContainer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>&gt;</code></p>
@@ -112,44 +112,54 @@ Inheritance diagram for tvx::HistContainer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a78eda9c21315943b1c23036b43ab25f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a78eda9c21315943b1c23036b43ab25f7">HistContainer</a> (const char *name, TDirectory *motherDir=nullptr, Option_t *option=&quot;&quot;)</td></tr>
-<tr class="separator:a78eda9c21315943b1c23036b43ab25f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e1c23ecaa098771a8bf4845e3bd10c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a45e1c23ecaa098771a8bf4845e3bd10c">GetHists</a> () const </td></tr>
-<tr class="separator:a45e1c23ecaa098771a8bf4845e3bd10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4676ca5a43f9d1ec55aa644aad6658"><td class="memItemLeft" align="right" valign="top">const TH1 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#aed4676ca5a43f9d1ec55aa644aad6658">FindHist</a> (const std::string &amp;hist_name) const </td></tr>
-<tr class="separator:aed4676ca5a43f9d1ec55aa644aad6658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38c4f471e0870ae666359e451407ce1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a38c4f471e0870ae666359e451407ce1e">FillDerivedHists</a> ()=0</td></tr>
-<tr class="separator:a38c4f471e0870ae666359e451407ce1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a2cd3c8d94a1bcb72e894b2b21e2fb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">SaveAllAs</a> (std::string prefix=&quot;./&quot;)</td></tr>
-<tr class="memdesc:a9a2cd3c8d94a1bcb72e894b2b21e2fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all histograms from the container as png images in the <code>prefix</code> directory.  <a href="#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">More...</a><br /></td></tr>
-<tr class="separator:a9a2cd3c8d94a1bcb72e894b2b21e2fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b14bfaed0a6ded0e1acd09eeeb00ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#ae5b14bfaed0a6ded0e1acd09eeeb00ba">HistContainer</a> (const std::string name, TDirectory *motherDir=nullptr, const std::string option=&quot;&quot;)</td></tr>
+<tr class="memdesc:ae5b14bfaed0a6ded0e1acd09eeeb00ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty histogram container.  <a href="#ae5b14bfaed0a6ded0e1acd09eeeb00ba">More...</a><br /></td></tr>
+<tr class="separator:ae5b14bfaed0a6ded0e1acd09eeeb00ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4404b0f4ed283e6fc082db42ae877e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a1e4404b0f4ed283e6fc082db42ae877e">Add</a> (TH1 *hist)</td></tr>
+<tr class="memdesc:a1e4404b0f4ed283e6fc082db42ae877e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This container assumes the ownership of the histogram and can modify it.  <a href="#a1e4404b0f4ed283e6fc082db42ae877e">More...</a><br /></td></tr>
+<tr class="separator:a1e4404b0f4ed283e6fc082db42ae877e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470d84ba3964c3e2bd2b42aefd69faaa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a470d84ba3964c3e2bd2b42aefd69faaa">GetHists</a> () const </td></tr>
+<tr class="memdesc:a470d84ba3964c3e2bd2b42aefd69faaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the internal histogram container for external handling.  <a href="#a470d84ba3964c3e2bd2b42aefd69faaa">More...</a><br /></td></tr>
+<tr class="separator:a470d84ba3964c3e2bd2b42aefd69faaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcba12b4380fecd98eb757abbe557641"><td class="memItemLeft" align="right" valign="top">const TH1 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#adcba12b4380fecd98eb757abbe557641">operator[]</a> (const std::string &amp;hist_name) const </td></tr>
+<tr class="memdesc:adcba12b4380fecd98eb757abbe557641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the histogram with name <code>hist_name</code>, throws a <code>std::out_of_range</code> exception if no such histogram exists.  <a href="#adcba12b4380fecd98eb757abbe557641">More...</a><br /></td></tr>
+<tr class="separator:adcba12b4380fecd98eb757abbe557641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d10386f78265937809f5b22bcf4c24e"><td class="memItemLeft" align="right" valign="top">const TH1 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a2d10386f78265937809f5b22bcf4c24e">FindHist</a> (const std::string &amp;hist_name) const </td></tr>
+<tr class="memdesc:a2d10386f78265937809f5b22bcf4c24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a raw pointer to the histogram with <code>hist_name</code> name or nullptr such histogram does not exist.  <a href="#a2d10386f78265937809f5b22bcf4c24e">More...</a><br /></td></tr>
+<tr class="separator:a2d10386f78265937809f5b22bcf4c24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d27370ad27f9162a141bdc95b93422"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a12d27370ad27f9162a141bdc95b93422">FillDerivedHists</a> ()</td></tr>
+<tr class="memdesc:a12d27370ad27f9162a141bdc95b93422"><td class="mdescLeft">&#160;</td><td class="mdescRight">A user implementation of this method can be called when additional histograms need to be built from the already available ones.  <a href="#a12d27370ad27f9162a141bdc95b93422">More...</a><br /></td></tr>
+<tr class="separator:a12d27370ad27f9162a141bdc95b93422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f17c948b7f41eedc19945a4466c281a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a3f17c948b7f41eedc19945a4466c281a">SaveAllAs</a> (std::string prefix=&quot;./&quot;, std::string img_format=&quot;png&quot;)</td></tr>
+<tr class="memdesc:a3f17c948b7f41eedc19945a4466c281a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all histograms from the container as png images in the <code>prefix</code> directory.  <a href="#a3f17c948b7f41eedc19945a4466c281a">More...</a><br /></td></tr>
+<tr class="separator:a3f17c948b7f41eedc19945a4466c281a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab7a58506a6c8f89c0eafce36ad50a838"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#ab7a58506a6c8f89c0eafce36ad50a838">BookHists</a> ()=0</td></tr>
-<tr class="separator:ab7a58506a6c8f89c0eafce36ad50a838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0247b096ae40953aa6ec9bdbdd76b207"><td class="memItemLeft" align="right" valign="top">TH1 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a0247b096ae40953aa6ec9bdbdd76b207">FindHist</a> (const std::string &amp;hist_name)</td></tr>
-<tr class="separator:a0247b096ae40953aa6ec9bdbdd76b207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3287c14e0d3d4b77b2a2ac883b42615c"><td class="memItemLeft" align="right" valign="top">TH1 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a3287c14e0d3d4b77b2a2ac883b42615c">h</a> (const std::string &amp;hist_name) const </td></tr>
+<tr class="memdesc:a3287c14e0d3d4b77b2a2ac883b42615c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unrestricted access to stored histograms for friends.  <a href="#a3287c14e0d3d4b77b2a2ac883b42615c">More...</a><br /></td></tr>
+<tr class="separator:a3287c14e0d3d4b77b2a2ac883b42615c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a48038a5dfafe5b6854c5c728545d72ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">mHs</a></td></tr>
-<tr class="memdesc:a48038a5dfafe5b6854c5c728545d72ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container of unique pointers to TH1 objects indexed by names.  <a href="#a48038a5dfafe5b6854c5c728545d72ed">More...</a><br /></td></tr>
-<tr class="separator:a48038a5dfafe5b6854c5c728545d72ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af9afbd4afba6c72566a0d143ec9b1ac5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvx_1_1HistContainer.html#af9afbd4afba6c72566a0d143ec9b1ac5">fHs</a></td></tr>
+<tr class="memdesc:af9afbd4afba6c72566a0d143ec9b1ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container of unique pointers to TH1 objects indexed by names.  <a href="#af9afbd4afba6c72566a0d143ec9b1ac5">More...</a><br /></td></tr>
+<tr class="separator:af9afbd4afba6c72566a0d143ec9b1ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A very light container to hold and manipulate user histograms. </p>
+<div class="textblock"><p>A light container to hold and manipulate user histograms. </p>
+<p>This class may be used by itself or serve as a base class when additional functionality is needed to fill user histograms. When saved in a ROOT file the histograms are placed in a subdirectory named <code>name</code> in <code>motherDir</code>. </p>
 
-<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00019">19</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00023">23</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a78eda9c21315943b1c23036b43ab25f7"></a>
+<a class="anchor" id="ae5b14bfaed0a6ded0e1acd09eeeb00ba"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">HistContainer::HistContainer </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">const std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
@@ -161,7 +171,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Option_t *&#160;</td>
+          <td class="paramtype">const std::string&#160;</td>
           <td class="paramname"><em>option</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
         <tr>
@@ -172,12 +182,37 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00012">12</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
+<p>Creates an empty histogram container. </p>
+<p>Follow up by filling it with TH1* objects using <a class="el" href="classtvx_1_1HistContainer.html#a1e4404b0f4ed283e6fc082db42ae877e" title="This container assumes the ownership of the histogram and can modify it. ">HistContainer::Add(TH1* hist)</a>. </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00017">17</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab7a58506a6c8f89c0eafce36ad50a838"></a>
+<a class="anchor" id="a1e4404b0f4ed283e6fc082db42ae877e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HistContainer::Add </td>
+          <td>(</td>
+          <td class="paramtype">TH1 *&#160;</td>
+          <td class="paramname"><em>hist</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This container assumes the ownership of the histogram and can modify it. </p>
+<p>Adds the user provided histogram to the internal container.</p>
+<p>Basic checks are performed to validate the pointer. </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00029">29</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12d27370ad27f9162a141bdc95b93422"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -185,7 +220,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void tvx::HistContainer::BookHists </td>
+          <td class="memname">void tvx::HistContainer::FillDerivedHists </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -193,14 +228,19 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>A user implementation of this method can be called when additional histograms need to be built from the already available ones. </p>
+<p>Usage cases include a ratio of two histograms or a fit to the histogram data points </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00083">83</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a38c4f471e0870ae666359e451407ce1e"></a>
+<a class="anchor" id="a2d10386f78265937809f5b22bcf4c24e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -208,66 +248,27 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void tvx::HistContainer::FillDerivedHists </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aed4676ca5a43f9d1ec55aa644aad6658"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const TH1 * HistContainer::FindHist </td>
+          <td class="memname">const TH1 * tvx::HistContainer::FindHist </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>hist_name</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00019">19</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0247b096ae40953aa6ec9bdbdd76b207"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TH1 * HistContainer::FindHist </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>hist_name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00026">26</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
+<p>Returns a raw pointer to the histogram with <code>hist_name</code> name or nullptr such histogram does not exist. </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00077">77</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a45e1c23ecaa098771a8bf4845e3bd10c"></a>
+<a class="anchor" id="a470d84ba3964c3e2bd2b42aefd69faaa"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -275,7 +276,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a>&amp; tvx::HistContainer::GetHists </td>
+          <td class="memname">const <a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a> &amp; tvx::HistContainer::GetHists </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -288,33 +289,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00025">25</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+<p>Returns a reference to the internal histogram container for external handling. </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00065">65</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9a2cd3c8d94a1bcb72e894b2b21e2fb6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HistContainer::SaveAllAs </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>prefix</em> = <code>&quot;./&quot;</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Saves all histograms from the container as png images in the <code>prefix</code> directory. </p>
-<p>Some additional options, such as XX, XY, and XZ specifying logarithmic X, Y, and Z axes correspondingly, are recognized if set with TH1::SetOption(). </p>
-
-<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00039">39</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a48038a5dfafe5b6854c5c728545d72ed"></a>
+<a class="anchor" id="a3287c14e0d3d4b77b2a2ac883b42615c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -322,19 +303,108 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a> tvx::HistContainer::mHs</td>
+          <td class="memname">TH1 * tvx::HistContainer::h </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hist_name</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unrestricted access to stored histograms for friends. </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00086">86</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcba12b4380fecd98eb757abbe557641"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TH1 &amp; tvx::HistContainer::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hist_name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the histogram with name <code>hist_name</code>, throws a <code>std::out_of_range</code> exception if no such histogram exists. </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00071">71</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f17c948b7f41eedc19945a4466c281a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HistContainer::SaveAllAs </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>prefix</em> = <code>&quot;./&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>img_format</em> = <code>&quot;png&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves all histograms from the container as png images in the <code>prefix</code> directory. </p>
+<p>Some additional options, such as XX, XY, and XZ specifying logarithmic X, Y, and Z axes correspondingly, are recognized if set with TH1::SetOption().</p>
+<p>For the list of supported image formats see ROOT's TPad::SaveAs(...) </p>
+
+<p>Definition at line <a class="el" href="HistContainer_8cxx_source.html#l00053">53</a> of file <a class="el" href="HistContainer_8cxx_source.html">HistContainer.cxx</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af9afbd4afba6c72566a0d143ec9b1ac5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetvx.html#ac16d8f7f6ea425b496077988b8d49981">HistMap</a> tvx::HistContainer::fHs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>A container of unique pointers to TH1 objects indexed by names. </p>
 
-<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00038">38</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
+<p>Definition at line <a class="el" href="HistContainer_8h_source.html#l00061">61</a> of file <a class="el" href="HistContainer_8h_source.html">HistContainer.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +415,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

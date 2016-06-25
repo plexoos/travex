@@ -89,42 +89,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TrackNode.cxx</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TrackNode_8cxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrackNode_8h.html">travex/TrackNode.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<a href="TrackNode_8cxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Hit_8h.html">travex/Hit.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrackNode_8h.html">travex/TrackNode.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e">    5</a></span>&#160;<a class="code" href="classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e">tvx::TrackNode::TrackNode</a>() : TObject(),</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;   fPosition(),</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   fError(),</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   fProjError(),</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;   fMomentum(),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   fAcceptedHit(nullptr),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   fCandidateHits()</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e">    6</a></span>&#160;<a class="code" href="classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e">tvx::TrackNode::TrackNode</a>() : TObject(),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   fPosition(),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   fError(),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;   fProjError(),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   fMomentum(),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   fAcceptedHit(nullptr),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   fCandidateHits()</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893">tvx::TrackNode::Print</a>(Option_t *opt)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   fPosition.Print();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   fMomentum.Print();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893">tvx::TrackNode::Print</a>(Option_t *opt)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   fPosition.Print();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   fMomentum.Print();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacetvx.html#a7f1bff11784245f01b544e7ebea5fb88">   27</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacetvx.html#ac5cb92929ebe1b27665bb6fd63183536">tvx::operator&lt; </a>(<span class="keyword">const</span> <a class="code" href="classtvx_1_1TrackNode.html">tvx::TrackNode</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="classtvx_1_1TrackNode.html">tvx::TrackNode</a>&amp; rhs)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keywordflow">return</span> lhs.<a class="code" href="classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874">fPosition</a>.Perp() &lt; rhs.<a class="code" href="classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874">fPosition</a>.Perp();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="ttc" id="classtvx_1_1TrackNode_html_ad88f8644c650f8db4820481d6d98558e"><div class="ttname"><a href="classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e">tvx::TrackNode::TrackNode</a></div><div class="ttdeci">TrackNode()</div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8cxx_source.html#l00005">TrackNode.cxx:5</a></div></div>
-<div class="ttc" id="classtvx_1_1TrackNode_html_a60f6295c80f7fca1258a1d08f8f5e893"><div class="ttname"><a href="classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893">tvx::TrackNode::Print</a></div><div class="ttdeci">virtual void Print(Option_t *opt=&quot;&quot;) const </div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8cxx_source.html#l00016">TrackNode.cxx:16</a></div></div>
-<div class="ttc" id="classtvx_1_1TrackNode_html_ab6a6d2f23cebb2a6e8227303b8407874"><div class="ttname"><a href="classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874">tvx::TrackNode::fPosition</a></div><div class="ttdeci">TVector3 fPosition</div><div class="ttdoc">Coordinates of the track state/node position. </div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8h_source.html#l00039">TrackNode.h:39</a></div></div>
-<div class="ttc" id="classtvx_1_1TrackNode_html"><div class="ttname"><a href="classtvx_1_1TrackNode.html">tvx::TrackNode</a></div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8h_source.html#l00018">TrackNode.h:18</a></div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacetvx.html#a7f1bff11784245f01b544e7ebea5fb88">   28</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacetvx.html#ac5cb92929ebe1b27665bb6fd63183536">tvx::operator&lt; </a>(<span class="keyword">const</span> <a class="code" href="classtvx_1_1TrackNode.html">tvx::TrackNode</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="classtvx_1_1TrackNode.html">tvx::TrackNode</a>&amp; rhs)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="keywordflow">return</span> lhs.<a class="code" href="classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874">fPosition</a>.Perp() &lt; rhs.<a class="code" href="classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874">fPosition</a>.Perp();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="classtvx_1_1TrackNode_html_ad88f8644c650f8db4820481d6d98558e"><div class="ttname"><a href="classtvx_1_1TrackNode.html#ad88f8644c650f8db4820481d6d98558e">tvx::TrackNode::TrackNode</a></div><div class="ttdeci">TrackNode()</div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8cxx_source.html#l00006">TrackNode.cxx:6</a></div></div>
+<div class="ttc" id="Hit_8h_html"><div class="ttname"><a href="Hit_8h.html">Hit.h</a></div></div>
+<div class="ttc" id="classtvx_1_1TrackNode_html_a60f6295c80f7fca1258a1d08f8f5e893"><div class="ttname"><a href="classtvx_1_1TrackNode.html#a60f6295c80f7fca1258a1d08f8f5e893">tvx::TrackNode::Print</a></div><div class="ttdeci">virtual void Print(Option_t *opt=&quot;&quot;) const </div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8cxx_source.html#l00017">TrackNode.cxx:17</a></div></div>
+<div class="ttc" id="classtvx_1_1TrackNode_html_ab6a6d2f23cebb2a6e8227303b8407874"><div class="ttname"><a href="classtvx_1_1TrackNode.html#ab6a6d2f23cebb2a6e8227303b8407874">tvx::TrackNode::fPosition</a></div><div class="ttdeci">TVector3 fPosition</div><div class="ttdoc">Coordinates of the track state/node position. </div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8h_source.html#l00036">TrackNode.h:36</a></div></div>
+<div class="ttc" id="classtvx_1_1TrackNode_html"><div class="ttname"><a href="classtvx_1_1TrackNode.html">tvx::TrackNode</a></div><div class="ttdef"><b>Definition:</b> <a href="TrackNode_8h_source.html#l00017">TrackNode.h:17</a></div></div>
 <div class="ttc" id="TrackNode_8h_html"><div class="ttname"><a href="TrackNode_8h.html">TrackNode.h</a></div></div>
 <div class="ttc" id="namespacetvx_html_ac5cb92929ebe1b27665bb6fd63183536"><div class="ttname"><a href="namespacetvx.html#ac5cb92929ebe1b27665bb6fd63183536">tvx::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const tvx::Hit &amp;lhs, const tvx::Hit &amp;rhs)</div><div class="ttdef"><b>Definition:</b> <a href="Hit_8cxx_source.html#l00018">Hit.cxx:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['facceptedhit',['fAcceptedHit',['../classtvx_1_1TrackNode.html#a5973231c8f8bd5856e88ce7380a7a5c4',1,'tvx::TrackNode']]],
+  ['facceptedhit',['fAcceptedHit',['../classtvx_1_1TrackNode.html#ae11cacc2a30b16e233799179e8b1cb76',1,'tvx::TrackNode']]],
   ['fargc',['fArgc',['../classtvx_1_1ProgramOptions.html#ab75dd2c984d89f15a699b4f51de3ecd3',1,'tvx::ProgramOptions']]],
   ['fargv',['fArgv',['../classtvx_1_1ProgramOptions.html#a46d71284ccb25fe378787ca06628fcb7',1,'tvx::ProgramOptions']]],
   ['fcandidatehits',['fCandidateHits',['../classtvx_1_1TrackNode.html#a517dd27a9160cbffe0eecb039ae2585d',1,'tvx::TrackNode']]],
@@ -9,6 +9,7 @@ var searchData=
   ['ferror',['fError',['../classtvx_1_1TrackNode.html#a2b150f010fc7f7236a93be3632e9294f',1,'tvx::TrackNode']]],
   ['fevent',['fEvent',['../classtvx_1_1Track.html#a105ac3890fff756a9f12596b27e68325',1,'tvx::Track']]],
   ['fhits',['fHits',['../classtvx_1_1Event.html#a748b38fe8952b9f3e28d7c853254168d',1,'tvx::Event']]],
+  ['fhs',['fHs',['../classtvx_1_1HistContainer.html#af9afbd4afba6c72566a0d143ec9b1ac5',1,'tvx::HistContainer']]],
   ['finfilepath',['fInFilePath',['../classtvx_1_1ProgramOptions.html#ae6fdf049b8b9ae1ff23b2e23853aa468',1,'tvx::ProgramOptions']]],
   ['fmaxeventsuser',['fMaxEventsUser',['../classtvx_1_1ProgramOptions.html#ae6b2bfb2a773d1075331f074c1d13907',1,'tvx::ProgramOptions']]],
   ['fmomentum',['fMomentum',['../classtvx_1_1TrackNode.html#acf3754473a989625f82f0cbcb15e6ceb',1,'tvx::TrackNode']]],

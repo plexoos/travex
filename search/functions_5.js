@@ -1,19 +1,6 @@
 var searchData=
 [
-  ['getacceptedhit',['GetAcceptedHit',['../classtvx_1_1GenericTrackNode.html#a31f20ed28dea3542ca1966b1655c9d59',1,'tvx::GenericTrackNode::GetAcceptedHit()'],['../classtvx_1_1TrackNode.html#aa656a4df7dcadc630c84cafbd3608fd4',1,'tvx::TrackNode::GetAcceptedHit()']]],
-  ['getcandidatehits',['GetCandidateHits',['../classtvx_1_1GenericTrackNode.html#a6d077c3f7f3da3f799f1f13b7fe1220f',1,'tvx::GenericTrackNode::GetCandidateHits()'],['../classtvx_1_1TrackNode.html#a89e7c6c0d02a5f1e4a4f8b5e7ed12fcb',1,'tvx::TrackNode::GetCandidateHits()']]],
-  ['getenergylosses',['GetEnergyLosses',['../classtvx_1_1GenericTrack.html#a624cd4b9adb29bd52044b755e29b338f',1,'tvx::GenericTrack::GetEnergyLosses()'],['../classtvx_1_1Track.html#a3ae03de86de9bc3a783391a95e286906',1,'tvx::Track::GetEnergyLosses()']]],
-  ['geterror',['GetError',['../classtvx_1_1GenericTrackNode.html#ad0bfac79b1dad4d4686dddafff7174e8',1,'tvx::GenericTrackNode::GetError()'],['../classtvx_1_1TrackNode.html#a99f7f71f31463e16835855937c3ba865',1,'tvx::TrackNode::GetError()']]],
-  ['gethists',['GetHists',['../classtvx_1_1HistContainer.html#a45e1c23ecaa098771a8bf4845e3bd10c',1,'tvx::HistContainer']]],
-  ['gethits',['GetHits',['../classtvx_1_1Event.html#aa5f427be1b2b789545f90c14e1838423',1,'tvx::Event::GetHits()'],['../classtvx_1_1GenericEvent.html#a04ffa9d7bc53a5bc79e0d920ea183b17',1,'tvx::GenericEvent::GetHits()']]],
-  ['getmaxeventsuser',['GetMaxEventsUser',['../classtvx_1_1ProgramOptions.html#a4f19c9090c5c3465933d5493c09d67a1',1,'tvx::ProgramOptions']]],
-  ['getmomentum',['GetMomentum',['../classtvx_1_1GenericTrackNode.html#a629c18e2085eda973a1d46f4926bc004',1,'tvx::GenericTrackNode::GetMomentum()'],['../classtvx_1_1TrackNode.html#a63cff025ea4785c7061b7d2755869271',1,'tvx::TrackNode::GetMomentum()']]],
-  ['getnodes',['GetNodes',['../classtvx_1_1GenericTrack.html#aeb84b9629f186b7b38e4ae982ee8e001',1,'tvx::GenericTrack::GetNodes()'],['../classtvx_1_1Track.html#a31e54aad9c7bf73bc8ec4d25fbe548a9',1,'tvx::Track::GetNodes()']]],
-  ['getoutfilename',['GetOutFileName',['../classtvx_1_1ProgramOptions.html#adc2f172aecadf527814735e1d133f905',1,'tvx::ProgramOptions']]],
-  ['getoutprefix',['GetOutPrefix',['../classtvx_1_1ProgramOptions.html#a8e80724da0ef5f194b93b61d563f8d8f',1,'tvx::ProgramOptions']]],
-  ['getparentevent',['GetParentEvent',['../classtvx_1_1GenericTrack.html#ab9bb2e44f1d4b417a8daeb2d3687816f',1,'tvx::GenericTrack::GetParentEvent()'],['../classtvx_1_1Track.html#a97c84f9340af8d6a6ee2b3a5983aeb09',1,'tvx::Track::GetParentEvent()']]],
-  ['getposition',['GetPosition',['../classtvx_1_1GenericHit.html#aaf9b2db81b8f8d5caddd44b9c67e296b',1,'tvx::GenericHit::GetPosition()'],['../classtvx_1_1GenericTrackNode.html#a060eb5c7e55c2ab58f58af2e9571c0ac',1,'tvx::GenericTrackNode::GetPosition()'],['../classtvx_1_1Hit.html#a02f8884cea757d5d0ea5747c2a509bbd',1,'tvx::Hit::GetPosition()'],['../classtvx_1_1TrackNode.html#a039d0ea4d512cb670c77d347c7316c83',1,'tvx::TrackNode::GetPosition()']]],
-  ['getprojerror',['GetProjError',['../classtvx_1_1GenericTrackNode.html#a85f78c9adf7eea8f6c5a24a8438db65d',1,'tvx::GenericTrackNode::GetProjError()'],['../classtvx_1_1TrackNode.html#aeb4c83c408fea258b89d8c548afb68d9',1,'tvx::TrackNode::GetProjError()']]],
-  ['getsparsity',['GetSparsity',['../classtvx_1_1ProgramOptions.html#a674428f592758f6c245e06c9c8d59ac1',1,'tvx::ProgramOptions']]],
-  ['gettracks',['GetTracks',['../classtvx_1_1Event.html#aa86032fed7d48cd7dda1989eefe7d0f8',1,'tvx::Event::GetTracks()'],['../classtvx_1_1GenericEvent.html#ae418035e9a27bdef5d647bd77efd3239',1,'tvx::GenericEvent::GetTracks()']]]
+  ['h',['h',['../classtvx_1_1HistContainer.html#a3287c14e0d3d4b77b2a2ac883b42615c',1,'tvx::HistContainer']]],
+  ['histcontainer',['HistContainer',['../classtvx_1_1HistContainer.html#ae5b14bfaed0a6ded0e1acd09eeeb00ba',1,'tvx::HistContainer']]],
+  ['hit',['Hit',['../classtvx_1_1Hit.html#ae415f89eda0729fd03f1f86c45535e1c',1,'tvx::Hit']]]
 ];

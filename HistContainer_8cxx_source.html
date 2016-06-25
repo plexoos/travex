@@ -95,106 +95,104 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;TPaletteAxis.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;TROOT.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HistContainer_8h.html">travex/HistContainer.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacetvx.html">tvx</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">travex/utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HistContainer_8h.html">travex/HistContainer.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacetvx.html">tvx</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#a78eda9c21315943b1c23036b43ab25f7">   12</a></span>&#160;<a class="code" href="classtvx_1_1HistContainer.html#a78eda9c21315943b1c23036b43ab25f7">HistContainer::HistContainer</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, TDirectory* motherDir, Option_t* option) :</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   TDirectoryFile(name, name, option, motherDir),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;   mHs()</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#aed4676ca5a43f9d1ec55aa644aad6658">   19</a></span>&#160;<span class="keyword">const</span> TH1* <a class="code" href="classtvx_1_1HistContainer.html#aed4676ca5a43f9d1ec55aa644aad6658">HistContainer::FindHist</a>(<span class="keyword">const</span> std::string&amp; hist_name)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keyword">auto</span> iter = <a class="code" href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">mHs</a>.find(hist_name);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <span class="keywordflow">return</span> ( iter != <a class="code" href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">mHs</a>.end() ) ? iter-&gt;second.get() : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#ae5b14bfaed0a6ded0e1acd09eeeb00ba">   17</a></span>&#160;<a class="code" href="classtvx_1_1HistContainer.html#ae5b14bfaed0a6ded0e1acd09eeeb00ba">HistContainer::HistContainer</a>(<span class="keyword">const</span> std::string name, TDirectory* motherDir, <span class="keyword">const</span> std::string option) :</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   TDirectoryFile(name.c_str(), name.c_str(), option.c_str(), motherDir),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   fHs()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   cd();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#a0247b096ae40953aa6ec9bdbdd76b207">   26</a></span>&#160;TH1* <a class="code" href="classtvx_1_1HistContainer.html#aed4676ca5a43f9d1ec55aa644aad6658">HistContainer::FindHist</a>(<span class="keyword">const</span> std::string&amp; hist_name)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">auto</span> iter = <a class="code" href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">mHs</a>.find(hist_name);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keywordflow">return</span> ( iter != <a class="code" href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">mHs</a>.end() ) ? iter-&gt;second.get() : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1HistContainer.html#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">HistContainer::SaveAllAs</a>(std::string prefix)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   TCanvas canvas(<span class="stringliteral">&quot;canvas&quot;</span>, <span class="stringliteral">&quot;canvas&quot;</span>, 1200, 600);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   canvas.UseCurrentStyle();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   canvas.SetGridx(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   canvas.SetGridy(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; iHist : <a class="code" href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">mHs</a>)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      std::string histName = iHist.first;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      std::unique_ptr&lt;TH1&gt;&amp; hist = iHist.second;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">if</span> (!hist) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;         Error(<span class="stringliteral">&quot;SaveAllAs&quot;</span>, <span class="stringliteral">&quot;No object found for key %s. Skipping...&quot;</span>, histName.c_str());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordtype">char</span>* opts = (<span class="keywordtype">char</span>*) hist-&gt;GetOption();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;XX&quot;</span>)) canvas.SetLogx(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">else</span> canvas.SetLogx(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;XY&quot;</span>)) canvas.SetLogy(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">else</span> canvas.SetLogy(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;XZ&quot;</span>)) canvas.SetLogz(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">else</span> canvas.SetLogz(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#a1e4404b0f4ed283e6fc082db42ae877e">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1HistContainer.html#a1e4404b0f4ed283e6fc082db42ae877e">HistContainer::Add</a>(TH1* hist)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <span class="keywordflow">if</span> (!hist || std::string(hist-&gt;GetName()).empty() ) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="utils_8h.html#a67d4626229accbf53adb685a5bdedab7">TVX_WARNING</a>(<span class="stringliteral">&quot;Cannot add invalid histogram&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   std::string hist_name(hist-&gt;GetName());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <span class="keywordflow">if</span> ( <a class="code" href="classtvx_1_1HistContainer.html#a2d10386f78265937809f5b22bcf4c24e">FindHist</a>(hist_name) )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="utils_8h.html#a67d4626229accbf53adb685a5bdedab7">TVX_WARNING</a>(<span class="stringliteral">&quot;Replacing existing histogram %s&quot;</span>, hist_name.c_str());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <a class="code" href="classtvx_1_1HistContainer.html#af9afbd4afba6c72566a0d143ec9b1ac5">fHs</a>[hist_name].reset(hist);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classtvx_1_1HistContainer.html#a3f17c948b7f41eedc19945a4466c281a">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtvx_1_1HistContainer.html#a3f17c948b7f41eedc19945a4466c281a">HistContainer::SaveAllAs</a>(std::string prefix, std::string img_format)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keyword">static</span> TCanvas canvas(<span class="stringliteral">&quot;canvas&quot;</span>, <span class="stringliteral">&quot;canvas&quot;</span>, 1200, 600);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   canvas.UseCurrentStyle();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   canvas.SetGridx(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   canvas.SetGridy(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; iHist : <a class="code" href="classtvx_1_1HistContainer.html#af9afbd4afba6c72566a0d143ec9b1ac5">fHs</a>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      std::string histName = iHist.first;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      std::unique_ptr&lt;TH1&gt;&amp; hist = iHist.second;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordtype">char</span>* opts = (<span class="keywordtype">char</span>*) hist-&gt;GetOption();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      hist-&gt;Draw();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      TColor *color;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordtype">float</span> r, g, b;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;whit_zro&quot;</span>)) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;         hist-&gt;GetZaxis()-&gt;SetRangeUser(-1,1);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         hist-&gt;SetContour(11);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         gPad-&gt;Update();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         TPaletteAxis *palette = (TPaletteAxis*) hist-&gt;GetListOfFunctions()-&gt;FindObject(<span class="stringliteral">&quot;palette&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;         color = gROOT-&gt;GetColor( palette-&gt;GetValueColor(0) );</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;         color-&gt;GetRGB(r, g, b);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;         color-&gt;SetRGB(255, 255, 255);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// Now check if there are other associated objects like functions and graphs</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      TList* sub_list = hist-&gt;GetListOfFunctions();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      TIter  next(sub_list);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">while</span> ( TObject *iObj = (TObject*) next() )</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="keywordflow">if</span> ( !iObj ) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         <span class="keywordflow">if</span> ( ( (TClass*) iObj-&gt;IsA() )-&gt;InheritsFrom(<span class="stringliteral">&quot;TLine&quot;</span>) )</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            iObj-&gt;Draw();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      std::string sFileName = prefix + <span class="stringliteral">&quot;/c_&quot;</span> + histName + <span class="stringliteral">&quot;.png&quot;</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      canvas.SaveAs(sFileName.c_str());</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="comment">// Restore modified color</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;whit_zro&quot;</span>)) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;         color-&gt;SetRGB(r, g, b);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="ttc" id="classtvx_1_1HistContainer_html_a48038a5dfafe5b6854c5c728545d72ed"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a48038a5dfafe5b6854c5c728545d72ed">tvx::HistContainer::mHs</a></div><div class="ttdeci">HistMap mHs</div><div class="ttdoc">A container of unique pointers to TH1 objects indexed by names. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8h_source.html#l00038">HistContainer.h:38</a></div></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;XX&quot;</span>)) canvas.SetLogx(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">else</span> canvas.SetLogx(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;XY&quot;</span>)) canvas.SetLogy(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">else</span> canvas.SetLogy(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;XZ&quot;</span>)) canvas.SetLogz(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordflow">else</span> canvas.SetLogz(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      hist-&gt;Draw();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      TColor *color = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordtype">float</span> r, g, b;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">if</span> (strstr(opts, <span class="stringliteral">&quot;whit_zro&quot;</span>)) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;         hist-&gt;GetZaxis()-&gt;SetRangeUser(-1,1);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         hist-&gt;SetContour(11);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         gPad-&gt;Update();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         TPaletteAxis *palette = (TPaletteAxis*) hist-&gt;GetListOfFunctions()-&gt;FindObject(<span class="stringliteral">&quot;palette&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;         color = gROOT-&gt;GetColor( palette-&gt;GetValueColor(0) );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         color-&gt;GetRGB(r, g, b);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         color-&gt;SetRGB(255, 255, 255);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="comment">// Now check if there are other associated objects like functions and graphs</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      TList* sub_list = hist-&gt;GetListOfFunctions();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      TIter  next(sub_list);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">while</span> ( TObject *iObj = (TObject*) next() )</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         <span class="keywordflow">if</span> ( !iObj ) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;         iObj-&gt;Draw();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      std::string sFileName = prefix + <span class="stringliteral">&quot;/&quot;</span> + histName + <span class="stringliteral">&quot;.&quot;</span> + img_format;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      canvas.SaveAs(sFileName.c_str());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="comment">// Restore modified color</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keywordflow">if</span> (color) color-&gt;SetRGB(r, g, b);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_ae5b14bfaed0a6ded0e1acd09eeeb00ba"><div class="ttname"><a href="classtvx_1_1HistContainer.html#ae5b14bfaed0a6ded0e1acd09eeeb00ba">tvx::HistContainer::HistContainer</a></div><div class="ttdeci">HistContainer(const std::string name, TDirectory *motherDir=nullptr, const std::string option=&quot;&quot;)</div><div class="ttdoc">Creates an empty histogram container. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00017">HistContainer.cxx:17</a></div></div>
 <div class="ttc" id="namespacetvx_html"><div class="ttname"><a href="namespacetvx.html">tvx</a></div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00012">Event.h:12</a></div></div>
-<div class="ttc" id="classtvx_1_1HistContainer_html_a9a2cd3c8d94a1bcb72e894b2b21e2fb6"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a9a2cd3c8d94a1bcb72e894b2b21e2fb6">tvx::HistContainer::SaveAllAs</a></div><div class="ttdeci">void SaveAllAs(std::string prefix=&quot;./&quot;)</div><div class="ttdoc">Saves all histograms from the container as png images in the prefix directory. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00039">HistContainer.cxx:39</a></div></div>
-<div class="ttc" id="classtvx_1_1HistContainer_html_aed4676ca5a43f9d1ec55aa644aad6658"><div class="ttname"><a href="classtvx_1_1HistContainer.html#aed4676ca5a43f9d1ec55aa644aad6658">tvx::HistContainer::FindHist</a></div><div class="ttdeci">const TH1 * FindHist(const std::string &amp;hist_name) const </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00019">HistContainer.cxx:19</a></div></div>
-<div class="ttc" id="classtvx_1_1HistContainer_html_a78eda9c21315943b1c23036b43ab25f7"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a78eda9c21315943b1c23036b43ab25f7">tvx::HistContainer::HistContainer</a></div><div class="ttdeci">HistContainer(const char *name, TDirectory *motherDir=nullptr, Option_t *option=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00012">HistContainer.cxx:12</a></div></div>
+<div class="ttc" id="utils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_af9afbd4afba6c72566a0d143ec9b1ac5"><div class="ttname"><a href="classtvx_1_1HistContainer.html#af9afbd4afba6c72566a0d143ec9b1ac5">tvx::HistContainer::fHs</a></div><div class="ttdeci">HistMap fHs</div><div class="ttdoc">A container of unique pointers to TH1 objects indexed by names. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8h_source.html#l00061">HistContainer.h:61</a></div></div>
+<div class="ttc" id="utils_8h_html_a67d4626229accbf53adb685a5bdedab7"><div class="ttname"><a href="utils_8h.html#a67d4626229accbf53adb685a5bdedab7">TVX_WARNING</a></div><div class="ttdeci">#define TVX_WARNING(...)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00008">utils.h:8</a></div></div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_a2d10386f78265937809f5b22bcf4c24e"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a2d10386f78265937809f5b22bcf4c24e">tvx::HistContainer::FindHist</a></div><div class="ttdeci">const TH1 * FindHist(const std::string &amp;hist_name) const </div><div class="ttdoc">Returns a raw pointer to the histogram with hist_name name or nullptr such histogram does not exist...</div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8h_source.html#l00077">HistContainer.h:77</a></div></div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_a3f17c948b7f41eedc19945a4466c281a"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a3f17c948b7f41eedc19945a4466c281a">tvx::HistContainer::SaveAllAs</a></div><div class="ttdeci">void SaveAllAs(std::string prefix=&quot;./&quot;, std::string img_format=&quot;png&quot;)</div><div class="ttdoc">Saves all histograms from the container as png images in the prefix directory. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00053">HistContainer.cxx:53</a></div></div>
+<div class="ttc" id="classtvx_1_1HistContainer_html_a1e4404b0f4ed283e6fc082db42ae877e"><div class="ttname"><a href="classtvx_1_1HistContainer.html#a1e4404b0f4ed283e6fc082db42ae877e">tvx::HistContainer::Add</a></div><div class="ttdeci">void Add(TH1 *hist)</div><div class="ttdoc">This container assumes the ownership of the histogram and can modify it. </div><div class="ttdef"><b>Definition:</b> <a href="HistContainer_8cxx_source.html#l00029">HistContainer.cxx:29</a></div></div>
 <div class="ttc" id="HistContainer_8h_html"><div class="ttname"><a href="HistContainer_8h.html">HistContainer.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 26 2016 14:54:56 for travex by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 24 2016 23:02:02 for travex by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
