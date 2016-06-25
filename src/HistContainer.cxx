@@ -38,12 +38,6 @@ void HistContainer::Add(TH1* hist)
 }
 
 
-const TH1* HistContainer::FindHist(const std::string& hist_name) const
-{
-   return h(hist_name);
-}
-
-
 /**
  * Saves all histograms from the container as png images in the `prefix`
  * directory. Some additional options, such as XX, XY, and XZ specifying

@@ -58,6 +58,12 @@ inline const TH1& HistContainer::operator[](const std::string& hist_name) const
 }
 
 
+inline const TH1* HistContainer::FindHist(const std::string& hist_name) const
+{
+   return h(hist_name);
+}
+
+
 inline void HistContainer::FillDerivedHists() {}
 
 
