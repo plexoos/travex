@@ -5,6 +5,12 @@ language: cpp
 compiler:
   - gcc
 
+env:
+  global:
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+    #   via the "travis encrypt" command using the project repo's public key
+    - secure: "c/Cxgz0pg7xrp5aG1qXtK+uWDvljMGB9ucq4nIhuINd8zS4kT2s6VvtdzLnpDb9zgxESqOJm8aqThOYUbEbdAqJZxEHzBPOpqbXjhatDrIDiZz+cbe9CTPBRtq55qNc9RTxICM5f556YKSrrvCDURl9vqkd7pXPjBUuog+51nssUX3eQ0+ROQ/Urp4/mEIMl8ZQm2S34ahQhhvxsSEWU2IFu/W+VmE5AboHyydE3cj7xDZVgLTzuWIXs6S+ncJ9e1RNyptzCJ/ZDPpH+jgi4Qw6CCqQmM2jb89fqmOneA/RXyF0pTTxL49M2onrSK/tCE///+m2vGSbZL/X3iTP4fvP5tRLK26Ihv3vU0WgHS7xPMM/GBI1dlsjDBk++busmBrYoOpCKkg7H3IEtdCdgFbbnhEhCOqNsThVgg1A+9bDTg55vM5R1BIDs/q79SjoQSfjIQE3dst+POYusspBnUmkjHBMvclVcEo1mmZjhvS9PCSCqqehC6w27qVmEdylbjVUMX9hYKqeR9b9LCIIlStMYMn9mN+5LNmmeTKm5I4We5xWIBRD6pLGq3hBg7GkI7OwrxmMwS/sAHZLPcmejADXDahLIFWYnXz5gKI4wZAC6ze+6o2qP1hRZM/0+Ej/i9ZLaEEPk0cXAX/KCJfFMw1Hr3tBvSkoYdzKr5t4i3O4="
+
 addons:
   apt:
     sources:
@@ -17,6 +23,14 @@ addons:
       - libboost-regex1.55-dev
       - libboost-filesystem1.55-dev
       - libboost-program-options1.55-dev
+  coverity_scan:
+    project:
+      name: "plexoos/travex"
+      description: "Build submitted via Travis CI"
+    notification_email: d.s@plexoos.com
+    build_command_prepend: "mkdir build-coverity/; cd build-coverity/; cmake ../"
+    build_command: "make -j4"
+    branch_pattern: coverity_scan
 
 branch:
   only:
