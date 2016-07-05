@@ -6,6 +6,7 @@
 #include "TROOT.h"
 
 #include "travex/config.h"
+#include "travex/utils.h"
 #include "travex/HistContainer.h"
 #include "travex/ProgramOptions.h"
 
@@ -55,6 +56,8 @@ void RootFile::Close(Option_t *option)
    }
 
    TFile::Close(option);
+
+   TVX_INFO("Closed ROOT file: %s", GetName());
 }
 
 
