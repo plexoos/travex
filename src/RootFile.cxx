@@ -33,10 +33,10 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
  */
 void RootFile::Finalize()
 {
-   for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
+   for (const auto& subDir : fDirs)
    {
       std::string  dirName = subDir.first;
-      HistContainer *container = subDir.second;
+      HistContainer *container = subDir.second.get();
 
       if (!container) {
          Error("Finalize", "No container/directory found for key %s. Skipping...", dirName.c_str());
@@ -72,10 +72,10 @@ void RootFile::SaveAllAs(std::string prefix)
    else
       Warning("SaveAllAs", "Perhaps directory already exists: %s", prefix.c_str());
 
-   for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
+   for (const auto& subDir : fDirs)
    {
       std::string  dirName = subDir.first;
-      HistContainer *container = subDir.second;
+      HistContainer *container = subDir.second.get();
 
       if (!container) {
          Error("SaveAllAs", "No container/directory found for key %s. Skipping...", dirName.c_str());

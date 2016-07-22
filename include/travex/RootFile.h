@@ -12,7 +12,7 @@
 
 namespace tvx {
 
-typedef std::map<std::string, HistContainer*>   HistContainers;
+typedef std::map<std::string, std::unique_ptr<HistContainer> >   HistContainers;
 
 
 /**
@@ -67,7 +67,7 @@ protected:
 inline HistContainer* RootFile::hc(const std::string& hc_name) const
 {
    auto iter = fDirs.find(hc_name);
-   return ( iter != fDirs.end() ) ? iter->second : nullptr;
+   return ( iter != fDirs.end() ) ? iter->second.get() : nullptr;
 }
 
 
