@@ -36,6 +36,15 @@ public:
 
 protected:
 
+   /// Adds HistContainer to the file
+   /// Current implementation is limited to Allocate-Add-Allocate-Add workflow:
+   // \code
+   // Add(new FooContainer("foo"))
+   // Add(new BarContainer("bar"))
+   // \endcode
+   // Allocate-Allocate-Add-Add will produce a wrong directory tree.
+   void Add(HistContainer *hc);
+
    /// Unrestricted access to a stored histogram container by its name for
    /// friends and those who know what they are doing
    HistContainer* hc(const std::string& hc_name) const;
