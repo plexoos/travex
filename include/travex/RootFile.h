@@ -36,12 +36,24 @@ public:
 
 protected:
 
+   /// Unrestricted access to a stored histogram container by its name for
+   /// friends and those who know what they are doing
+   HistContainer* hc(const std::string& hc_name) const;
+
    /// A string-to-HistContainer map for convenient access to enclosed directories
    HistContainers  fDirs;
 
    /// Command line arguments and options requested by the user
    ProgramOptions& fPrgOptions;
 };
+
+
+
+inline HistContainer* RootFile::hc(const std::string& hc_name) const
+{
+   auto iter = fDirs.find(hc_name);
+   return ( iter != fDirs.end() ) ? iter->second : nullptr;
+}
 
 }
 
