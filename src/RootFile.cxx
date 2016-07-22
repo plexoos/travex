@@ -92,3 +92,10 @@ void RootFile::SaveAllAs(std::string prefix)
       container->SaveAllAs(path);
    }
 }
+
+
+void RootFile::Add(HistContainer *hc)
+{
+   fDirs.insert({hc->GetName(), hc});
+   cd();
+}
