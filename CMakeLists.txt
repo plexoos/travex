@@ -10,7 +10,7 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 find_package(Boost 1.54.0 REQUIRED COMPONENTS program_options regex filesystem)
 
 # This project depends on ROOT
-find_package(ROOT)
+find_package(ROOT COMPONENTS HistPainter)
 
 # Since this projects heavily depend on ROOT check the ROOT's '-m' compilation flag
 # and use the same
@@ -73,11 +73,11 @@ add_library (
 	travex_dict.cxx
 )
 
-link_directories(${ROOT_LIBRARY_DIR})
+target_link_libraries(travex ${Boost_LIBRARIES} ${ROOT_LIBRARIES} pthread)
 
 add_executable(test-lib tests/test-lib.cxx)
 
-target_link_libraries(test-lib travex ${Boost_LIBRARIES} ${ROOT_LIBRARIES} HistPainter pthread)
+target_link_libraries(test-lib travex)
 
 
 # Installation section
