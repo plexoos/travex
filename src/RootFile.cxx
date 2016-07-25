@@ -31,7 +31,7 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
  * For each histogram container calls the method of the same name in order to
  * produce new histograms from already filled histograms.
  */
-void RootFile::FillDerivedHists()
+void RootFile::Finalize()
 {
    for (const std::pair<std::string, HistContainer*>& subDir : fDirs)
    {
@@ -39,12 +39,12 @@ void RootFile::FillDerivedHists()
       HistContainer *container = subDir.second;
 
       if (!container) {
-         Error("FillDerivedHists", "No container/directory found for key %s. Skipping...", dirName.c_str());
+         Error("Finalize", "No container/directory found for key %s. Skipping...", dirName.c_str());
          continue;
       }
 
       container->cd();
-      container->FillDerivedHists();
+      container->Finalize();
    }
 }
 

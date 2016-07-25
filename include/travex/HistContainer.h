@@ -44,7 +44,7 @@ public:
    /// A user implementation of this method can be called when additional
    /// histograms need to be built from the already available ones. Usage cases
    /// include a ratio of two histograms or a fit to the histogram data points
-   virtual void FillDerivedHists();
+   virtual void Finalize();
 
    /// Saves all histograms from the container as png images in the `prefix`
    /// directory
@@ -80,7 +80,7 @@ inline const TH1* HistContainer::FindHist(const std::string& hist_name) const
 }
 
 
-inline void HistContainer::FillDerivedHists() {}
+inline void HistContainer::Finalize() {}
 
 
 inline TH1* HistContainer::h(const std::string& hist_name) const
