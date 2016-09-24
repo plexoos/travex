@@ -49,6 +49,12 @@ protected:
    /// friends and those who know what they are doing
    HistContainer* hc(const std::string& hc_name) const;
 
+   /// Templated variant of `hc()` hidding the cast to a user class derived
+   /// from HistContainer. Can be used as a shorthand when calling a non-virtual
+   /// method of the user class.
+   template<typename HistContainer_t>
+   HistContainer_t* hc(const std::string& hc_name) const;
+
    /// A string-to-HistContainer map for convenient access to enclosed directories
    HistContainers  fDirs;
 
@@ -62,6 +68,13 @@ inline HistContainer* RootFile::hc(const std::string& hc_name) const
 {
    auto iter = fDirs.find(hc_name);
    return ( iter != fDirs.end() ) ? iter->second : nullptr;
+}
+
+
+template<typename HistContainer_t>
+inline HistContainer_t* RootFile::hc(const std::string& hc_name) const
+{
+   return static_cast<HistContainer_t*>( hc(hc_name) );
 }
 
 }
