@@ -28,6 +28,28 @@ RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle
 
 
 /**
+ * Adds the user provided histogram container to the internal collection. Basic
+ * checks are performed to validate the pointer.
+ */
+void RootFile::Add(HistContainer* hist_container)
+{
+   if (!hist_container || std::string(hist_container->GetName()).empty() ) {
+      TVX_WARNING("Cannot add invalid histogram container");
+      return;
+   }
+
+   std::string hc_name(hist_container->GetName());
+
+   if ( hc(hc_name) )
+      TVX_WARNING("Replacing existing histogram %s", hc_name.c_str());
+
+   fDirs[hc_name].reset(hist_container);
+
+   cd();
+}
+
+
+/**
  * For each histogram container calls the method of the same name in order to
  * produce new histograms from already filled histograms.
  */
@@ -91,11 +113,4 @@ void RootFile::SaveAllAs(std::string prefix)
 
       container->SaveAllAs(path);
    }
-}
-
-
-void RootFile::Add(HistContainer *hc)
-{
-   fDirs.insert({hc->GetName(), hc});
-   cd();
 }

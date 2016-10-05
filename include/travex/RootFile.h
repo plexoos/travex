@@ -28,6 +28,18 @@ public:
 
    RootFile(ProgramOptions& prgOpts, Option_t* option="", const char* ftitle="", Int_t compress=1);
 
+   /// Adds HistContainer to this RootFile who takes the ownership of the
+   /// histogram container and can modify it. Current implementation is limited
+   /// to Allocate-Add-Allocate-Add workflow:
+   ///
+   /// \code
+   /// Add(new FooContainer("foo"))
+   /// Add(new BarContainer("bar"))
+   /// \endcode
+   ///
+   /// Allocate-Allocate-Add-Add will produce a wrong directory tree.
+   void Add(HistContainer* hc);
+
    void Finalize();
    const ProgramOptions& GetPrgOptions() { return fPrgOptions; }
 
@@ -35,15 +47,6 @@ public:
    void SaveAllAs(std::string prefix="./");
 
 protected:
-
-   /// Adds HistContainer to the file
-   /// Current implementation is limited to Allocate-Add-Allocate-Add workflow:
-   // \code
-   // Add(new FooContainer("foo"))
-   // Add(new BarContainer("bar"))
-   // \endcode
-   // Allocate-Allocate-Add-Add will produce a wrong directory tree.
-   void Add(HistContainer *hc);
 
    /// Unrestricted access to a stored histogram container by its name for
    /// friends and those who know what they are doing
