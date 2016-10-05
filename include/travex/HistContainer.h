@@ -37,10 +37,6 @@ public:
    /// a `std::out_of_range` exception if no such histogram exists
    const TH1& operator[](const std::string& hist_name) const;
 
-   /// Returns a raw pointer to the histogram with `hist_name` name or nullptr
-   /// such histogram does not exist
-   const TH1* FindHist(const std::string& hist_name) const;
-
    /// A user implementation of this method can be called when additional
    /// histograms need to be built from the already available ones. Usage cases
    /// include a ratio of two histograms or a fit to the histogram data points
@@ -74,10 +70,6 @@ inline const TH1& HistContainer::operator[](const std::string& hist_name) const
 }
 
 
-inline const TH1* HistContainer::FindHist(const std::string& hist_name) const
-{
-   return h(hist_name);
-}
 
 
 inline void HistContainer::Finalize() {}

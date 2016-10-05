@@ -35,7 +35,7 @@ void HistContainer::Add(TH1* hist)
 
    std::string hist_name(hist->GetName());
 
-   if ( FindHist(hist_name) )
+   if ( h(hist_name) )
       TVX_WARNING("Replacing existing histogram %s", hist_name.c_str());
 
    fHs[hist_name].reset(hist);
