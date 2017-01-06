@@ -79,6 +79,12 @@ void RootFile::Close(Option_t *option)
 
    TFile::Close(option);
 
+   // Since ROOT file owns the subdirectories they will be destroyed at closing.
+   // Release the unique_ptr-s to HistContainer-s to avoid segfault in following
+   // destructor call
+   for (auto& subDir : fDirs)
+      subDir.second.release();
+
    TVX_INFO("Closed ROOT file: %s", GetName());
 }
 
