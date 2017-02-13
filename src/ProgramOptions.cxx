@@ -1,7 +1,7 @@
 #include <exception>
 #include <iostream>
 #include <fstream>
-#include <boost/regex.hpp>
+#include <boost/filesystem.hpp>
 
 #include "travex/utils.h"
 #include "travex/ProgramOptions.h"
@@ -103,23 +103,27 @@ void ProgramOptions::VerifyOptions()
 
 
 /**
- * Form the name of the output file from the input file name by appending
- * a suffix to it. The following rules applied depending on the input file
- * extension:
+ * Create a name for the output file from the input file's base name, a suffix,
+ * and a new extension provided as arguments. For example,
  *
- * input_file_name      -> input_file_name.<suffix>.root
- * input_file_name.blah -> input_file_name.blah.<suffix>.root
- * input_file_name.root -> input_file_name.<suffix>.root
+ * some/path/to/input_file_name    -> input_file_name_<suffix>.<extension>
+ * /a/path/to/input_file_name.blah -> input_file_name_blah_<suffix>.<extension>
+ *
  */
-std::string ProgramOptions::GetOutFileName(std::string suffix) const
+std::string ProgramOptions::GetOutFileName(std::string suffix, std::string extension) const
 {
-   boost::regex extension_regex("^(.*)\\.root$");
+   boost::filesystem::path outputPathFile(fInFilePath);
 
-   if ( boost::regex_match(fInFilePath, extension_regex) ) {
-      return boost::regex_replace(fInFilePath, extension_regex, "\\1." + suffix + ".root");
-   } else {
-      return fInFilePath + "." + suffix + ".root";
-   }
+   // Remove the extension if present
+   outputPathFile.replace_extension("");
+
+   // Append to the base file name
+   outputPathFile += suffix.empty() ? "" : "_" + suffix;
+
+   // Append new extension
+   outputPathFile.replace_extension(extension);
+
+   return outputPathFile.string();
 }
 
 

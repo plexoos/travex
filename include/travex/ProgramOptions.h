@@ -29,7 +29,10 @@ public:
    float GetSparsity() const { return fSparsity; }
    bool  SaveGraphics() const { return fSaveGraphics; }
    std::string GetOutPrefix() const { return fOutPrefix; }
-   std::string GetOutFileName(std::string suffix="hist") const;
+
+   /// Create a name for the output file from the input file's base name,
+   /// a suffix, and a new extension provided as arguments
+   std::string GetOutFileName(std::string suffix="", std::string extension=".root") const;
 
    void ProcessOptions();
    void Print() const;
