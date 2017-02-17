@@ -23,12 +23,21 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
 {
    fOptions.add_options()
       ("help,h",        "Print this help message")
-      ("input-file,f",  po::value<std::string>(&fInFilePath), "Full path to a ROOT file containing a TTree " \
-                        "OR a text file with a list of such ROOT files")
-      ("prefix,o",      po::value<std::string>(&fOutPrefix)->default_value("./"), "Absolute or relative path to prefix output files")
-      ("max-events,n",  po::value<unsigned int>(&fMaxEventsUser)->default_value(0), "Maximum number of events to process")
-      ("sparsity,s",    po::value<float>(&fSparsity)->default_value(1), "Approximate fraction of events to read and process")
-      ("save-graph,g",  po::value<bool>(&fSaveGraphics)->default_value(false)->implicit_value(true), "Use this option to save histograms and such as images")
+
+      ("input-file,f",  po::value<std::string>(&fInFilePath),
+                        "Full path to a ROOT file containing a TTree OR a text file with a list of such ROOT files")
+
+      ("prefix,o",      po::value<std::string>(&fOutPrefix)->default_value("./"),
+                        "Absolute or relative path to prefix output files")
+
+      ("max-events,n",  po::value<unsigned int>(&fMaxEventsUser)->default_value(0),
+                        "Maximum number of events to process")
+
+      ("sparsity,s",    po::value<double>(&fSparsity)->default_value(1),
+                        "Approximate fraction of events to read and process")
+
+      ("save-graph,g",  po::value<bool>(&fSaveGraphics)->default_value(false)->implicit_value(true),
+                        "Use this option to save histograms and such as images")
    ;
 }
 
@@ -56,7 +65,7 @@ void ProgramOptions::ProcessOptions()
 /** Prints the options and their values. */
 void ProgramOptions::Print() const
 {
-   std::cout << "Program options set to following values:\n";
+   std::cout << "\nProgram options set to following values:\n";
 
    for (const std::pair< std::string, po::variable_value >& option : fOptionsValues)
    {
@@ -78,14 +87,15 @@ void ProgramOptions::VerifyOptions()
    }
 
 
+   // Validate input-file option
    if (fOptionsValues.count("input-file"))
    {
-      std::string inputFileName = boost::any_cast<std::string>(fOptionsValues["input-file"].value());
+      std::ifstream tmpFileCheck(fInFilePath.c_str());
 
-      std::ifstream tmpFileCheck(inputFileName.c_str());
       if (!tmpFileCheck.good()) {
-         TVX_FATAL("File \"%s\" does not exist", inputFileName.c_str());
+         TVX_FATAL("File \"%s\" does not exist", fInFilePath.c_str());
       }
+
    } else {
       TVX_ERROR("Input file not set");
       std::cout << fOptions << std::endl;
@@ -95,8 +105,9 @@ void ProgramOptions::VerifyOptions()
    if (fOptionsValues.count("sparsity"))
    {
       if (fSparsity > 1 || fSparsity <= 0) {
-         TVX_WARNING("VerifyOptions", "Sparsity specified value outside allowed limits. Set to 1");
+         TVX_WARNING("Sparsity specified value outside allowed limits. Set to 1");
          fSparsity = 1;
+         fOptionsValues.at("sparsity").value() = boost::any( fSparsity );
       }
    }
 }
@@ -133,6 +144,7 @@ std::ostream& tvx::operator<<(std::ostream& os, const boost::any& any_value)
    if(!out_to_stream<int>(os, any_value))
    if(!out_to_stream<unsigned int>(os, any_value))
    if(!out_to_stream<float>(os, any_value))
+   if(!out_to_stream<double>(os, any_value))
    if(!out_to_stream<bool>(os, any_value))
    if(!out_to_stream<std::string>(os, any_value))
       os<<"{unknown}"; // all cast are failed, an unknown type of any

@@ -26,7 +26,7 @@ public:
 
    std::string  PathToInputFile() const { return fInFilePath; }
    unsigned int GetMaxEventsUser() const { return fMaxEventsUser; }
-   float GetSparsity() const { return fSparsity; }
+   double GetSparsity() const { return fSparsity; }
    bool  SaveGraphics() const { return fSaveGraphics; }
    std::string GetOutPrefix() const { return fOutPrefix; }
 
@@ -58,7 +58,7 @@ protected:
    unsigned int  fMaxEventsUser;
 
    /// An approximate fraction of events to read and process
-   float  fSparsity;
+   double  fSparsity;
 
    /// This flag controls whether to produce images for created histograms
    bool  fSaveGraphics;
