@@ -27,8 +27,9 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
       ("input-file,f",  po::value<std::string>(&fInFilePath),
                         "Full path to a ROOT file containing a TTree OR a text file with a list of such ROOT files")
 
-      ("prefix,o",      po::value<std::string>(&fOutPrefix)->default_value("./"),
-                        "Absolute or relative path to prefix output files")
+      ("out-prefix,o",  po::value<std::string>(&fOutPrefix)->default_value("./")->implicit_value(""),
+                        "Absolute or relative path to prefix output files. Default is the current directory. " \
+                        "If no argument provided deducted from input file")
 
       ("max-events,n",  po::value<unsigned int>(&fMaxEventsUser)->default_value(0),
                         "Maximum number of events to process")
@@ -100,6 +101,16 @@ void ProgramOptions::VerifyOptions()
       TVX_ERROR("Input file not set");
       std::cout << fOptions << std::endl;
       exit(EXIT_FAILURE);
+   }
+
+   // Validate out-prefix option
+   if (fOptionsValues.count("out-prefix"))
+   {
+      if (fOutPrefix.empty()) {
+         boost::filesystem::path outputPathFile(fInFilePath);
+         fOutPrefix = outputPathFile.parent_path().string();
+         fOptionsValues.at("out-prefix").value() = boost::any( fOutPrefix );
+      }
    }
 
    if (fOptionsValues.count("sparsity"))
