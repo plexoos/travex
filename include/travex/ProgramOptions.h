@@ -6,7 +6,6 @@
 
 #include <boost/program_options/options_description.hpp>
 #include <boost/program_options/variables_map.hpp>
-#include <boost/program_options/parsers.hpp>
 
 
 namespace tvx {
@@ -74,7 +73,7 @@ bool out_to_stream(std::ostream& os, const boost::any& any_value)
    try {
       os << boost::any_cast<T>(any_value);
       return true;
-   } catch(boost:: bad_any_cast& e) {
+   } catch(boost::bad_any_cast& e) {
       return false;
    }
 }

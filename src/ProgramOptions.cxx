@@ -1,7 +1,9 @@
 #include <exception>
 #include <iostream>
 #include <fstream>
+
 #include <boost/filesystem.hpp>
+#include <boost/program_options/parsers.hpp>
 
 #include "travex/utils.h"
 #include "travex/ProgramOptions.h"
@@ -51,11 +53,14 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
 void ProgramOptions::ProcessOptions()
 {
    try {
+
       po::store(po::parse_command_line(fArgc, fArgv, fOptions), fOptionsValues);
       po::notify(fOptionsValues);
-   } catch(const std::exception& ex) {
+
+   } catch(const std::exception& ex)
+   {
       TVX_ERROR(ex.what());
-      std::cout << fOptions << std::endl;
+      std::cout << "\n" << fOptions << std::endl;
       exit(EXIT_FAILURE);
    }
 
@@ -158,7 +163,7 @@ std::ostream& tvx::operator<<(std::ostream& os, const boost::any& any_value)
    if(!out_to_stream<double>(os, any_value))
    if(!out_to_stream<bool>(os, any_value))
    if(!out_to_stream<std::string>(os, any_value))
-      os<<"{unknown}"; // all cast are failed, an unknown type of any
+      os << "{non-std type}"; // all cast are failed, an unknown type of any
 
    return os;
 }
