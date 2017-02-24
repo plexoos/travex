@@ -57,14 +57,14 @@ void ProgramOptions::ProcessOptions()
       po::store(po::parse_command_line(fArgc, fArgv, fOptions), fOptionsValues);
       po::notify(fOptionsValues);
 
+      VerifyOptions();
+
    } catch(const std::exception& ex)
    {
       TVX_ERROR(ex.what());
       std::cout << "\n" << fOptions << std::endl;
       exit(EXIT_FAILURE);
    }
-
-   VerifyOptions();
 }
 
 

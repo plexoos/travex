@@ -39,7 +39,7 @@ public:
 protected:
 
    /** Verifies user submitted values. */
-   void VerifyOptions();
+   virtual void VerifyOptions();
 
    int                     fArgc;
    char**                  fArgv;
