@@ -12,7 +12,11 @@
 using namespace tvx;
 
 
-
+/**
+ * Creates a number of options which can be used in a typical application
+ * reading a file (containing e.g. a ROOT TTree) and producing an output (e.g.
+ * a ROOT file with histograms and their corresponding images).
+ */
 ProgramOptions::ProgramOptions(int argc, char **argv) :
    fArgc(argc), fArgv(argv),
    fOptions("Available program options", 120),

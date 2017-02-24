@@ -15,7 +15,9 @@ namespace po = boost::program_options;
 
 
 /**
- * Processes and controls user options provided in the command line.
+ * Processes and controls user options provided in the command line. An input
+ * file is required. The path to an output file is built from the input file
+ * name and a prefix path provided by the user.
  */
 class ProgramOptions
 {
@@ -38,13 +40,17 @@ public:
 
 protected:
 
-   /** Verifies user submitted values. */
+   /// Verifies user submitted values
    virtual void VerifyOptions();
 
    int                     fArgc;
    char**                  fArgv;
-   po::options_description fOptions;
-   po::variables_map       fOptionsValues;
+
+   /// User defined command line options defined with boost::program_options
+   po::options_description  fOptions;
+
+   /// Option values extracted from the command line argument
+   po::variables_map  fOptionsValues;
 
    /// Full path to either a root file with event tree or a text file with
    /// a list of such root files

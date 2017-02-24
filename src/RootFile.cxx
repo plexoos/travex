@@ -14,6 +14,9 @@
 using namespace tvx;
 
 
+/**
+ * Should be used to create a new output file with histograms.
+ */
 RootFile::RootFile(ProgramOptions& prgOpts, Option_t *option, const char *ftitle, Int_t compress) :
    TFile(prgOpts.GetOutFileName().c_str(), option, ftitle, compress),
    fDirs(),

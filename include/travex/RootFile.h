@@ -26,6 +26,8 @@ class RootFile : public TFile
 {
 public:
 
+   /// This constructor can be used to create a new output file with
+   /// tvx::HistContainers organized in subdirectories
    RootFile(ProgramOptions& prgOpts, Option_t* option="", const char* ftitle="", Int_t compress=1);
 
    /// Adds HistContainer to this RootFile who takes the ownership of the
