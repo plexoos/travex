@@ -18,12 +18,14 @@ namespace fs = boost::filesystem;
  * reading a file (containing e.g. a ROOT TTree) and producing an output (e.g.
  * a ROOT file with histograms and their corresponding images).
  */
-ProgramOptions::ProgramOptions(int argc, char **argv) :
+ProgramOptions::ProgramOptions(int argc, char **argv, const std::string& out_sfx, const std::string& out_ext) :
    fArgc(argc), fArgv(argv),
    fOptions("Available program options", 120),
    fOptionsValues(),
    fInFilePath(),
    fOutPrefix("./"),
+   fOutSuffix(out_sfx),
+   fOutExtension(out_ext),
    fMaxEventsUser(0),
    fSparsity(1),
    fSaveGraphics(false)
@@ -141,18 +143,41 @@ void ProgramOptions::VerifyOptions()
  */
 std::string ProgramOptions::GetOutFileName(std::string suffix, std::string extension) const
 {
-   boost::filesystem::path outputPathFile(fInFilePath);
+   // Allow user to overwrite internal values
+   if ( suffix.empty() ) suffix = fOutSuffix;
 
-   // Remove the extension if present
-   outputPathFile.replace_extension("");
+   if ( extension.empty() ) extension = fOutExtension;
+
+   fs::path in_file_path(fInFilePath);
+   fs::path out_file_path(fOutPrefix);
+
+   std::string filename = in_file_path.filename().string();
+
+   // Compare the tail of the input filename with the new desired extension
+   int length_diff = filename.size() - extension.size();
+
+   if ( length_diff > 0 &&
+        filename.compare(length_diff, extension.size(), extension) == 0)
+   {
+      // The file already ends with the same "extension"
+      out_file_path /= filename.substr(0, length_diff);
+   }
+   else
+   {
+      out_file_path /= filename;
+      // Remove any extension if present
+      out_file_path.replace_extension("");
+   }
 
    // Append to the base file name
-   outputPathFile += suffix.empty() ? "" : "_" + suffix;
+   out_file_path += suffix.empty() ? "" :
+                    (suffix[0] == '_' ? suffix : "_" + suffix);
 
    // Append new extension
-   outputPathFile.replace_extension(extension);
+   out_file_path += extension.empty() ? "" :
+                    (extension[0] == '.' ? extension : "." + extension);
 
-   return outputPathFile.string();
+   return out_file_path.string();
 }
 
 

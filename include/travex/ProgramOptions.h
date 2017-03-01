@@ -23,7 +23,7 @@ class ProgramOptions
 {
 public:
 
-   ProgramOptions(int argc, char **argv);
+   ProgramOptions(int argc, char **argv, const std::string& out_sfx="_out", const std::string& out_ext=".root");
 
    std::string  PathToInputFile() const { return fInFilePath; }
    unsigned int GetMaxEventsUser() const { return fMaxEventsUser; }
@@ -33,7 +33,7 @@ public:
 
    /// Create a name for the output file from the input file's base name,
    /// a suffix, and a new extension provided as arguments
-   std::string GetOutFileName(std::string suffix="", std::string extension=".root") const;
+   std::string GetOutFileName(std::string suffix="", std::string extension="") const;
 
    void ProcessOptions();
    void Print() const;
@@ -58,6 +58,14 @@ protected:
 
    /// A prefix to specify the location of the output files
    std::string  fOutPrefix;
+
+   /// User modifiable suffix to append to the output file base name (not
+   /// a command line option)
+   std::string  fOutSuffix;
+
+   /// User modifiable extension for the output file (not a command line
+   /// option)
+   std::string  fOutExtension;
 
    /// The maximum number of input events to process
    unsigned int  fMaxEventsUser;
