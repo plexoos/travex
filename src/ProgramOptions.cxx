@@ -63,11 +63,16 @@ void ProgramOptions::ProcessOptions()
 
       VerifyOptions();
 
-   } catch(const std::exception& ex)
+   } catch(const po::error& ex)
    {
       TVX_ERROR(ex.what());
       std::cout << "\n" << fOptions << std::endl;
-      exit(EXIT_FAILURE);
+      _exit(EXIT_FAILURE);
+
+   } catch(...)
+   {
+      std::cout << "\n" << fOptions << std::endl;
+      _exit(EXIT_FAILURE);
    }
 }
 
@@ -91,11 +96,7 @@ void ProgramOptions::Print() const
 void ProgramOptions::VerifyOptions()
 {
    if (fOptionsValues.count("help"))
-   {
-      std::cout << fOptions << std::endl;
-      exit(EXIT_SUCCESS);
-   }
-
+      throw std::logic_error("Just print help");
 
    // Validate input-file option
    if (fOptionsValues.count("input-file"))
@@ -106,11 +107,8 @@ void ProgramOptions::VerifyOptions()
          TVX_FATAL("File \"%s\" does not exist", fInFilePath.c_str());
       }
 
-   } else {
-      TVX_ERROR("Input file not set");
-      std::cout << fOptions << std::endl;
-      exit(EXIT_FAILURE);
-   }
+   } else
+      throw po::required_option("input-file");
 
    // Validate out-prefix option
    if (fOptionsValues.count("out-prefix"))
