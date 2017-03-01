@@ -30,7 +30,7 @@ ProgramOptions::ProgramOptions(int argc, char **argv) :
    fOptions.add_options()
       ("help,h",        "Print this help message")
 
-      ("input-file,f",  po::value<std::string>(&fInFilePath),
+      ("input-file,i",  po::value<std::string>(&fInFilePath),
                         "Full path to a ROOT file containing a TTree OR a text file with a list of such ROOT files")
 
       ("out-prefix,o",  po::value<std::string>(&fOutPrefix)->default_value("./")->implicit_value(""),
