@@ -1,6 +1,5 @@
 #include <exception>
 #include <iostream>
-#include <fstream>
 
 #include <boost/filesystem.hpp>
 #include <boost/program_options/parsers.hpp>
@@ -10,6 +9,8 @@
 
 
 using namespace tvx;
+
+namespace fs = boost::filesystem;
 
 
 /**
@@ -101,11 +102,10 @@ void ProgramOptions::VerifyOptions()
    // Validate input-file option
    if (fOptionsValues.count("input-file"))
    {
-      std::ifstream tmpFileCheck(fInFilePath.c_str());
+      fs::path in_file_path(fInFilePath);
 
-      if (!tmpFileCheck.good()) {
+      if ( !fs::exists(in_file_path) )
          TVX_FATAL("File \"%s\" does not exist", fInFilePath.c_str());
-      }
 
    } else
       throw po::required_option("input-file");
@@ -114,8 +114,8 @@ void ProgramOptions::VerifyOptions()
    if (fOptionsValues.count("out-prefix"))
    {
       if (fOutPrefix.empty()) {
-         boost::filesystem::path outputPathFile(fInFilePath);
-         fOutPrefix = outputPathFile.parent_path().string();
+         fs::path out_file_path(fInFilePath);
+         fOutPrefix = out_file_path.parent_path().string();
          fOptionsValues.at("out-prefix").value() = boost::any( fOutPrefix );
       }
    }
