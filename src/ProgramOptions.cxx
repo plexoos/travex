@@ -75,7 +75,7 @@ void ProgramOptions::ProcessOptions()
    } catch(...)
    {
       std::cout << "\n" << fOptions << std::endl;
-      _exit(EXIT_FAILURE);
+      _exit(EXIT_SUCCESS);
    }
 }
 
