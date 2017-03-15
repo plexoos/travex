@@ -91,6 +91,8 @@ void ProgramOptions::Print() const
    {
       std::cout << "\t" << option.first << ":\t" << option.second.value() << "\n";
    }
+
+   std::cout << "\t[output file]:\t" << GetOutFileName() << std::endl;
 }
 
 
