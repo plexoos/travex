@@ -18,14 +18,13 @@ namespace fs = boost::filesystem;
  * reading a file (containing e.g. a ROOT TTree) and producing an output (e.g.
  * a ROOT file with histograms and their corresponding images).
  */
-ProgramOptions::ProgramOptions(int argc, char **argv, const std::string& out_sfx, const std::string& out_ext) :
+ProgramOptions::ProgramOptions(int argc, char **argv, const std::string& postfix) :
    fArgc(argc), fArgv(argv),
    fOptions("Available program options", 120),
    fOptionsValues(),
    fInFilePath(),
    fOutPrefix("./"),
-   fOutSuffix(out_sfx),
-   fOutExtension(out_ext),
+   fOutPostfix(postfix),
    fMaxEventsUser(0),
    fSparsity(1),
    fSaveGraphics(false)
@@ -39,6 +38,9 @@ ProgramOptions::ProgramOptions(int argc, char **argv, const std::string& out_sfx
       ("out-prefix,o",  po::value<std::string>(&fOutPrefix)->default_value("./")->implicit_value(""),
                         "Absolute or relative path to prefix output files. Default is the current directory. " \
                         "If no argument provided deducted from input file")
+
+      ("out-ending,e",  po::value<std::string>(&fOutPostfix)->default_value(postfix),
+                        "Output file ending")
 
       ("max-events,n",  po::value<unsigned int>(&fMaxEventsUser)->default_value(0),
                         "Maximum number of events to process")
@@ -134,48 +136,48 @@ void ProgramOptions::VerifyOptions()
 
 
 /**
- * Create a name for the output file from the input file's base name, a suffix,
- * and a new extension provided as arguments. For example,
+ * Form a name for the output file from the input file's base name with an
+ * optional string to be appended to the end if provided as an argument. For
+ * example,
  *
- * some/path/to/input_file_name    -> input_file_name_<suffix>.<extension>
- * /a/path/to/input_file_name.blah -> input_file_name_blah_<suffix>.<extension>
+ * some/path/to/input_file_name -> <prefix>/input_file_name_<postfix>
+ *
+ * If <postfix> = .ext..
+ *
+ * /a/path/to/input.file.name.blah -> <prefix>/input.ext
  *
  */
-std::string ProgramOptions::GetOutFileName(std::string suffix, std::string extension) const
+std::string ProgramOptions::GetOutFileName(std::string postfix) const
 {
-   // Allow user to overwrite internal values
-   if ( suffix.empty() ) suffix = fOutSuffix;
+   // Allow the user to overwrite internal values
+   if ( postfix.empty() ) postfix = fOutPostfix;
 
-   if ( extension.empty() ) extension = fOutExtension;
-
-   fs::path in_file_path(fInFilePath);
    fs::path out_file_path(fOutPrefix);
+   fs::path in_file_path(fInFilePath);
 
-   std::string filename = in_file_path.filename().string();
+   fs::path in_filename  = in_file_path.filename();
+   fs::path in_extension = in_file_path.extension();
 
-   // Compare the tail of the input filename with the new desired extension
-   int length_diff = filename.size() - extension.size();
+   // Pop as many "extensions" in the original file name as there are dots at
+   // the end of the user extension. Do it at least once
+   do {
+      in_filename.replace_extension("");
 
-   if ( length_diff > 0 &&
-        filename.compare(length_diff, extension.size(), extension) == 0)
+      if (postfix.back() == '.') postfix.pop_back();
+
+   } while(postfix.back() == '.');
+
+   // If there are NO dots in the new extension
+   if ( postfix.find(".") == std::string::npos)
    {
-      // The file already ends with the same "extension"
-      out_file_path /= filename.substr(0, length_diff);
-   }
-   else
-   {
-      out_file_path /= filename;
-      // Remove any extension if present
-      out_file_path.replace_extension("");
+      // Reuse the extension of the input file
+      postfix += in_extension.string();
    }
 
+   out_file_path /= in_filename;
    // Append to the base file name
-   out_file_path += suffix.empty() ? "" :
-                    (suffix[0] == '_' ? suffix : "_" + suffix);
-
-   // Append new extension
-   out_file_path += extension.empty() ? "" :
-                    (extension[0] == '.' ? extension : "." + extension);
+   out_file_path += (postfix[0] == '_' || postfix[0] == '.') ?
+                     postfix : "_" + postfix;
 
    return out_file_path.string();
 }
