@@ -71,6 +71,9 @@ protected:
 
    /// This flag controls whether to produce images for created histograms
    bool  fSaveGraphics;
+
+   /// Removes options specified by their long name in 'opt_list'
+   void RemoveOptions(const std::vector<std::string>& opt_list);
 };
 
 

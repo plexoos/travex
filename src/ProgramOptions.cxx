@@ -185,6 +185,22 @@ std::string ProgramOptions::GetOutFileName(std::string postfix) const
 }
 
 
+void ProgramOptions::RemoveOptions(const std::vector<std::string>& opt_list)
+{
+   using opt_t = boost::shared_ptr<po::option_description>;
+   using opt_container_t = std::vector< opt_t >;
+
+   opt_container_t& opts = const_cast< opt_container_t& >(fOptions.options());
+
+   auto in_list = [&opt_list] (const opt_t& opt)
+   {
+      return std::find(opt_list.begin(), opt_list.end(), opt->long_name()) != opt_list.end();
+   };
+
+   opts.erase( std::remove_if(opts.begin(), opts.end(), in_list), opts.end() );
+}
+
+
 std::ostream& tvx::operator<<(std::ostream& os, const boost::any& any_value)
 {
    // List all types you want to try
