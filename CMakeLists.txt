@@ -80,14 +80,10 @@ add_executable(test-lib tests/test-lib.cxx)
 target_link_libraries(test-lib travex)
 
 
-# Installation section
-set(ADDITIONAL_INSTALL_PREFIX ".")
+install(DIRECTORY "include/travex" DESTINATION "include")
 
-# This hack is here just for the STAR users
-if(DEFINED ENV{STAR_HOST_SYS})
-   set(ADDITIONAL_INSTALL_PREFIX ".$ENV{STAR_HOST_SYS}")
-endif()
-
-install(DIRECTORY "include/travex" DESTINATION "${ADDITIONAL_INSTALL_PREFIX}/include")
-install(TARGETS travex DESTINATION "${ADDITIONAL_INSTALL_PREFIX}/lib" OPTIONAL)
-install(TARGETS test-lib DESTINATION "${ADDITIONAL_INSTALL_PREFIX}/bin" OPTIONAL)
+install( TARGETS
+	test-lib travex
+	RUNTIME DESTINATION "bin"
+	LIBRARY DESTINATION "lib"
+)
