@@ -6,40 +6,22 @@ project(travex)
 # Add to path in order to pick up the FindXXX.cmake files included in this project
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 
-# This project depends on Boost
-find_package(Boost 1.54.0 REQUIRED COMPONENTS program_options regex filesystem)
-
 # This project depends on ROOT
 find_package(ROOT COMPONENTS HistPainter)
 
-# Since this projects heavily depend on ROOT check the ROOT's '-m' compilation flag
-# and use the same
-if(ROOT_FOUND)
-	string(REGEX MATCH "(^|[\t ]+)-m([\t ]*)(32|64)([\t ]+|$)" TRAVEX_ROOT_CXX_FLAGS_M ${ROOT_CXX_FLAGS})
-
-	if (TRAVEX_ROOT_CXX_FLAGS_M)
-		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m${CMAKE_MATCH_3}")
-		message(STATUS "Found -m${CMAKE_MATCH_3} option in $ROOT_CXX_FLAGS (root-config). Will add it to $CMAKE_CXX_FLAGS")
-	endif()
-else()
-	message(FATAL_ERROR "Fatal error: ROOT package not found")
+if( ${ROOT_CXX_FLAGS} MATCHES "-m32" )
+	message(STATUS "Found -m32 option in $ROOT_CXX_FLAGS (root-config). Will add it to $CMAKE_CXX_FLAGS")
+	set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS FALSE)
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32" )
+	set(ENV{PKG_CONFIG_PATH} "/usr/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
 endif()
+
+# This project depends on Boost
+find_package(Boost 1.54.0 COMPONENTS program_options regex filesystem)
 
 add_definitions(-D__ROOT__)
 
-
-# Check whether the compiler supports c++11
-include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
-if(COMPILER_SUPPORTS_CXX11)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-elseif(COMPILER_SUPPORTS_CXX0X)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-else()
-	message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
-endif()
-
+set(CMAKE_CXX_STANDARD 11)
 
 include_directories (
 	${Boost_INCLUDE_DIR}
